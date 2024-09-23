@@ -14,8 +14,8 @@ if ($blnLocal) {
     //Local
     $strHost = 'localhost';
     $strBD='25_rpni1_OFF';
-    $strUser = 'rpni1_user';
-    $strPassword= 'rpni1_mdp';
+    $strUser = 'rpni1';
+    $strPassword= 'rpni1';
     error_reporting(E_ALL);
 } else {
     //en ligne
