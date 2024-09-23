@@ -1,0 +1,112 @@
+/**
+ * @author Prénom Nom courriel
+ * @todo ADAPTER ce fichier selon le projet
+**/
+
+/**
+ * TABLE DES MATIÈRES
+ * Palette de couleurs
+ * Base commune
+ * - Bouton du menu
+ * - Liste du menu
+ * - Liens du menu
+ * Si le javascript est activé
+ */
+
+/****** Palette de couleurs *******/
+/*
+Couleur de fond : #d9d7d0
+Effet de survol : #f5ae09
+Effet actif : #f4d07c
+*/
+
+/****** Base commune *******/
+
+/* Bouton du menu */
+.menu {
+
+    &__controle {
+        background-color: $bleuPale;
+        border: none;
+        padding: 10px;
+        min-width: 40px;
+        width: 80px;
+        @media (min-width: 601px){
+            display: none;
+        }
+        &:hover,
+        &:active{
+            background-color: $bleuMoyen;;
+        }
+        &:focus{
+            /**
+             * Les styles du navigateur utilisent la règle outline pour définir
+             * l'état focus des éléments interactifs.
+             * Vous pouvez redéfinir cette règle ou remplacer par d'autres styles
+             * mieux adaptés à la direction visuelle.
+             * MAIS il faut souligner l'état focus et le tester au clavier.
+             */
+            outline-offset: -5px;
+            outline: $bleuMinuit auto 5px;}
+        }
+
+        &__liste{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            max-height: none;
+            @media (min-width: 601px) {
+                &Item{
+                    display: inline-block;
+                }
+            }
+        }
+
+        &__lien{
+            border: 1px solid $bleuMinuit;
+            background-color: $bleuPale;
+            display: block;
+            padding: 5px 10px;
+            &:link,
+            &:visited{
+                text-decoration: none;
+                color: inherit;
+            }
+            &:hover,
+            &:active{
+                background-color: $bleuMoyen;
+            }
+            &:focus {
+                /*outline: none;
+                border-left: 5px solid #f5ae09;*/
+                outline-offset: -5px;
+                outline: #f5ae09 auto 5px;
+            }
+            &--actif{
+                border-left: 5px solid #f4d07c;
+               
+            }
+        }
+    }
+
+
+    /* Si le javascript est activé */
+    /* Pour des raisons d'accessibilité, on ne cache le menu mobile
+     * que si Javascript est activé. De cette façon, s'il est désactivé,
+     * le menu restera tout de même visible à l'utilisateur.
+     */
+.js .menu__liste {
+        max-height: 100vh;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+
+.js .menu--ferme .menu__liste {
+    max-height: 0;
+    @media (min-width: 601px) {
+        max-height: none;
+        }
+    }
+
+
+
