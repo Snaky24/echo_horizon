@@ -693,28 +693,56 @@ Effet actif : #f4d07c
 }
 
 /****** LAYOUT *****************************/
-<<<<<<< HEAD
-.artiste__titre {
-=======
-.entete {
->>>>>>> 4f979349e9a1e354d2d9fe5114db069166e98c94
+.conteneur {
   background-color: #000;
+}
+
+.entete {
+  background-color: #000;
+  padding: 20px;
+}
+
+.logo {
+  width: 174px;
+  height: 90px;
+}
+
+.menu {
+  display: block;
+  margin: auto;
+  width: 100%;
+  text-align: left;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  display: inline;
+  list-style-type: none;
+}
+
+.menu__lien {
+  margin: 26px;
+  width: 174px;
+  display: block;
+  float: right;
+  text-decoration: none;
+  text-align: center;
+  color: #DA4167;
+  text-transform: uppercase;
+}
+
+a .sac {
+  float: right;
 }
 
 .piedDePage {
   background-color: #68a8e8;
 }
-<<<<<<< HEAD
 .artiste__titre {
   color: red;
-=======
-h1 {
-  color: aqua;
-}
-
-p {
-  color: aqua;
->>>>>>> 4f979349e9a1e354d2d9fe5114db069166e98c94
 }
 
 .accueil__titre {
@@ -729,11 +757,8 @@ body {
   background-color: black;
 }
 
-<<<<<<< HEAD
 .artiste__titre {
   background-color: #000;
 }
 
-=======
->>>>>>> 4f979349e9a1e354d2d9fe5114db069166e98c94
 /*# sourceMappingURL=styles.css.map */
