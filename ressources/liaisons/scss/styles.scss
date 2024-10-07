@@ -60,5 +60,9 @@
 @import "layout/entete";
 @import "layout/piedDePage";
 
-@import "layout/fiche";
+@import "layout/artistes";
 @import "layout/accueil";
+
+.artiste__titre {
+    background-color: #000;
+  }
