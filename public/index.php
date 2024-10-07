@@ -1,6 +1,6 @@
 
-<?php $niveau="./";?>
-<?php include ($niveau . "liaisons/php/config.inc.php");?>
+<?php $niveau="../";?>
+<?php include ($niveau . "public/liaisons/php/config.inc.php");?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,12 +11,12 @@
 	<meta name="author" content="">
 	<meta charset="utf-8">
 	<title>Un beau titre ici!</title>
-	<?php include ($niveau . "liaisons/fragments/headlinks.inc.html");?>
+	<?php include ($niveau . "public/liaisons/fragments/headlinks.inc.php");?>
 </head>
 
 <body>
 
-	<?php include ($niveau . "liaisons/fragments/entete.inc.php");?>
+	<?php include ($niveau . "public/liaisons/fragments/entete.inc.php");?>
 
 	<main>
 		<div id="contenu" class="conteneur">
