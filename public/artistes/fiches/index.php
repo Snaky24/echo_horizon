@@ -5,6 +5,7 @@ $niveau = '../../';
 ?>
 <?php include ($niveau . "liaisons/php/config.inc.php");?>
 
+
 <?php
 
 	$id_artiste=$_GET['id_artiste']; 
@@ -69,7 +70,7 @@ $niveau = '../../';
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Fiche de l'artiste</title>
-    
+    <?php include ($niveau . "liaisons/fragments/headlinks.inc.php");?>
 	
 </head>
 

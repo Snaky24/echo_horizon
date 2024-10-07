@@ -694,10 +694,29 @@ Effet actif : #f4d07c
 
 /****** LAYOUT *****************************/
 .entete {
-  background-color: #358ae0;
+  background-color: black;
 }
 .piedDePage {
   background-color: #68a8e8;
+}
+h1 {
+  color: aqua;
+}
+
+p {
+  color: aqua;
+}
+
+.accueil__titre {
+  padding: 20px;
+}
+.accueil__layout {
+  display: flex;
+  flex-direction: row;
+}
+
+body {
+  background-color: black;
 }
 
 /*# sourceMappingURL=styles.css.map */
