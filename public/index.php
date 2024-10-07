@@ -10,12 +10,13 @@
 	<meta name="keyword" content="">
 	<meta name="author" content="">
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="../ressources/liaisons/scss/styles.scss">
+	<link rel="stylesheet" href="../ressources/liaisons/scss/layout/_entete.scss">
 	<title>Un beau titre ici!</title>
 	<?php include($niveau . "public/liaisons/fragments/headlinks.inc.php"); ?>
 </head>
 
 <body>
-	<?php $niveau = "../"; ?>
 	<?php include($niveau . "public/liaisons/fragments/entete.inc.php"); ?>
 
 	<main>
