@@ -694,8 +694,9 @@ Effet actif : #f4d07c
 
 /****** LAYOUT *****************************/
 .entete {
-  background-color: #358ae0;
+  background-color: #000;
 }
+
 .piedDePage {
   background-color: #68a8e8;
 }
