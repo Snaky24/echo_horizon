@@ -693,15 +693,28 @@ Effet actif : #f4d07c
 }
 
 /****** LAYOUT *****************************/
+<<<<<<< HEAD
 .artiste__titre {
+=======
+.entete {
+>>>>>>> 4f979349e9a1e354d2d9fe5114db069166e98c94
   background-color: #000;
 }
 
 .piedDePage {
   background-color: #68a8e8;
 }
+<<<<<<< HEAD
 .artiste__titre {
   color: red;
+=======
+h1 {
+  color: aqua;
+}
+
+p {
+  color: aqua;
+>>>>>>> 4f979349e9a1e354d2d9fe5114db069166e98c94
 }
 
 .accueil__titre {
@@ -716,8 +729,11 @@ body {
   background-color: black;
 }
 
+<<<<<<< HEAD
 .artiste__titre {
   background-color: #000;
 }
 
+=======
+>>>>>>> 4f979349e9a1e354d2d9fe5114db069166e98c94
 /*# sourceMappingURL=styles.css.map */
