@@ -1,5 +1,5 @@
 <header class="entete">
-    <a class="entete__titre" href="index.php"><h1>Festival OFF</h1></a>
+    <a href="<?php echo $niveau;?>index.php" class="menu__lien"><img src="../public/liaisons/images/logo.svg" alt="Logo"></a>
 </header>  
 <nav class="menu menu--ferme">
     <ul class="menu__liste">
