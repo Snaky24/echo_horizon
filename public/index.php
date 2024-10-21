@@ -20,9 +20,12 @@
 	<?php include($niveau . "public/liaisons/fragments/entete.inc.php"); ?>
 
 	<main>
-	<link rel="stylesheet" href="../public/liaisons/fragments/entete.inc.php">
+		<link rel="stylesheet" href="../public/liaisons/fragments/entete.inc.php">
+		<div class="container">
+		<img src="../public/liaisons/images/Rectangle 61.png" alt="Description">
+		<div class="centered">Festival OFF de Québec</div>
+		</div>
 		<div id="contenu" class="conteneur">
-			<h2>Entête de page</h2>
 
 			<?php
 			$requeteSQL = "Select titre from actualites";

@@ -1,3 +1,5 @@
+@charset "UFT-8";
+
 .accueil {
 
   &__titre {
@@ -14,4 +16,17 @@
 body {
   background-color: black;
   color: #FFF;
+}
+
+.container {
+  display: flex;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  padding-top: 50px;
+  padding-left: 200px;
+  font-size: 40px;
+  text-shadow: #000;
 }
