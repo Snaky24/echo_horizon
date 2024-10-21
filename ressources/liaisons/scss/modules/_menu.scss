@@ -26,7 +26,7 @@ Effet actif : #f4d07c
 .menu {
 
     &__controle {
-        background-color: $bleuPale;
+        background-color: $noir;
         border: none;
         padding: 10px;
         min-width: 40px;
@@ -36,7 +36,7 @@ Effet actif : #f4d07c
         }
         &:hover,
         &:active{
-            background-color: $bleuMoyen;;
+            background-color: $noir;;
         }
         &:focus{
             /**
@@ -47,7 +47,7 @@ Effet actif : #f4d07c
              * MAIS il faut souligner l'état focus et le tester au clavier.
              */
             outline-offset: -5px;
-            outline: $bleuMinuit auto 5px;}
+            outline: $noir auto 5px;}
         }
 
         &__liste{
@@ -63,8 +63,8 @@ Effet actif : #f4d07c
         }
 
         &__lien{
-            border: 1px solid $bleuMinuit;
-            background-color: $bleuPale;
+            border: 1px solid $noir;
+            background-color: $noir;
             display: block;
             padding: 5px 10px;
             &:link,
@@ -74,7 +74,7 @@ Effet actif : #f4d07c
             }
             &:hover,
             &:active{
-                background-color: $bleuMoyen;
+                background-color: $noir;
             }
             &:focus {
                 /*outline: none;

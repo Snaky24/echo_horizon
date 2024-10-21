@@ -513,17 +513,17 @@ body {
   text-decoration: none;
   border-radius: 18px;
   padding: 0.5em 1em;
-  background-color: #bbd531;
+  background-color: rgba(0, 0, 0, 0.5);
   color: black;
 }
 .bouton:after {
   margin-left: 0.4em;
 }
 .bouton:hover {
-  background-color: rgba(187, 213, 49, 0.75);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 .bouton:active {
-  background-color: rgba(187, 213, 49, 0.5);
+  background-color: rgba(0, 0, 0, 0);
 }
 .bouton--inverse {
   text-decoration: none;
@@ -533,10 +533,10 @@ body {
   border: 2px solid black;
 }
 .bouton--inverse:hover {
-  border-color: rgba(187, 213, 49, 0.75);
+  border-color: rgba(0, 0, 0, 0.25);
 }
 .bouton--inverse:active {
-  border-color: rgba(187, 213, 49, 0.5);
+  border-color: rgba(0, 0, 0, 0);
 }
 
 /** Grille 12 colones **/
@@ -618,7 +618,7 @@ Effet actif : #f4d07c
 /****** Base commune *******/
 /* Bouton du menu */
 .menu__controle {
-  background-color: #68a8e8;
+  background-color: rgba(0, 0, 0, 0.5);
   border: none;
   padding: 10px;
   min-width: 40px;
@@ -630,7 +630,7 @@ Effet actif : #f4d07c
   }
 }
 .menu__controle:hover, .menu__controle:active {
-  background-color: #358ae0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .menu__controle:focus {
   /**
@@ -641,7 +641,7 @@ Effet actif : #f4d07c
    * MAIS il faut souligner l'état focus et le tester au clavier.
    */
   outline-offset: -5px;
-  outline: #012d61 auto 5px;
+  outline: rgba(0, 0, 0, 0.5) auto 5px;
 }
 .menu__liste {
   margin: 0;
@@ -655,8 +655,8 @@ Effet actif : #f4d07c
   }
 }
 .menu__lien {
-  border: 1px solid #012d61;
-  background-color: #68a8e8;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: block;
   padding: 5px 10px;
 }
@@ -665,7 +665,7 @@ Effet actif : #f4d07c
   color: inherit;
 }
 .menu__lien:hover, .menu__lien:active {
-  background-color: #358ae0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .menu__lien:focus {
   /*outline: none;
@@ -698,37 +698,35 @@ Effet actif : #f4d07c
 }
 
 /****** LAYOUT *****************************/
+.logo {
+  display: block;
+  height: 84px;
+  cursor: pointer;
+}
+
+.menu__listeItem,
+a,
+button {
+  font-size: 18px;
+  color: #DA4167;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 .entete {
-  background-color: #000;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
 }
 
-.menu__listeItem {
-  float: right;
-  color: #DA4167;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 18px;
-  text-decoration: none;
-}
-
-.menu__listeItem:hover {
-  color: black;
-}
-
-.icon__liste {
-  float: right;
-  color: #DA4167;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 18px;
-  text-decoration: none;
-}
-
-.menu__listeItem:hover {
-  color: black;
+button {
+  text-transform: uppercase;
+  text-shadow: #000;
+  padding: 10px 40px;
+  background: linear-gradient(160deg, rgb(218, 65, 103) 20%, rgb(254, 168, 47) 70%);
+  color: rgb(243, 236, 236);
+  border: none;
 }
 
 .piedDePage {

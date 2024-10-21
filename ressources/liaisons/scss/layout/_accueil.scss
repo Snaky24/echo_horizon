@@ -1,17 +1,17 @@
-.accueil{
+.accueil {
 
-  &__titre{
+  &__titre {
     padding: 20px;
   }
-  &__layout{
+
+  &__layout {
     display: flex;
     flex-direction: row;
   }
 
 }
 
-body{
+body {
   background-color: black;
   color: #FFF;
 }
-
