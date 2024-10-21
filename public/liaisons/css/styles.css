@@ -486,23 +486,22 @@ body {
 }
 /** Hyperliens **/
 /**
-* @author Prenom Nom courriel
-* @todo Compléter selon l'énoncé de l'exercice
+* @author Jade Mayrand
 */
 .hyperlien {
-  color: #000;
-  font-size: 48px;
-  text-decoration: none;
+  color: #DA4167;
+  font-size: 20px;
+  text-decoration: underline;
 }
 .hyperlien:visited {
-  color: black;
+  color: #971e3c;
 }
 .hyperlien:hover {
-  color: black;
+  color: #FFF;
   text-decoration: underline;
 }
 .hyperlien:active {
-  color: #000;
+  color: #FFF;
   text-decoration: underline;
 }
 
@@ -736,7 +735,7 @@ Effet actif : #f4d07c
   background-color: #68a8e8;
 }
 .artiste__titre {
-  color: red;
+  text-transform: uppercase;
 }
 
 .accueil__titre {

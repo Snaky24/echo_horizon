@@ -1,19 +1,18 @@
 /**
-* @author Prenom Nom courriel
-* @todo Compléter selon l'énoncé de l'exercice
+* @author Jade Mayrand
 */
-$hyperlien: #000;
-$hyperlien_actif: #000;
+$hyperlien: #DA4167;
+$hyperlien_actif: #FFF;
 
 .hyperlien{
   color: $hyperlien;
-  font-size: 48px;
-  text-decoration: none;
+  font-size: 20px;
+  text-decoration: underline;
   &:visited {
-    color: darken($hyperlien, 5%);
+    color: darken($hyperlien, 20%);
   }
   &:hover {
-    color: darken($hyperlien, 20%);
+    color: $hyperlien_actif;
     text-decoration: underline;
   }
   &:active {
