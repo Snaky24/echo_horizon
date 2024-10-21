@@ -75,7 +75,7 @@ $niveau = '../../';
 </head>
 
 <body>
-    <h1>Fiche de l'artiste</h1>
+    <h1 class="artiste__titre">Fiche de l'artiste</h1>
 	
     <?php 
 		//Affichage du participant et de son identifiant
