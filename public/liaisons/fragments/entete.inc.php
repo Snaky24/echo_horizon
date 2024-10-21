@@ -1,3 +1,9 @@
+<?php $niveau = "../"; ?>
+<?php include($niveau . "public/liaisons/php/config.inc.php"); ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+
 <header class="entete">
     <nav class="menu menu--ferme">
         <ul class="menu__liste">
@@ -9,9 +15,13 @@
                     class="menu__lien">Artistes</a></li>
             <li class="menu__listeItem"><a href="<?php echo $niveau; ?>public/lieux/index.php"
                     class="menu__lien">Partenaires</a></li>
+        </ul>
+        <ul class="icon__liste">
             <a class="sac"><img src="../public/liaisons/images/sac.svg" alt=""></a>
             <a class="loupe"><img src="../public/liaisons/images/loupe.svg" alt=""></a>
-            <button type="">Billets</button>
+            <button type="bouton">Billets</button>
         </ul>
     </nav>
 </header>
+
+</html>

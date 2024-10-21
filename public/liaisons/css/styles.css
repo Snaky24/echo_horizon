@@ -484,19 +484,19 @@ body {
 * @todo Compléter selon l'énoncé de l'exercice
 */
 .hyperlien {
-  color: #2678B5;
+  color: #000;
   font-size: 48px;
   text-decoration: none;
 }
 .hyperlien:visited {
-  color: #226aa0;
+  color: black;
 }
 .hyperlien:hover {
-  color: #144061;
+  color: black;
   text-decoration: underline;
 }
 .hyperlien:active {
-  color: #012d61;
+  color: #000;
   text-decoration: underline;
 }
 
@@ -693,49 +693,37 @@ Effet actif : #f4d07c
 }
 
 /****** LAYOUT *****************************/
-.conteneur {
-  background-color: #000;
-}
-
 .entete {
   background-color: #000;
-  padding: 20px;
+  overflow: hidden;
 }
 
-.logo {
-  width: 174px;
-  height: 90px;
-}
-
-.menu {
-  display: block;
-  margin: auto;
-  width: 100%;
-  text-align: left;
-}
-
-nav ul {
-  list-style-type: none;
-}
-
-nav li {
-  display: inline;
-  list-style-type: none;
-}
-
-.menu__lien {
-  margin: 26px;
-  width: 174px;
-  display: block;
+.menu__listeItem {
   float: right;
-  text-decoration: none;
-  text-align: center;
   color: #DA4167;
-  text-transform: uppercase;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  text-decoration: none;
 }
 
-a .sac {
+.menu__listeItem:hover {
+  color: black;
+}
+
+.icon__liste {
   float: right;
+  color: #DA4167;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.menu__listeItem:hover {
+  color: black;
 }
 
 .piedDePage {
