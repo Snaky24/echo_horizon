@@ -2,6 +2,7 @@ Artistes!
 <?php $niveau="../";?>
 <a href="<?php echo $niveau;?>index.php">Retour</a>
 
+<<<<<<< HEAD
 
 
 <!DOCTYPE html>
@@ -29,3 +30,6 @@ Artistes!
     <footer></footer>
 </body>
 </html>
+=======
+<?php include ($niveau . "liaisons/fragments/headlinks.inc.php");?>
+>>>>>>> 513325707d7bbbd5b6d217eeef6326c753edb3dd

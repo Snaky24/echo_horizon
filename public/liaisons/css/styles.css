@@ -471,6 +471,12 @@ html {
   font-size: 62.5%;
 }
 
+h1,
+h2,
+h3 {
+  color: white;
+}
+
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -743,10 +749,7 @@ Effet actif : #f4d07c
 
 body {
   background-color: black;
-}
-
-.artiste__titre {
-  background-color: #000;
+  color: #FFF;
 }
 
 /*# sourceMappingURL=styles.css.map */
