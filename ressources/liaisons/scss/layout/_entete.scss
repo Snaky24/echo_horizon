@@ -1,4 +1,34 @@
-.artiste__titre {
+@charset "UTF-8";
+
+.entete {
   background-color: #000;
+  overflow: hidden;
 }
 
+.menu__listeItem {
+  float: right;
+  color: #DA4167;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.menu__listeItem:hover {
+  color: black;
+}
+
+.icon__liste {
+  float: right;
+  color: #DA4167;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.menu__listeItem:hover {
+  color: black;
+}

@@ -33,6 +33,12 @@ html {
   font-size: 62.5%;
 }
 
+h1,
+h2,
+h3{
+  color: white;
+}
+
 body {
   font-family: $fonteSecondaire;
   @include fontSize(16px); /* 16px pour toutes les largeurs d'écran */
