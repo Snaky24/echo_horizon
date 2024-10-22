@@ -36,3 +36,24 @@ body {
   padding-left: 200px;
   font-size: 30px;
 }
+
+.nav-sec__liste {
+  justify-content: center;
+  display: flex;
+  list-style: none;
+}
+
+.nav-sec__listeItem {
+  padding: 14px 140px;
+  font-size: 20px;
+}
+
+.nav-sec__lien {
+  color: #FFF;
+}
+
+hr {
+  background-color: #FEA82F;
+  padding: 20px;
+  border: #FEA82F;
+}

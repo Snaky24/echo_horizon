@@ -23,7 +23,15 @@
 		<link rel="stylesheet" href="../public/liaisons/fragments/entete.inc.php">
 		<span class="centered" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">Festival OFF de Québec</span>
 		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 11 AU 14 JUILLET</span>
-		<img src="../public/liaisons/images/Rectangle 61.png" alt="Description">
+		<img class="image_festi" src="../public/liaisons/images/Rectangle 61.png" alt="Description">
+		<nav class="nav_sec">
+			<ul class="nav-sec__liste">
+				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>#" class="nav-sec__lien">Lieux</a></li>
+				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>#" class="nav-sec__lien">Tarifs</a></li>
+				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>#" class="nav-sec__lien">Contact</a></li>
+			</ul>
+		</nav>
+		<hr class="separator">
 		<div id="contenu" class="conteneur">
 
 			<?php
@@ -73,9 +81,9 @@
 		<p>Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est eros, vel fringilla
 			urna. Pellentesque odio rhoncus</p>
 	</aside>
+	<hr class="separator">
 
-
-	<?php include($niveau . "liaisons/fragments/piedDePage.inc.php"); ?>
+	<?php include($niveau . "public/liaisons/fragments/piedDePage.inc.php"); ?>
 
 </body>
 

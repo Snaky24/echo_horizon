@@ -1,8 +1,67 @@
-$bleupieddepage:#358ae0;
+@charset "UFT-8";
 
-.piedDePage{
-  background-color: #68a8e8;
-  &__copyRights{
+.container {
+  padding: 20px;
+  text-align: center;
+}
 
-  }
+.logo__footer {
+  display: block;
+  height: 84px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #FFA500;
+}
+
+.contact,
+.newsletter {
+  width: 45%;
+}
+
+.newsletter form {
+  display: flex;
+}
+
+.newsletter input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.newsletter button {
+  padding: 10px;
+  background-color: #FFA500;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials a img {
+  width: 30px;
+  height: 30px;
 }
