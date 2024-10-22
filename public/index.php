@@ -22,7 +22,7 @@
 	<main>
 		<link rel="stylesheet" href="../public/liaisons/fragments/entete.inc.php">
 		<span class="centered" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">Festival OFF de Québec</span>
-		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 11 AU 14 JUILLET</span>
+		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 8 AU 11 JUILLET</span>
 		<img class="image_festi" src="../public/liaisons/images/Rectangle 61.png" alt="Description">
 		<nav class="nav_sec">
 			<ul class="nav-sec__liste">
