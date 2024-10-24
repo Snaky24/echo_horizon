@@ -1,7 +1,5 @@
 <?php 
-
 $niveau = '../../';
-
 ?>
 <?php include ($niveau . "liaisons/php/config.inc.php");?>
 <?php include ($niveau . "liaisons/fragments/headlinks.inc.php");?>

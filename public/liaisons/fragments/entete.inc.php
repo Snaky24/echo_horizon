@@ -4,6 +4,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<head>
+    <link rel="stylesheet" href="../public/liaisons/css/styles.css">
+    <link rel="stylesheet" href="../ressources/liaisons/scss/styles.scss">
+</head>
+
 <header class="entete">
     <img class="logo" src="../public/liaisons/images/logo.svg" alt="Logo">
     <nav class="menu menu--ferme">

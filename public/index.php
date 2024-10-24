@@ -1,6 +1,36 @@
 <?php $niveau = "../"; ?>
 <?php include($niveau . "public/liaisons/php/config.inc.php"); ?>
 
+<?php
+$arrJour = array("lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche");
+$arrMois = array("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre");
+
+$strRequete = 'SELECT titre, DAYOFWEEK(date_actualite) AS jourSemaine, MONTH(date_actualite) AS mois, DAYOFWEEK(date_actualite) AS jour, YEAR(date_actualite) AS annee, auteurs, article FROM actualites ORDER BY date_actualite DESC;';
+
+$pdosResultatActualites = $objPdo->prepare($strRequete);
+$pdosResultatActualites->execute();
+
+$arrActualites = array();
+for ($cptEnr = 0; $ligneActualite = $pdosResultatActualites->fetch(); $cptEnr++) {
+	$arrActualites[$cptEnr]["titre"] = $ligneActualite["titre"];
+	$arrActualites[$cptEnr]["jour"] = $ligneActualite["jour"];
+	$arrActualites[$cptEnr]["jourSemaine"] = $ligneActualite["jourSemaine"];
+	$arrActualites[$cptEnr]["mois"] = $ligneActualite["mois"];
+	$arrActualites[$cptEnr]["annee"] = $ligneActualite["annee"];
+	$arrActualites[$cptEnr]["auteurs"] = $ligneActualite["auteurs"];
+
+	$arrArticle = explode(" ", $ligneActualite["article"]);
+
+	if (count($arrArticle) > 45) {
+		array_splice($arrArticle, 45, count($arrArticle));
+	}
+
+	$arrActualites[$cptEnr]["article"] = implode(" ", $arrArticle);
+}
+$pdosResultatActualites->closeCursor();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -23,7 +53,9 @@
 		<link rel="stylesheet" href="../public/liaisons/fragments/entete.inc.php">
 		<span class="centered" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">Festival OFF de Québec</span>
 		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 8 AU 11 JUILLET</span>
-		<img class="image_festi" src="../public/liaisons/images/Rectangle 61.png" alt="Description">
+		<img src="images/votre-image-small.jpg" srcset="../public/liaisons/images/Rectangle 61.png 768w, 
+			 ../public/liaisons/images/Rectangle 61.png 1200w" sizes="(max-width: 768px) 100vw, 50vw"
+			alt="Description de l'image">
 		<nav class="nav_sec">
 			<ul class="nav-sec__liste">
 				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>#" class="nav-sec__lien">Lieux</a></li>
@@ -33,40 +65,24 @@
 		</nav>
 		<hr class="separator">
 		<div id="contenu" class="conteneur">
-
-			<?php
-			$requeteSQL = "Select titre from actualites";
-			$objStat = $objPdo->prepare($requeteSQL);
-			$objStat->execute();
-			$arrActualite = $objStat->fetchAll();
-			foreach ($arrActualite as $actualite) {
-				echo $actualite["titre"]; ?><BR>
-			<?php } ?>
-
-			<section>
-				<h3>Entête de section</h3>
-				<article>
-					<header>
-						<h4>Entête d'article</h4>
-					</header>
-					<p>Lorem ipsum dolor HTML5 nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est
-						eros, vel fringilla urna.</p>
-					<p>Per inceptos himenaeos. Quisque feugiat, justo at vehicula pellentesque, turpis lorem dictum
-						nunc.</p>
-					<footer>
-						<h5>Pied d'article</h5>
-					</footer>
-				</article>
-				<article>
-					<header>
-						<h4>Entête d'article</h4>
-					</header>
-					<p>Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est eros,
-						vel fringilla urna. Pellentesque odio</p>
-					<footer>
-						<h5>Pied d'article</h5>
-					</footer>
-				</article>
+			<section class="conteneur_actu">
+				<?php for ($cpt = 0; $cpt < 3; $cpt++) { ?>
+					<a>
+						<header>
+							<h3><b><?php echo $arrActualites[$cpt]["titre"]; ?></b></h3>
+						</header>
+						<?php echo $arrActualites[$cpt]["article"];
+						if (count(explode(" ", $arrActualites[$cpt]["article"])) >= 45) { ?>
+							<a href="#">...</a>
+						<?php } ?>
+						</article>
+						<footer>
+							<h4>Par <?php echo $arrActualites[$cpt]["auteurs"]; ?>, le
+								<?php echo $arrJour[$arrActualites[$cpt]["jourSemaine"] - 1]; ?>
+								<?php echo $arrActualites[$cpt]["jour"] . " " . $arrMois[$arrActualites[$cpt]["mois"]] . " " . $arrActualites[$cpt]["annee"]; ?>
+							</h4>
+						</footer>
+					<?php } ?>
 			</section>
 		</div>
 
