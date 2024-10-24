@@ -57,52 +57,56 @@ body {
   color: #FFF;
 }
 
-hr {
+.separator {
   background-color: #FEA82F;
+  width: 140px;
   padding: 20px;
   border: #FEA82F;
 }
 
-@media (max-width: 768px) {
-  .image_festi {
-    max-width: auto;
-    height: auto;
-  }
-}
-
-.conteneur_actu {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h3 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.article {
-  display: flex;
+.conteneur {
+  display: block;
   justify-content: space-between;
 }
 
-.article {
+.conteneur_actu {
   background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 30%;
+  width: 32%;
 }
 
-.article h2 {
-  font-size: 18px;
+.titre_texte {
+  font-size: 20px;
   margin-bottom: 10px;
-  color: #333;
+  color: #000;
 }
 
-.article p {
+.hr_article {
+  background-color: #FEA82F;
+  width: 162px;
+  padding: 4px;
+  border: #FEA82F;
+}
+
+.auteurs {
+  text-transform: none;
   font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
+  color: #000;
+}
+
+article a {
+  text-transform: none;
+  color: #000;
+  font-size: 16px;
+}
+
+.a_points {
+  color: #DA4167;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.a_points:hover {
+  font-weight: bold;
 }
