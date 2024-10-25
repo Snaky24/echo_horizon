@@ -802,7 +802,7 @@ nav ul {
 }
 .artiste__nom {
   text-transform: uppercase;
-  color: red;
+  color: #FFF;
 }
 
 @media (min-width: 800px) {

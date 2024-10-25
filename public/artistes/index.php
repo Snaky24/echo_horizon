@@ -1,5 +1,38 @@
 <?php $niveau="../";?>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- NE PAS OUBLIER LE RESTE DES META -->
+    <title>Document</title>
+</head>
+<body>
+<!-- À faire par Camille -->
+    <header></header>
+    
+    <main class="informationsPrincipales">
+        <select name="filtresProgrammtion" id="filtresProgrammtion">
+            <option value="parDefaut">Par défaut</option>
+            <option value="date">Date</option>
+            <option value=""></option>
+        </select>
+    </main>
+
+
+<!-- À faire par Camille -->
+    <footer></footer>
+</body>
+</html>
+=======
+<?php include ($niveau . "liaisons/fragments/headlinks.inc.php");?>
+>>>>>>> 513325707d7bbbd5b6d217eeef6326c753edb3dd
+=======
 <?php include ($niveau . "liaisons/php/config.inc.php");?>
 
 <?php
@@ -211,3 +244,4 @@ else{
         
     </body>
 </html>
+>>>>>>> 926af44af36e57350e36ceff813022599031ffbe

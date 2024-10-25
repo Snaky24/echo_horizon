@@ -1,5 +1,4 @@
 <?php $niveau = "../"; ?>
-<?php include($niveau . "public/liaisons/php/config.inc.php"); ?>
 
 <!DOCTYPE html>
 <html lang="fr">
