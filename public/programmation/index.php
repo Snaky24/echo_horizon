@@ -142,9 +142,7 @@ $pdoResultatDates->closeCursor();
 </head>
 
 <body>
-    <header>
         <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
-    </header>
 
     <h1>Programmation</h1>
     <main>
