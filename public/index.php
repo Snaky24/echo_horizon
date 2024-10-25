@@ -42,21 +42,19 @@ $pdosResultatActualites->closeCursor();
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../public/liaisons/css/styles.css">
 	<link rel="stylesheet" href="../ressources/liaisons/scss/styles.scss">
-	<link rel="stylesheet" href="../ressources/liaisons/scss/layout/_accueil.scss">
+	<link rel="stylesheet" href="../ressources/liaisons/scss/layout/accueil.scss">
 	<title>Un beau titre ici!</title>
 	<?php include($niveau . "public/liaisons/fragments/headlinks.inc.php"); ?>
 </head>
 
-<body>
-	<?php include($niveau . "public/liaisons/fragments/entete.inc.php"); ?>
+<?php include($niveau . "public/liaisons/fragments/entete.inc.php"); ?>
 
-	<>
+<body>
+
+	<main>
 		<link rel="stylesheet" href="../public/liaisons/fragments/entete.inc.php">
 		<span class="centered" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">Festival OFF de Québec</span>
 		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 8 AU 11 JUILLET</span>
-		<img src="../public/liaisons/images/Rectangle 61.png" srcset="../public/liaisons/images/Rectangle 61.png 768w, 
-			 ../public/liaisons/images/Rectangle 61.png 1200w" sizes="(max-width: 768px) 100vw, 50vw"
-			alt="Description de l'image">
 		<nav class="nav_sec">
 			<ul class="nav-sec__liste">
 				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>#" class="nav-sec__lien">Lieux</a></li>
@@ -68,25 +66,26 @@ $pdosResultatActualites->closeCursor();
 		<div id="contenu" class="conteneur">
 			<section class="conteneur_actu">
 				<?php for ($cpt = 0; $cpt < 3; $cpt++) { ?>
-					<a>
+					<article>
 						<header class="titre">
 							<h3 class="titre_texte"><b><?php echo $arrActualites[$cpt]["titre"]; ?></b></h3>
 						</header>
 						<hr class="hr_article">
 						<p class="auteurs"><?php echo $arrActualites[$cpt]["auteurs"]; ?></p>
-						<article>
+						<p>
 							<?php echo $arrActualites[$cpt]["article"];
 							if (count(explode(" ", $arrActualites[$cpt]["article"])) >= 45) { ?>
 								<a class="a_points" href="#">...</a>
 							<?php } ?>
-						</article>
+						</p>
 						<footer>
 							<h4>Par <?php echo $arrActualites[$cpt]["auteurs"]; ?>, le
 								<?php echo $arrJour[$arrActualites[$cpt]["jourSemaine"] - 1]; ?>
 								<?php echo $arrActualites[$cpt]["jour"] . " " . $arrMois[$arrActualites[$cpt]["mois"]] . " " . $arrActualites[$cpt]["annee"]; ?>
 							</h4>
 						</footer>
-					<?php } ?>
+					</article>
+				<?php } ?>
 			</section>
 		</div>
 
@@ -94,11 +93,11 @@ $pdosResultatActualites->closeCursor();
 		<p><a href="#" class="bouton">Bouton</a></p>
 		<p><a href="#" class="bouton--inverse">Bouton</a></p>
 		<a href="#" class="hyperlien">lien test!</a>
-		</main>
+	</main>
 
-		<hr class="separator">
+	<hr class="separator">
 
-		<?php include($niveau . "public/liaisons/fragments/piedDePage.inc.php"); ?>
+	<?php include($niveau . "public/liaisons/fragments/piedDePage.inc.php"); ?>
 
 </body>
 
