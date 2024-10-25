@@ -1,7 +1,5 @@
 <?php 
-
 $niveau = '../../';
-
 ?>
 <?php include ($niveau . "liaisons/php/config.inc.php");?>
 <?php include ($niveau . "liaisons/fragments/headlinks.inc.php");?>
@@ -75,21 +73,19 @@ $niveau = '../../';
 </head>
 
 <body>
-    <h1 class="artiste__titre">Fiche de l'artiste</h1>
-	
-    <?php 
-		//Affichage du participant et de son identifiant
-		echo "<h2>Nom:</h2>" . $arrArtistes['nom'];
-		echo "<h2>Description:</h2>" . $arrArtistes['description'];
-		echo "<h2>Provenance:</h2> " . $arrArtistes['provenance'];
-		echo "<h2>Site Web:</h2> " . $arrArtistes['site_web'];
-		echo "<h2>Style:</h2> " . $arrArtistes['style'];
-		
-	?>
+    <h1 class="artiste__titre"><?php echo $arrArtistes['nom'] ?></h1>
+    <h2 class="artiste__titre">Description</h2>
+    <p><?php echo $arrArtistes['description']?></p>
+    <h3 class="artiste__titre">Site Web :</h3>
+	<p class="hyperlien" ><?php echo $arrArtistes['site_web']?></p>
+    <h3 class="artiste__titre">Provenance</h3>
+	<p><?php echo $arrArtistes['provenance']?></p>
+    <h3 class="artiste__titre">Style musical</h3>
+	<p><?php echo $arrArtistes['style']?></p>
 
 
 <p>
-	<h3><a href="<?php echo $niveau ?>artistes/index.php">Retour à la liste des artistes</a></h3>
+	<p><a class="hyperlien" href="<?php echo $niveau ?>artistes/index.php">Retour à la liste des artistes</a></p>
 </p>
 </body>
 </html>

@@ -486,23 +486,22 @@ body {
 }
 /** Hyperliens **/
 /**
-* @author Prenom Nom courriel
-* @todo Compléter selon l'énoncé de l'exercice
+* @author Jade Mayrand
 */
 .hyperlien {
-  color: #000;
-  font-size: 48px;
-  text-decoration: none;
+  color: #DA4167;
+  font-size: 20px;
+  text-decoration: underline;
 }
 .hyperlien:visited {
-  color: black;
+  color: #971e3c;
 }
 .hyperlien:hover {
-  color: black;
+  color: #FFF;
   text-decoration: underline;
 }
 .hyperlien:active {
-  color: #000;
+  color: #FFF;
   text-decoration: underline;
 }
 
@@ -514,17 +513,17 @@ body {
   text-decoration: none;
   border-radius: 18px;
   padding: 0.5em 1em;
-  background-color: #bbd531;
+  background-color: rgba(0, 0, 0, 0.5);
   color: black;
 }
 .bouton:after {
   margin-left: 0.4em;
 }
 .bouton:hover {
-  background-color: rgba(187, 213, 49, 0.75);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 .bouton:active {
-  background-color: rgba(187, 213, 49, 0.5);
+  background-color: rgba(0, 0, 0, 0);
 }
 .bouton--inverse {
   text-decoration: none;
@@ -534,10 +533,10 @@ body {
   border: 2px solid black;
 }
 .bouton--inverse:hover {
-  border-color: rgba(187, 213, 49, 0.75);
+  border-color: rgba(0, 0, 0, 0.25);
 }
 .bouton--inverse:active {
-  border-color: rgba(187, 213, 49, 0.5);
+  border-color: rgba(0, 0, 0, 0);
 }
 
 /** Grille 12 colones **/
@@ -619,7 +618,7 @@ Effet actif : #f4d07c
 /****** Base commune *******/
 /* Bouton du menu */
 .menu__controle {
-  background-color: #68a8e8;
+  background-color: rgba(0, 0, 0, 0.5);
   border: none;
   padding: 10px;
   min-width: 40px;
@@ -631,7 +630,7 @@ Effet actif : #f4d07c
   }
 }
 .menu__controle:hover, .menu__controle:active {
-  background-color: #358ae0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .menu__controle:focus {
   /**
@@ -642,7 +641,7 @@ Effet actif : #f4d07c
    * MAIS il faut souligner l'état focus et le tester au clavier.
    */
   outline-offset: -5px;
-  outline: #012d61 auto 5px;
+  outline: rgba(0, 0, 0, 0.5) auto 5px;
 }
 .menu__liste {
   margin: 0;
@@ -656,8 +655,8 @@ Effet actif : #f4d07c
   }
 }
 .menu__lien {
-  border: 1px solid #012d61;
-  background-color: #68a8e8;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: block;
   padding: 5px 10px;
 }
@@ -666,7 +665,7 @@ Effet actif : #f4d07c
   color: inherit;
 }
 .menu__lien:hover, .menu__lien:active {
-  background-color: #358ae0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .menu__lien:focus {
   /*outline: none;
@@ -699,44 +698,118 @@ Effet actif : #f4d07c
 }
 
 /****** LAYOUT *****************************/
+.logo {
+  display: block;
+  height: 84px;
+  cursor: pointer;
+}
+
+.menu__listeItem,
+a,
+button {
+  font-size: 18px;
+  color: #DA4167;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 .entete {
-  background-color: #000;
-  overflow: hidden;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
 }
 
-.menu__listeItem {
-  float: right;
-  color: #DA4167;
+button {
+  text-transform: uppercase;
+  text-shadow: #000;
+  padding: 10px 40px;
+  background: linear-gradient(160deg, rgb(218, 65, 103) 20%, rgb(254, 168, 47) 70%);
+  color: #FFF;
+  border: none;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .menu .menu--ferme {
+    flex-direction: column;
+  }
+}
+.container {
+  padding: 20px;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 18px;
-  text-decoration: none;
 }
 
-.menu__listeItem:hover {
-  color: black;
+.logo__footer {
+  display: block;
+  height: 84px;
+  cursor: pointer;
 }
 
-.icon__liste {
-  float: right;
-  color: #DA4167;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 18px;
-  text-decoration: none;
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.menu__listeItem:hover {
-  color: black;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #FFA500;
 }
 
-.piedDePage {
-  background-color: #68a8e8;
+.contact,
+.newsletter {
+  width: 45%;
 }
+
+.newsletter form {
+  display: flex;
+}
+
+.newsletter input[type=email] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.newsletter button {
+  padding: 10px;
+  background-color: #FFA500;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials a img {
+  width: 30px;
+  height: 30px;
+}
+
 .artiste__titre {
-  color: red;
+  text-transform: uppercase;
 }
 
 .accueil__titre {
@@ -750,6 +823,99 @@ Effet actif : #f4d07c
 body {
   background-color: black;
   color: #FFF;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  color: white;
+  padding: 10px;
+  position: relative;
+}
+
+.centered {
+  position: absolute;
+  padding-top: 50px;
+  padding-left: 200px;
+  font-size: 40px;
+}
+
+.centered_dates {
+  position: absolute;
+  padding-top: 110px;
+  padding-left: 200px;
+  font-size: 30px;
+}
+
+.nav-sec__liste {
+  justify-content: center;
+  display: flex;
+  list-style: none;
+}
+
+.nav-sec__listeItem {
+  padding: 14px 140px;
+  font-size: 20px;
+}
+
+.nav-sec__lien {
+  color: #FFF;
+}
+
+.separator {
+  background-color: #FEA82F;
+  width: 140px;
+  padding: 20px;
+  border: #FEA82F;
+}
+
+.conteneur {
+  display: block;
+  justify-content: space-between;
+}
+
+.conteneur_actu {
+  background-color: white;
+  padding: 20px;
+  width: 32%;
+}
+
+.titre_texte {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.hr_article {
+  background-color: #FEA82F;
+  width: 162px;
+  padding: 4px;
+  border: #FEA82F;
+}
+
+.auteurs {
+  text-transform: none;
+  font-size: 14px;
+  color: #000;
+}
+
+article a {
+  text-transform: none;
+  color: #000;
+  font-size: 16px;
+}
+
+.a_points {
+  color: #DA4167;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.a_points:hover {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=styles.css.map */
