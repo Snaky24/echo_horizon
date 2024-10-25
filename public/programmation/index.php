@@ -1,10 +1,4 @@
 Programmation!
-
-<?php $niveau="../";?>
-<a href="<?php echo $niveau;?>index.php">Retour</a>
-
-Programmation!
-
 <?php $niveau = "../";
 include($niveau . 'liaisons/php/config.inc.php') ?>;
 <a href="<?php echo $niveau; ?>index.php">Retour</a>
@@ -132,36 +126,10 @@ for ($cptDate = 0; $ligneResultatDates = $pdoResultatDates->fetch(); $cptDate++)
 }
 // $ligneResultatDates = $pdoResultatDates->fetch();
 $pdoResultatDates->closeCursor();
-
-    // REQUETE DE SELECTION DE TOUS LES LIEUX ET DES ARTISTES PRÉSENTS DANS LES LIEUX
-    // if(isset($_GET ['id_date'])==true){
-    //     $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure, 
-    //     DAYOFMONTH(evenements.date_et_heure) AS mois, 
-    //     HOUR (evenements.date_et_heure) AS heure, 
-    //     MINUTE (evenements.date_et_heure) AS minute 
-    //     FROM evenements 
-    //     INNER JOIN artistes ON artistes.id  = '.$_GET ['id_date'] .'
-    //     INNER JOIN lieux ON lieux.id  = evenements.lieu_id
-    //     WHERE artistes.id = '.$_GET ['id_date'] .' AND lieux.id = '.$_GET ['id_date']. 
-    //     ' ORDER BY evenements.date_et_heure 
-    //      AND lieu_id';
-    // }
-    // else{
-    //     $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure, 
-    //     DAYOFMONTH(evenements.date_et_heure) AS mois, 
-    //     HOUR (evenements.date_et_heure) AS heure, 
-    //     MINUTE (evenements.date_et_heure) AS minute 
-    //     FROM evenements 
-    //     INNER JOIN artistes ON artistes.id  = evenements.artiste_id
-    //     INNER JOIN lieux ON lieux.id  = evenements.lieu_id
-    //     WHERE artistes. = evenements.artiste_id AND lieux.id = evenements.lieu_id';
-    // }
 ?>
 
 <!doctype html>
 <html>
-
-<?php ?>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -169,13 +137,15 @@ $pdoResultatDates->closeCursor();
     <meta name="keyword" content="">
     <meta name="author" content="">
     <meta charset="utf-8">
-    <title>Un beau titre ici!</title>
+    <title>Programmation</title>
     <?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
 </head>
 
 <body>
+    <header>
+        <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
+    </header>
 
-    <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
     <h1>Programmation</h1>
     <main>
 
@@ -231,21 +201,15 @@ $pdoResultatDates->closeCursor();
 
                 <?php } ?>
 
-                <?php
-
-
-
-                ?>
-
             </ul>
         </li>
         </ul>
 
 
     </main>
+    <footer>
+    <?php include($niveau . "liaisons/fragments/pieddePage.inc.php"); ?>
+    </footer>
 </body>
-<footer>
-<?php include($niveau . "liaisons/fragments/pieddePage.inc.php"); ?>
-</footer>
 
 </html>
