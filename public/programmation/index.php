@@ -131,13 +131,14 @@ $pdoResultatDates->closeCursor();
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keyword" content="">
     <meta name="author" content="">
     <meta charset="utf-8">
     <title>Programmation</title>
     <?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
+    <link rel="stylesheet" href="../liaisons/layout/entete.scss">
 </head>
 
 <body>
