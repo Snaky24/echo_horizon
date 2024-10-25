@@ -16,13 +16,11 @@ button {
 }
 
 .entete {
-  display: none;
+  display: block;
   justify-content: space-between;
   align-items: center;
   padding: 30px 10%;
-  position: absolute;
-  top: 100%;
-  left: 0;
+  position: relative;
   width: 100%;
 }
 
@@ -33,15 +31,4 @@ button {
   background: linear-gradient(160deg, rgb(218, 65, 103) 20%, rgb(254, 168, 47) 70%);
   color: #FFF;
   border: none;
-}
-
-.menu-toggle {
-  cursor: pointer;
-  font-size: 24px;
-}
-
-@media (max-width: 768px) {
-  .menu .menu--ferme {
-    flex-direction: column;
-  }
 }
