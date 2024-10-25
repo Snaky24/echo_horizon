@@ -131,13 +131,16 @@ $pdoResultatDates->closeCursor();
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keyword" content="">
-    <meta name="author" content="">
-    <meta charset="utf-8">
-    <title>Programmation</title>
-    <?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="keyword" content="">
+	<meta name="author" content="">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../liaisons/css/styles.css">
+    <link rel="stylesheet" href="../liaisons/scss/layout/_entete.scss">
+    <link rel="stylesheet" href="../liaisons/scss/layout/_programmation.scss">
+	<title>Programmation</title>
+	<?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
 </head>
 
 <body>

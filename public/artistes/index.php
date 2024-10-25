@@ -1,7 +1,5 @@
 <?php $niveau="../";?>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
 <!DOCTYPE html>
