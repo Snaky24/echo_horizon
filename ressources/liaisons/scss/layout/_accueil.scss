@@ -69,12 +69,6 @@ body {
   justify-content: space-between;
 }
 
-.conteneur_actu {
-  background-color: white;
-  padding: 20px;
-  width: 32%;
-}
-
 .titre_texte {
   font-size: 20px;
   margin-bottom: 10px;
@@ -109,4 +103,15 @@ p {
 
 .a_points:hover {
   font-weight: bold;
+}
+
+.conteneur_actu {
+  display: flex;
+}
+
+.articles {
+  background-color: #FFF;
+  padding: 32px;
+  margin: 21px;
+  vertical-align: bottom;
 }

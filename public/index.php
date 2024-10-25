@@ -52,7 +52,7 @@ $pdosResultatActualites->closeCursor();
 <body>
 
 	<main>
-		<link rel="stylesheet" href="../public/liaisons/fragments/entete.inc.php">
+		<link rel="stylesheet" href="<?php echo $niveau; ?>liaisons/fragments/entete.inc.php">
 		<span class="centered" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">Festival OFF de Québec</span>
 		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 8 AU 11 JUILLET</span>
 		<nav class="nav_sec">
@@ -66,7 +66,7 @@ $pdosResultatActualites->closeCursor();
 		<div id="contenu" class="conteneur">
 			<section class="conteneur_actu">
 				<?php for ($cpt = 0; $cpt < 3; $cpt++) { ?>
-					<article>
+					<article class="articles">
 						<header class="titre">
 							<h3 class="titre_texte"><b><?php echo $arrActualites[$cpt]["titre"]; ?></b></h3>
 						</header>
