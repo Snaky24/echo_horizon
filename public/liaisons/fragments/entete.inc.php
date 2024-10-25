@@ -9,7 +9,7 @@
 </head>
 
 <header class="entete">
-    <img class="logo" src="../public/liaisons/images/logo.svg" alt="Logo">
+    <img class="logo" src="../liaisons/images/logo.svg" alt="Logo">
     <nav class="menu menu--ferme">
         <ul class="menu__liste">
             <li class="menu__listeItem"><a href="<?php echo $niveau; ?>index.php" class="menu__lien">Le OFF</a></li>
@@ -22,8 +22,8 @@
         </ul>
     </nav>
 
-    <a class="sac"><img src="../public/liaisons/images/sac.svg" alt=""></a>
-    <a class="loupe"><img src="../public/liaisons/images/loupe.svg" alt=""></a>
+    <a class="sac"><img src="../liaisons/images/sac.svg" alt=""></a>
+    <a class="loupe"><img src="../liaisons/images/loupe.svg" alt=""></a>
     <button type="bouton" style="text-shadow: 1px 1px 2px #000, 0 0 25em #000;">BILLETS</button>
 </header>
 
