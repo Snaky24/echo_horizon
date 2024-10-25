@@ -714,13 +714,11 @@ button {
 }
 
 .entete {
-  display: none;
+  display: block;
   justify-content: space-between;
   align-items: center;
   padding: 30px 10%;
-  position: absolute;
-  top: 100%;
-  left: 0;
+  position: relative;
   width: 100%;
 }
 
@@ -733,16 +731,6 @@ button {
   border: none;
 }
 
-.menu-toggle {
-  cursor: pointer;
-  font-size: 24px;
-}
-
-@media (max-width: 768px) {
-  .menu .menu--ferme {
-    flex-direction: column;
-  }
-}
 .container {
   padding: 20px;
   text-align: center;
@@ -814,7 +802,7 @@ nav ul {
 }
 .artiste__nom {
   text-transform: uppercase;
-  color: red;
+  color: #FFF;
 }
 
 @media (min-width: 800px) {
