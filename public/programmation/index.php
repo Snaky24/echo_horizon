@@ -1,7 +1,5 @@
-Programmation!
-<?php $niveau = "../";
-include($niveau . 'liaisons/php/config.inc.php') ?>;
-<a href="<?php echo $niveau; ?>index.php">Retour</a>
+<?php $niveau = "../"; ?>
+<?php include($niveau . "liaisons/php/config.inc.php"); ?>
 
 <?php
 // REQUETE DE SELECTION DE TOUS LES LIEUX
@@ -127,6 +125,7 @@ for ($cptDate = 0; $ligneResultatDates = $pdoResultatDates->fetch(); $cptDate++)
 // $ligneResultatDates = $pdoResultatDates->fetch();
 $pdoResultatDates->closeCursor();
 ?>
+
 
 <!doctype html>
 <html>
