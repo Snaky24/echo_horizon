@@ -1,7 +1,24 @@
 // JADE
+@charset "UFT-8";
 
 .artiste{
-  &__titre{
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &__nom{
     text-transform: uppercase;
+    color: $blanc;
   }
+}
+
+@media(min-width: 800px){
+.suggestion{
+  display: flex;
+  list-style-type: none;
+
+  &__artiste{
+    flex-direction: row;
+    padding: 20px;
+  }
+}
 }

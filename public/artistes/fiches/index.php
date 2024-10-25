@@ -159,36 +159,44 @@ $niveau = '../../';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/liaisons/css/styles.css">
+	<link rel="stylesheet" href="../ressources/liaisons/scss/styles.scss">
+	<link rel="stylesheet" href="../ressources/liaisons/scss/layout/_artistes.scss">
+    
     <title>Fiche de l'artiste</title>
     
-	
 </head>
 
-<body>
-    <h1>Fiche de l'artiste</h1>
-	
-    <?php 
-		echo "<h2>Nom:</h2>" . $arrArtistes['nom'];
-		echo "<h2>Description:</h2>" . $arrArtistes['description'];
-		echo "<h2>Provenance:</h2> " . $arrArtistes['provenance']. ', '.$arrArtistes['pays'];
-        if($arrArtistes['site_web'] != NULL){ ?>
-		<h2>Site Web:</h2><a href='<?php echo $arrArtistes['site_web']; ?>'><?php echo $arrArtistes['site_web']; ?></a>
-        <?php }
-		echo "<h2>Style:</h2> " . $arrArtistes['style'];
-		
-	?>
+<body class="artiste">
+    <h1 class="artiste__nom"><?php echo $arrArtistes['nom']?></h1>
+	<h2>Description</h2>
+    <p><?php echo $arrArtistes['description']?></p>
 
     <h2>Représentations</h2>
     <ul>
         <?php
             for($intCpt=0;$intCpt<count($arrSpectacles);$intCpt++){?>
                 <li>
-                    <?php echo $arrSpectacles[$intCpt]['nom']. ' '.$arrJour[$arrSpectacles[$intCpt]['jourSemaine']-1].' le ' .$arrSpectacles[$intCpt]['jour'].' '.$arrMois[$arrSpectacles[$intCpt]['mois']-1].' '.$arrSpectacles[$intCpt]['annee'].' à '.$arrSpectacles[$intCpt]['heure'].'h'.$arrSpectacles[$intCpt]['minut']?>
+                    <?php echo $arrSpectacles[$intCpt]['nom']?>
+                    <br>
+                    <?php echo $arrJour[$arrSpectacles[$intCpt]['jourSemaine']-1].' le ' .$arrSpectacles[$intCpt]['jour'].' '.$arrMois[$arrSpectacles[$intCpt]['mois']-1].' à '.$arrSpectacles[$intCpt]['heure'].'h'.$arrSpectacles[$intCpt]['minut']?>
             
             
                 </li>
     <?php } ?>
     </ul>
+
+    <section class="infos">
+        <h3>Provenance</h3>
+        <p><?php echo $arrArtistes['provenance']. ', '.$arrArtistes['pays']?></p>
+        <h3>Style musical</h3>
+        <p><?php echo $arrArtistes['style']?></p>
+    </section>
+
+    <?php if($arrArtistes['site_web'] != NULL){ ?>
+		<h3>Site Web:</h3><a class="hyperlien" href='<?php echo $arrArtistes['site_web']; ?>'><?php echo $arrArtistes['site_web']; ?></a>
+    <?php } ?>
+
 
     <!-- AFFICHER 3-5 PHOTOS -->
     <?php for($intCpt=0;$intCpt<count($arrPhotosChoisies);$intCpt++){?>
@@ -200,15 +208,17 @@ $niveau = '../../';
 
     <?php if($arrArtistesChoisi != NULL){
 	?>
-    <h2>Vous pourriez aimer:</h2>
-    <ul>
-        <?php
+    <section>
+        <h3>Vous pourriez aimer:</h3>
+        <ul class="suggestion">
+            <?php
 
-            for($intCpt=0;$intCpt<count($arrArtistesChoisi);$intCpt++){?>
-                <li><a href="<?php echo $niveau ?>artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>"><?php echo $arrArtistesChoisi[$intCpt]['nom'];?></a>
-                </li>
-    <?php } ?>
-    </ul>
+                for($intCpt=0;$intCpt<count($arrArtistesChoisi);$intCpt++){?>
+                    <li><a class="hyperlien suggestion__artiste" href="<?php echo $niveau ?>artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>"><?php echo $arrArtistesChoisi[$intCpt]['nom'];?></a>
+                    </li>
+                <?php } ?>
+        </ul>
+    </section>
     <?php 
         }
 	?>          

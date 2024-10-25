@@ -6,7 +6,7 @@ $hyperlien_actif: #FFF;
 
 .hyperlien{
   color: $hyperlien;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: underline;
   &:visited {
     color: darken($hyperlien, 20%);
