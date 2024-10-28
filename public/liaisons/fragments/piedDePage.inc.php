@@ -1,8 +1,4 @@
-<?php $niveau = "../"; ?>
-<?php include($niveau . "public/liaisons/php/config.inc.php"); ?>
 
-<!DOCTYPE html>
-<html lang="fr">
 
 <footer class="piedDePage">
     <img class="logo__footer" src="../public/liaisons/images/logo.svg" alt="Logo">
@@ -48,5 +44,3 @@
 </footer>
 
 <script src="public/liaisons/js/_menu.js"></script>
-
-</html>
