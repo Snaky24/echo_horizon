@@ -74,5 +74,17 @@
     max-width: 250px;
 }
 
+@mixin tinytitle {
+    text-align: center;
+    margin: 2em 0;
+    text-transform: uppercase;
+    color: $blanc;
+    border-bottom: $orange 5px solid;
+}
+
+@mixin icone {
+    width: 30px;
+    height: 30px;
+}
 
 

@@ -822,8 +822,12 @@ nav ul {
   max-width: 250px;
 }
 
-.suggestion {
+.suggestion__titre {
   text-align: center;
+  margin: 2em 0;
+  text-transform: uppercase;
+  color: #FFF;
+  border-bottom: #FEA82F 5px solid;
 }
 .suggestion__liste {
   list-style-type: none;
@@ -840,7 +844,11 @@ nav ul {
 }
 
 .website {
+  text-align: center;
+  margin: 2em 0;
   text-transform: uppercase;
+  color: #FFF;
+  border-bottom: #FEA82F 5px solid;
 }
 
 .spectacle {
@@ -870,6 +878,15 @@ nav ul {
 .infos__titre {
   color: #000;
   border-bottom: #FEA82F 5px solid;
+}
+
+.icone__lieu {
+  width: 30px;
+  height: 30px;
+}
+.icone__calender {
+  width: 30px;
+  height: 30px;
 }
 
 .accueil__titre {

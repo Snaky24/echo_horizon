@@ -177,8 +177,11 @@ $niveau = '../../';
         <?php
             for($intCpt=0;$intCpt<count($arrSpectacles);$intCpt++){?>
                 <li class="spectacle__liste">
+                    <img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
                     <?php echo $arrSpectacles[$intCpt]['nom']?>
                     <br>
+                    <span class="icone__calender"></span>
+                    <img class="icone__calender" src="<?php echo $niveau; ?>liaisons/images/calender.svg" alt="lieu carte">
                     <?php echo $arrJour[$arrSpectacles[$intCpt]['jourSemaine']-1].' le ' .$arrSpectacles[$intCpt]['jour'].' '.$arrMois[$arrSpectacles[$intCpt]['mois']-1].' à '.$arrSpectacles[$intCpt]['heure'].'h'.$arrSpectacles[$intCpt]['minut']?>
             
             

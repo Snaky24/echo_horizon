@@ -28,7 +28,10 @@
 }
 
 .suggestion{
- text-align: center;
+
+  &__titre{
+    @include tinytitle;
+  }
 
   &__liste{
     list-style-type: none;
@@ -49,7 +52,7 @@
 }
 
 .website{
-  text-transform: uppercase;
+  @include tinytitle;
 }
 
 
@@ -61,6 +64,7 @@
     color: $orange;
     margin-top: 1.5em;
     margin-right: 5em;
+    // font-family: $grosTexte;
   }
 
   @media(min-width: $desktop){
@@ -89,4 +93,14 @@
   //   top:20%;
   //   left: 20%;
   // }
+}
+
+.icone{
+  &__lieu{
+    @include icone;
+  }
+
+  &__calender{
+    @include icone;
+  }
 }
