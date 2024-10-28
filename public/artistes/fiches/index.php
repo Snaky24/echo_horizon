@@ -173,10 +173,10 @@ $niveau = '../../';
     <p><?php echo $arrArtistes['description']?></p>
 
     <h2>Représentations</h2>
-    <ul>
+    <ul class="spectacle">
         <?php
             for($intCpt=0;$intCpt<count($arrSpectacles);$intCpt++){?>
-                <li>
+                <li class="spectacle__liste">
                     <?php echo $arrSpectacles[$intCpt]['nom']?>
                     <br>
                     <?php echo $arrJour[$arrSpectacles[$intCpt]['jourSemaine']-1].' le ' .$arrSpectacles[$intCpt]['jour'].' '.$arrMois[$arrSpectacles[$intCpt]['mois']-1].' à '.$arrSpectacles[$intCpt]['heure'].'h'.$arrSpectacles[$intCpt]['minut']?>
@@ -187,10 +187,10 @@ $niveau = '../../';
     </ul>
 
     <section class="infos">
-        <h3>Provenance</h3>
-        <p><?php echo $arrArtistes['provenance']. ', '.$arrArtistes['pays']?></p>
-        <h3>Style musical</h3>
-        <p><?php echo $arrArtistes['style']?></p>
+        <h3 class="infos__titre">Provenance</h3>
+        <p class="infos__texte"><?php echo $arrArtistes['provenance']. ', '.$arrArtistes['pays']?></p>
+        <h3 class="infos__titre">Style musical</h3>
+        <p class="infos__texte"><?php echo $arrArtistes['style']?></p>
     </section>
 
     <?php if($arrArtistes['site_web'] != NULL){ ?>
@@ -198,11 +198,10 @@ $niveau = '../../';
     <?php } ?>
 
 
-    <!-- AFFICHER 3-5 PHOTOS -->
-    <?php for($intCpt=0;$intCpt<count($arrPhotosChoisies);$intCpt++){?>
-    <img src="<?php echo $niveau ?>liaisons/images/artistes/artiste<?php echo $id_artiste ?>_photo<?php echo $arrPhotosChoisies[$intCpt] ?>" alt="photo artiste #<?php echo $intCpt +1 ?>">
-    <!-- La photo se nomme artisteID_photoNUM -->
-    <?php }?>
+    
+ 
+    <img src="<?php echo $niveau ?>liaisons/images/artistes/artiste_<?php echo $id_artiste ?>_1__port_w908" alt="photo artiste #<?php echo $id_artiste ?>">
+  
 
 
 
@@ -219,12 +218,7 @@ $niveau = '../../';
                 <?php } ?>
         </ul>
     </section>
-    <?php 
-        }
-	?>          
-    
-
-	<h3><a href="<?php echo $niveau ?>artistes/index.php">Retour à la liste des artistes</a></h3>
+    <?php } ?>          
 
 </body>
 </html>

@@ -408,17 +408,16 @@ th {
 /**** UTILITAIRES ****************************/
 /** Variables **/
 /**
-* @author Prenom Nom courriel
+* @author Jade Mayrand
 */
 /** Polices de caractères **/
 /** Palette de couleurs **/
 /* Couleurs de base */
-/* Autres couleurs */
 /** Points de rupture **/
 /** Mixins **/
 /**
-* @author Ève Février - efevrier@cegep-ste-foy.qc.ca
-* @author Yves Hélie - yves.helie@cegep-ste-foy.qc.ca
+* @author 
+* @author 
 */
 /**
  * ----------------------------
@@ -513,17 +512,17 @@ body {
   text-decoration: none;
   border-radius: 18px;
   padding: 0.5em 1em;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #000;
   color: black;
 }
 .bouton:after {
   margin-left: 0.4em;
 }
 .bouton:hover {
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 .bouton:active {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .bouton--inverse {
   text-decoration: none;
@@ -533,10 +532,10 @@ body {
   border: 2px solid black;
 }
 .bouton--inverse:hover {
-  border-color: rgba(0, 0, 0, 0.25);
+  border-color: rgba(0, 0, 0, 0.75);
 }
 .bouton--inverse:active {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0.5);
 }
 
 /** Grille 12 colones **/
@@ -618,7 +617,7 @@ Effet actif : #f4d07c
 /****** Base commune *******/
 /* Bouton du menu */
 .menu__controle {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #000;
   border: none;
   padding: 10px;
   min-width: 40px;
@@ -630,7 +629,7 @@ Effet actif : #f4d07c
   }
 }
 .menu__controle:hover, .menu__controle:active {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #000;
 }
 .menu__controle:focus {
   /**
@@ -641,7 +640,7 @@ Effet actif : #f4d07c
    * MAIS il faut souligner l'état focus et le tester au clavier.
    */
   outline-offset: -5px;
-  outline: rgba(0, 0, 0, 0.5) auto 5px;
+  outline: #000 auto 5px;
 }
 .menu__liste {
   margin: 0;
@@ -655,8 +654,8 @@ Effet actif : #f4d07c
   }
 }
 .menu__lien {
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #000;
+  background-color: #000;
   display: block;
   padding: 5px 10px;
 }
@@ -665,7 +664,7 @@ Effet actif : #f4d07c
   color: inherit;
 }
 .menu__lien:hover, .menu__lien:active {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #000;
 }
 .menu__lien:focus {
   /*outline: none;
@@ -802,8 +801,18 @@ nav ul {
   text-transform: uppercase;
   color: #FFF;
 }
+.artiste__description {
+  color: #000;
+  background-color: #FFF;
+  border: 2px #FEA82F solid;
+  padding: 20px;
+}
 
-@media (min-width: 800px) {
+.suggestion {
+  list-style-type: none;
+}
+
+@media (min-width: 601px) {
   .suggestion {
     display: flex;
     list-style-type: none;
@@ -813,6 +822,27 @@ nav ul {
     padding: 20px;
   }
 }
+.spectacle {
+  list-style-type: none;
+}
+.spectacle__liste {
+  color: #FEA82F;
+}
+
+.infos {
+  background-color: #FFF;
+  max-width: 350px;
+  border-bottom: #FEA82F 10px solid;
+  padding: 20px;
+}
+.infos__texte {
+  color: #000;
+}
+.infos__titre {
+  color: #000;
+  border-bottom: #FEA82F 5px solid;
+}
+
 .accueil__titre {
   padding: 20px;
 }
