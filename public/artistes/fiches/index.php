@@ -2,7 +2,6 @@
 $niveau = '../../';
 ?>
 <?php include ($niveau . "liaisons/php/config.inc.php");?>
-<?php include ($niveau . "liaisons/fragments/headlinks.inc.php");?>
 
 <?php
 
@@ -159,18 +158,20 @@ $niveau = '../../';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../public/liaisons/css/styles.css">
-	<link rel="stylesheet" href="../ressources/liaisons/scss/styles.scss">
-	<link rel="stylesheet" href="../ressources/liaisons/scss/layout/_artistes.scss">
-    
+    <link rel="stylesheet" href="<?php echo $niveau ?>public/liaisons/css/styles.css">
+	<link rel="stylesheet" href="<?php echo $niveau ?>ressources/liaisons/scss/styles.scss">
+	<link rel="stylesheet" href="<?php echo $niveau ?>ressources/liaisons/scss/layout/_artistes.scss">
+    <?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
     <title>Fiche de l'artiste</title>
     
 </head>
 
+<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
+
 <body class="artiste">
     <h1 class="artiste__nom"><?php echo $arrArtistes['nom']?></h1>
 	<h2>Description</h2>
-    <p><?php echo $arrArtistes['description']?></p>
+    <p class="artiste__description"><?php echo $arrArtistes['description']?></p>
 
     <h2>Représentations</h2>
     <ul class="spectacle">
@@ -220,5 +221,6 @@ $niveau = '../../';
     </section>
     <?php } ?>          
 
+    <?php include($niveau . "liaisons/fragments/piedDePage.inc.php"); ?>
 </body>
 </html>
