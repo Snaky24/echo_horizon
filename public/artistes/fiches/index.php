@@ -221,6 +221,7 @@ $niveau = '../../';
     </section>
     <?php } ?>          
 
-    <?php include($niveau . "liaisons/fragments/piedDePage.inc.php"); ?>
+    
 </body>
+    <?php include($niveau . "liaisons/fragments/piedDePage.inc.php"); ?>
 </html>
