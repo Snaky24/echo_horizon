@@ -2,52 +2,78 @@
 @charset "UFT-8";
 
 .artiste{
+  margin: 0 1em;
+  position: relative;
+
+  @media(min-width: $desktop){
   max-width: 1000px;
   margin: 0 auto;
+  }
 
   &__nom{
-    text-transform: uppercase;
-    color: $blanc;
+    @include title;
   }
 
   &__description{
     // mixin cadre blanc
     color: $noir ;
     background-color: $blanc;
-    border: 2px $orange solid;
-    padding: 20px;
+    border: 3px $orange solid;
+    padding: 30px;
+  }
+
+  &__titre{
+    @include title;
   }
 }
 
 .suggestion{
-  list-style-type: none;
-}
+ text-align: center;
 
-@media(min-width: $desktop){
-.suggestion{
-  display: flex;
-  list-style-type: none;
+  &__liste{
+    list-style-type: none;
+  }
 
-  &__artiste{
-    flex-direction: row;
-    padding: 20px;
+  @media(min-width: $desktop){
+    &__liste{
+    display: flex;
+    list-style-type: none;
+    }
+  
+    &__artiste{
+      flex-direction: row;
+      padding: 20px;
+    }
+  
   }
 }
+
+.website{
+  text-transform: uppercase;
 }
+
 
 .spectacle{
   list-style-type: none;
+  display: flex;
+
   &__liste{
     color: $orange;
+    margin-top: 1.5em;
+    margin-right: 5em;
+  }
+
+  @media(min-width: $desktop){
+    flex-direction: row;
   }
   
 }
 
 .infos{
   background-color: $blanc;
-  max-width: 350px;
-  border-bottom: $orange 10px solid;
-  padding: 20px;
+  max-width: 250px;
+  border-bottom: $orange 20px solid;
+  padding: 40px;
 
   &__texte{
     color: $noir;
@@ -57,4 +83,10 @@
     color: $noir;
     border-bottom: $orange 5px solid;
   }
+
+  // @media(min-width: $desktop){
+  //   position: absolute;
+  //   top:20%;
+  //   left: 20%;
+  // }
 }

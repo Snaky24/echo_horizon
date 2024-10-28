@@ -152,28 +152,27 @@ $niveau = '../../';
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="<?php echo $niveau ?>public/liaisons/css/styles.css">
-	<link rel="stylesheet" href="<?php echo $niveau ?>ressources/liaisons/scss/styles.scss">
-	<link rel="stylesheet" href="<?php echo $niveau ?>ressources/liaisons/scss/layout/_artistes.scss">
     <?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
     <title>Fiche de l'artiste</title>
-    
 </head>
 
-<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
+
 
 <body class="artiste">
+<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
+<main>
     <h1 class="artiste__nom"><?php echo $arrArtistes['nom']?></h1>
-	<h2>Description</h2>
+	<h2 class="artiste__titre">Description</h2>
     <p class="artiste__description"><?php echo $arrArtistes['description']?></p>
 
-    <h2>Représentations</h2>
+    <h2 class="artiste__titre">Représentations</h2>
     <ul class="spectacle">
         <?php
             for($intCpt=0;$intCpt<count($arrSpectacles);$intCpt++){?>
@@ -195,7 +194,7 @@ $niveau = '../../';
     </section>
 
     <?php if($arrArtistes['site_web'] != NULL){ ?>
-		<h3>Site Web:</h3><a class="hyperlien" href='<?php echo $arrArtistes['site_web']; ?>'><?php echo $arrArtistes['site_web']; ?></a>
+		<h3 class="website">Site Web:</h3><a class="hyperlien" href='<?php echo $arrArtistes['site_web']; ?>'><?php echo $arrArtistes['site_web']; ?></a>
     <?php } ?>
 
 
@@ -208,9 +207,9 @@ $niveau = '../../';
 
     <?php if($arrArtistesChoisi != NULL){
 	?>
-    <section>
-        <h3>Vous pourriez aimer:</h3>
-        <ul class="suggestion">
+    <section class="suggestion">
+        <h3 class="suggestion__titre">Vous pourriez aimer:</h3>
+        <ul class="suggestion__liste">
             <?php
 
                 for($intCpt=0;$intCpt<count($arrArtistesChoisi);$intCpt++){?>
@@ -220,8 +219,8 @@ $niveau = '../../';
         </ul>
     </section>
     <?php } ?>          
-
-    
-</body>
+</main>
     <?php include($niveau . "liaisons/fragments/piedDePage.inc.php"); ?>
+</body>
+  
 </html>

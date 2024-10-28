@@ -473,7 +473,7 @@ html {
 h1,
 h2,
 h3 {
-  color: white;
+  color: #FFF;
 }
 
 body {
@@ -794,26 +794,42 @@ nav ul {
 }
 
 .artiste {
-  max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 1em;
+  position: relative;
+}
+@media (min-width: 601px) {
+  .artiste {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 }
 .artiste__nom {
   text-transform: uppercase;
   color: #FFF;
+  border-bottom: #FEA82F 20px solid;
+  max-width: 250px;
 }
 .artiste__description {
   color: #000;
   background-color: #FFF;
-  border: 2px #FEA82F solid;
-  padding: 20px;
+  border: 3px #FEA82F solid;
+  padding: 30px;
+}
+.artiste__titre {
+  text-transform: uppercase;
+  color: #FFF;
+  border-bottom: #FEA82F 20px solid;
+  max-width: 250px;
 }
 
 .suggestion {
+  text-align: center;
+}
+.suggestion__liste {
   list-style-type: none;
 }
-
 @media (min-width: 601px) {
-  .suggestion {
+  .suggestion__liste {
     display: flex;
     list-style-type: none;
   }
@@ -822,18 +838,31 @@ nav ul {
     padding: 20px;
   }
 }
+
+.website {
+  text-transform: uppercase;
+}
+
 .spectacle {
   list-style-type: none;
+  display: flex;
 }
 .spectacle__liste {
   color: #FEA82F;
+  margin-top: 1.5em;
+  margin-right: 5em;
+}
+@media (min-width: 601px) {
+  .spectacle {
+    flex-direction: row;
+  }
 }
 
 .infos {
   background-color: #FFF;
-  max-width: 350px;
-  border-bottom: #FEA82F 10px solid;
-  padding: 20px;
+  max-width: 250px;
+  border-bottom: #FEA82F 20px solid;
+  padding: 40px;
 }
 .infos__texte {
   color: #000;

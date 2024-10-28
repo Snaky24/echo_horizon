@@ -67,5 +67,12 @@
     @include visuallyhidden;
 }
 
+@mixin title {
+    text-transform: uppercase;
+    color: $blanc;
+    border-bottom: $orange 20px solid;
+    max-width: 250px;
+}
+
 
 
