@@ -3,61 +3,63 @@
 
 <?php
 // REQUETE DE SELECTION DE TOUS LES LIEUX
-$strRequeteTousLesLieux = 'SELECT lieux.id, nom
+$strRequeteTousLesLieux = 'SELECT id, nom 
                             FROM lieux';
+
 $pdoResultatTousLesLieux = $objPdo->prepare($strRequeteTousLesLieux);
 $pdoResultatTousLesLieux->execute();
+
 $arrTousLesLieux = array();
-$ligneTousLesLieux = $pdoResultatTousLesLieux->fetch();
+$ligneTousLesLieux = $pdoResultatTousLesLieux->fetchAll();
 // SELECTION DE TOUS LES LIEUX PRÈSENTS DANS LE TABLEAU
-for ($intCpt = 0; $intCpt < $pdoResultatTousLesLieux->rowCount(); $intCpt++) {
-    $arrTousLesLieux[$intCpt]['nom'] = $ligneTousLesLieux['nom'];
+
+foreach($ligneTousLesLieux as $ligneTousLesLieu){
+    $arrTousLesLieux['nom'] = $ligneTousLesLieu['nom'];
 
     // REQUETE DE SELECTION DE TOUS LES LIEUX ET DES ARTISTES PRÉSENTS DANS LES LIEUX
-    if(isset($_GET ['id_date'])==true){
+    if (isset($_GET['id_date']) == true) {
         $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure, 
-        DAYOFMONTH(evenements.date_et_heure) AS mois, 
+        DAYOFMONTH(evenements.date_et_heure) AS jour, 
+        MONTH(evenements.date_et_heure) AS mois, 
+        HOUR (evenements.date_et_heure) AS heure, 
+        MINUTE (evenements.date_et_heure) AS minute 
+        FROM evenements 
+        INNER JOIN artistes ON artistes.id  = evenements.artiste_id 
+        INNER JOIN lieux ON lieux.id  = evenements.lieu_id 
+        WHERE DAYOFMONTH(evenements.date_et_heure) = ' . $_GET['id_date'] .' ORDER BY lieux_nom';
+    } else {
+        $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure, 
+         DAYOFMONTH(evenements.date_et_heure) AS jour, 
+        MONTH(evenements.date_et_heure) AS mois, 
         HOUR (evenements.date_et_heure) AS heure, 
         MINUTE (evenements.date_et_heure) AS minute 
         FROM evenements 
         INNER JOIN artistes ON artistes.id  = evenements.artiste_id
         INNER JOIN lieux ON lieux.id  = evenements.lieu_id
-        WHERE DAYOFMONTH(evenements.date_et_heure) = '.$_GET ['id_date']. 
-        ' ORDER BY evenements.date_et_heure 
-         AND lieu_id';
-    }
-    else{
-        $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure, 
-        DAYOFMONTH(evenements.date_et_heure) AS mois, 
-        HOUR (evenements.date_et_heure) AS heure, 
-        MINUTE (evenements.date_et_heure) AS minute 
-        FROM evenements 
-        INNER JOIN artistes ON artistes.id  = evenements.artiste_id
-        INNER JOIN lieux ON lieux.id  = evenements.lieu_id
-        WHERE lieux.id = evenements.lieu_id';
+        WHERE lieux.id = evenements.lieu_id
+        ORDER BY lieux_nom';
     }
     $pdoResulatLieu = $objPdo->prepare($strRequeteLieu);
     $pdoResulatLieu->execute();
     $arrEvenements = array();
     $ligneResulatLieu = $pdoResulatLieu->fetch();
 
-    for ($intCpt = 0; $intCpt < $pdoResulatLieu->rowCount(); $intCpt++) {
-        // var_dump($arrResultatLieu);
-        $arrEvenements[$intCpt]['lieu_id'] = $ligneResulatLieu['lieu_id'];
-        $arrEvenements[$intCpt]['artiste_id'] = $ligneResulatLieu['artiste_id'];
-        $arrEvenements[$intCpt]['lieux_nom'] = $ligneResulatLieu['lieux_nom'];
-        $arrEvenements[$intCpt]['artistes_nom'] = $ligneResulatLieu['artistes_nom'];
-        $arrEvenements[$intCpt]['date_et_heure'] = $ligneResulatLieu['date_et_heure'];
-        $arrEvenements[$intCpt]['mois'] = $ligneResulatLieu['mois'];
-        $arrEvenements[$intCpt]['heure'] = $ligneResulatLieu['heure'];
-        $arrEvenements[$intCpt]['minute'] = $ligneResulatLieu['minute'];
+    for ($intCptEvent = 0; $intCptEvent < $pdoResulatLieu->rowCount(); $intCptEvent++) {
+        $arrEvenements[$intCptEvent]['lieu_id'] = $ligneResulatLieu['lieu_id'];
+        $arrEvenements[$intCptEvent]['artiste_id'] = $ligneResulatLieu['artiste_id'];
+        $arrEvenements[$intCptEvent]['lieux_nom'] = $ligneResulatLieu['lieux_nom'];
+        $arrEvenements[$intCptEvent]['artistes_nom'] = $ligneResulatLieu['artistes_nom'];
+        $arrEvenements[$intCptEvent]['date_et_heure'] = $ligneResulatLieu['date_et_heure'];
+        $arrEvenements[$intCptEvent]['jour'] = $ligneResulatLieu['jour'];
+        $arrEvenements[$intCptEvent]['mois'] = $ligneResulatLieu['mois'];
+        $arrEvenements[$intCptEvent]['heure'] = $ligneResulatLieu['heure'];
+        $arrEvenements[$intCptEvent]['minute'] = $ligneResulatLieu['minute'];
         $ligneResulatLieu = $pdoResulatLieu->fetch();
     }
-
-    $ligneTousLesLieux = $pdoResultatTousLesLieux->fetch();
     $pdoResulatLieu->closeCursor();
-    $pdoResultatTousLesLieux->closeCursor();
+    $ligneTousLesLieux = $pdoResultatTousLesLieux->fetch();
 }
+$pdoResultatTousLesLieux->closeCursor();
 
 function trouverStylesArtiste($id)
 {
@@ -114,15 +116,13 @@ $strRequeteDates = 'SELECT DISTINCT DAYOFMONTH(evenements.date_et_heure) AS jour
                     FROM evenements';
 $pdoResultatDates = $objPdo->prepare($strRequeteDates);
 $pdoResultatDates->execute();
-
-$arrDates = array();
+$arrJour = array();
 
 for ($cptDate = 0; $ligneResultatDates = $pdoResultatDates->fetch(); $cptDate++) {
-    $arrDates[$cptDate]['id_date'] = $cptDate+8;
-    $arrDates[$cptDate]['jour'] = $ligneResultatDates['jour'];
-    $arrDates[$cptDate]['mois'] = $ligneResultatDates['mois'];
+    $arrJour[$cptDate]['id_date'] = $cptDate;
+    $arrJour[$cptDate]['jour'] = $ligneResultatDates['jour'];
+    $arrJour[$cptDate]['mois'] = $ligneResultatDates['mois'];
 }
-// $ligneResultatDates = $pdoResultatDates->fetch();
 $pdoResultatDates->closeCursor();
 ?>
 
@@ -149,13 +149,21 @@ $pdoResultatDates->closeCursor();
     <h1>Programmation</h1>
     <main>
 
+    <?php
+        if (isset($_GET['id_date']) == true) { ?>
+
+            <h2><?php echo $_GET['id_date'] . " " . afficherMois($arrJour[0]['mois']) ?></h2>
+
+        <?php } else { ?>
+            <h2>Toutes les dates</h2>
+        <?php } ?>
+
+
         <?php
-        for ($intCpt = 0; $intCpt < count($arrDates); $intCpt++) { ?>
-           <!-- <?php  var_dump( value: $arrDates[$intCpt]['id_date']) ?> -->
+        for ($intCpt = 0; $intCpt < count($arrJour); $intCpt++) { ?>
 
-
-            <a href='index.php?id_date=<?php echo $arrDates[$intCpt]['id_date'] ?>'>
-                <?php echo $arrDates[$intCpt]['jour'] ?>
+            <a href='index.php?id_date=<?php echo $arrJour[$intCpt]['jour'] ?>'>
+                <?php echo $arrJour[$intCpt]['jour'] ?>
             </a>
         <?php } ?>
 
@@ -169,29 +177,23 @@ $pdoResultatDates->closeCursor();
 
                 //si le lieu présentement traité
                 if ($lieuActuel != $arrEvenement['lieux_nom']) {
-
                     if ($lieuActuel != "") { ?>
                     </ul>
                     </li>
                 <?php } ?>
-
                 <li>
                     <h3>
-
                         <?php echo $arrEvenement['lieux_nom'];
                         $lieuActuel = $arrEvenement['lieux_nom']; ?>
-
                     </h3>
                     <ul>
-
                     <?php } ?>
-
                     <li>
                         <time datetime="<?php echo $arrEvenement['date_et_heure'] ?>">
                             <?php echo ajouterZero($arrEvenement['heure']) ?>h<?php echo ajouterZero($arrEvenement['minute']) ?>
                         </time>,
                         <a
-                            href='<?php echo $niveau; ?>artistes/fiches/index.php?artiste_id=<?php echo $arrEvenement['artiste_id']; ?>'>
+                            href='<?php echo $niveau; ?>artistes/fiches/index.php?artiste_id=<?php echo $arrEvenement['artiste_id']; ?>&id_style=<?php echo $arrEvenement['artiste_id']; ?>'>
                             <?php echo $arrEvenement['artistes_nom']; ?></a>,
                         <?php echo trouverStylesArtiste($arrEvenement['artiste_id']); ?>
                         <img src="<?php echo $niveau; ?>liaisons/images/artistes/<?php echo $arrEvenement["artiste_id"] ?>_0_carre_w150.jpg"
