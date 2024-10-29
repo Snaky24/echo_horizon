@@ -195,7 +195,7 @@ $niveau = '../../';
 
 
     <picture class="picture">
-          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_2_portrait__w590.jpg" media="(max-width:600px)">
+          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_3_portrait__w590.jpg" media="(max-width:600px)">
           <source srcset="<?php echo $niveau ?>liaisons/images/artistes/paysage/<?php echo $id_artiste ?>_paysage__w1328.jpg" media="(min-width:601px)">
           <img class="picture__img" src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_1_portrait__w908.jpg" alt="<?php echo $arrArtistes['nom']?>">
     </picture>
@@ -204,8 +204,8 @@ $niveau = '../../';
     <p class="artiste__description"><?php echo $arrArtistes['description']?></p>
 
     <picture class="picture">
-          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_3_portrait__w590.jpg" media="(max-width:600px)">
-          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_3_portrait__w636.jpg" media="(min-width:601px)">
+          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_2_portrait__w590.jpg" media="(max-width:600px)">
+          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_2_portrait__w636.jpg" media="(min-width:601px)">
           <img class="picture__img" src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_1_portrait__w908.jpg" alt="<?php echo $arrArtistes['nom']?>">
     </picture>
 

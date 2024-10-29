@@ -806,8 +806,8 @@ nav ul {
 .artiste__nom {
   text-transform: uppercase;
   color: #FFF;
-  border-bottom: #FEA82F 20px solid;
-  max-width: 250px;
+  text-decoration: underline 17px #FEA82F solid;
+  margin-bottom: 2em;
 }
 .artiste__description {
   color: #000;
@@ -818,8 +818,8 @@ nav ul {
 .artiste__titre {
   text-transform: uppercase;
   color: #FFF;
-  border-bottom: #FEA82F 20px solid;
-  max-width: 250px;
+  text-decoration: underline 17px #FEA82F solid;
+  margin-bottom: 2em;
 }
 
 .suggestion__titre {
@@ -827,7 +827,7 @@ nav ul {
   margin: 2em 0;
   text-transform: uppercase;
   color: #FFF;
-  border-bottom: #FEA82F 5px solid;
+  text-decoration: underline 5px #FEA82F solid;
 }
 .suggestion__liste {
   list-style-type: none;
@@ -848,7 +848,7 @@ nav ul {
   margin: 2em 0;
   text-transform: uppercase;
   color: #FFF;
-  border-bottom: #FEA82F 5px solid;
+  text-decoration: underline 5px #FEA82F solid;
 }
 
 .spectacle {
@@ -887,6 +887,10 @@ nav ul {
 .icone__calender {
   width: 30px;
   height: 30px;
+}
+
+.picture {
+  width: 100%;
 }
 
 .accueil__titre {

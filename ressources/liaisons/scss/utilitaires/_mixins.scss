@@ -70,8 +70,8 @@
 @mixin title {
     text-transform: uppercase;
     color: $blanc;
-    border-bottom: $orange 20px solid;
-    max-width: 250px;
+    text-decoration: underline 17px $orange solid;
+    margin-bottom: 2em;
 }
 
 @mixin tinytitle {
@@ -79,7 +79,7 @@
     margin: 2em 0;
     text-transform: uppercase;
     color: $blanc;
-    border-bottom: $orange 5px solid;
+    text-decoration: underline 5px $orange solid;
 }
 
 @mixin icone {
