@@ -151,7 +151,7 @@ $pdoResultatDates->closeCursor();
 
         <?php
         for ($intCpt = 0; $intCpt < count($arrDates); $intCpt++) { ?>
-           <?php  var_dump( value: $arrDates[$intCpt]['id_date']) ?>
+           <!-- <?php  var_dump( value: $arrDates[$intCpt]['id_date']) ?> -->
 
 
             <a href='index.php?id_date=<?php echo $arrDates[$intCpt]['id_date'] ?>'>
