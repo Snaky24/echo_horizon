@@ -1,24 +1,19 @@
 /**
-* @author Prenom Nom courriel
+* @author Jade Mayrand
 */
 
 /** Polices de caractères **/
 
 /** Palette de couleurs **/
-// Utiliser http://chir.ag/projects/name-that-color pour obtenir des noms uniques et mémorisables
-// Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop étrange
 
 /* Couleurs de base */
 $noir: #000;
 $blanc: #FFF;
 $degrade: linear-gradient(160deg, rgb(218, 65, 103) 20%, rgb(254, 168, 47) 70%);
-$noir: #000;
-$noir: #000;
+$orange: #FEA82F;
+$rose: #DA4167;
 
-$noir : transparentize($noir, 0.50);
-
-/* Autres couleurs */
-
+$transparent : transparentize($noir, 0.50);
 
 /** Points de rupture **/
 $desktop : 601px;

@@ -118,7 +118,7 @@ $pdoResultatDates->execute();
 $arrDates = array();
 
 for ($cptDate = 0; $ligneResultatDates = $pdoResultatDates->fetch(); $cptDate++) {
-    $arrDates[$cptDate]['id_date'] = $cptDate+8x;
+    $arrDates[$cptDate]['id_date'] = $cptDate+8;
     $arrDates[$cptDate]['jour'] = $ligneResultatDates['jour'];
     $arrDates[$cptDate]['mois'] = $ligneResultatDates['mois'];
 }
@@ -151,7 +151,7 @@ $pdoResultatDates->closeCursor();
 
         <?php
         for ($intCpt = 0; $intCpt < count($arrDates); $intCpt++) { ?>
-           <?php  var_dump( value: $arrDates[$intCpt]['id_date']) ?>
+           <!-- <?php  var_dump( value: $arrDates[$intCpt]['id_date']) ?> -->
 
 
             <a href='index.php?id_date=<?php echo $arrDates[$intCpt]['id_date'] ?>'>

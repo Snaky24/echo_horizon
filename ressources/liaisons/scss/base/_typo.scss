@@ -23,7 +23,8 @@
   src: 	url('../fonts/Roboto-Regular.ttc') format('truetype');
 }
 
-$fontePrimaire : Roboto, sans-serif;
+$fontePrimaire : "Lato", sans-serif;
+$grosTexte : "Jaldi", sans-serif;
 $fonteSecondaire : Arial, sans-serif;
 
 
@@ -36,7 +37,7 @@ html {
 h1,
 h2,
 h3{
-  color: white;
+  color: $blanc;
 }
 
 body {
