@@ -1,0 +1,19 @@
+@charset "UFT-8";
+
+body {
+  background-color: black;
+  color: #FFF;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.entete {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  position: relative;
+  width: 100%;
+}

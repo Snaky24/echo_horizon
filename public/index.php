@@ -1,5 +1,5 @@
-<?php $niveau = "../"; ?>
-<?php include($niveau . "public/liaisons/php/config.inc.php"); ?>
+<?php $niveau = ""; ?>
+<?php include($niveau . "liaisons/php/config.inc.php"); ?>
 
 <?php
 $arrJour = array("lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche");
@@ -44,10 +44,10 @@ $pdosResultatActualites->closeCursor();
 	<link rel="stylesheet" href="../ressources/liaisons/scss/styles.scss">
 	<link rel="stylesheet" href="../ressources/liaisons/scss/layout/accueil.scss">
 	<title>Un beau titre ici!</title>
-	<?php include($niveau . "public/liaisons/fragments/headlinks.inc.php"); ?>
+	<?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
 </head>
 
-<?php include($niveau . "public/liaisons/fragments/entete.inc.php"); ?>
+<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
 
 <body>
 
@@ -97,7 +97,7 @@ $pdosResultatActualites->closeCursor();
 
 	<hr class="separator">
 
-	<?php include($niveau . "public/liaisons/fragments/piedDePage.inc.php"); ?>
+	<?php include($niveau . "liaisons/fragments/piedDePage.inc.php"); ?>
 
 </body>
 
