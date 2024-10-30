@@ -1,19 +1,50 @@
+/**
+ * @author Elma Atindehou 2233755@csfoy.ca
+ * @todo MISE EN PAGE DE LA PAGE PROGRAMMATION
+**/
+
+/**
+ * TABLE DES MATIÈRES
+ * Palette de couleurs
+ * Base commune
+ * - Bouton du menu
+ * - Liste du menu
+ * - Liens du menu
+ * Si le javascript est activé
+ */
+
 @charset "UFT-8";
 
-body {
-  background-color: black;
-  color: #FFF;
-  margin: 0;
-  padding: 0;
-  display: flex;
+/******* MISE EN FORME DE LA LISTE DES LIEUX *******/
+
+/****** LISTE DES LIEUX ***/
+.conteneurEvenements{
+  display:flex;
   flex-direction: column;
+  color:($noir);
+
+  &__items{
+    list-style: none;
+  }
 }
 
-.entete {
-  display: block;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 10%;
-  position: relative;
-  width: 100%;
+/****** LISTE DES ARTISTES ***/
+.evenementsDesArtistes{
+  display:flex;
+  flex-direction: column;
+
+  &__item{
+    width:40%;
+    padding:1rem;
+    list-style: none;
+    display:flex;
+    flex-direction: column;
+    background-color: ($blanc);
+    border: .2rem, solid ($orange);
+  }
+
+  &__image{
+    width: 40%;
+    height: 40%;
+  }
 }

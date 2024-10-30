@@ -493,7 +493,7 @@ body {
   text-decoration: underline;
 }
 .hyperlien:visited {
-  color: rgb(151.4977973568, 29.5022026432, 59.8017621145);
+  color: #971e3c;
 }
 .hyperlien:hover {
   color: #FFF;
@@ -998,6 +998,49 @@ p {
   padding: 32px;
   margin: 21px;
   vertical-align: bottom;
+}
+
+/**
+ * @author Elma Atindehou 2233755@csfoy.ca
+ * @todo MISE EN PAGE DE LA PAGE PROGRAMMATION
+**/
+/**
+ * TABLE DES MATIÈRES
+ * Palette de couleurs
+ * Base commune
+ * - Bouton du menu
+ * - Liste du menu
+ * - Liens du menu
+ * Si le javascript est activé
+ */
+/******* MISE EN FORME DE LA LISTE DES LIEUX *******/
+/****** LISTE DES LIEUX ***/
+.conteneurEvenements {
+  display: flex;
+  flex-direction: column;
+  color: #000;
+}
+.conteneurEvenements__items {
+  list-style: none;
+}
+
+/****** LISTE DES ARTISTES ***/
+.evenementsDesArtistes {
+  display: flex;
+  flex-direction: column;
+}
+.evenementsDesArtistes__item {
+  width: 40%;
+  padding: 1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  border: 0.2rem, solid #FEA82F;
+}
+.evenementsDesArtistes__image {
+  width: 40%;
+  height: 40%;
 }
 
 /*# sourceMappingURL=styles.css.map */
