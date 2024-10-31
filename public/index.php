@@ -47,11 +47,11 @@ $pdosResultatActualites->closeCursor();
 
 
 <body>
-<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
+	<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
 	<main>
 		<span class="centered" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">Festival OFF de Québec</span>
 		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 8 AU 11 JUILLET</span>
-		<img src="<?php echo $niveau; ?>liaisons/images/img_entete_w940.jpg" alt="">
+		<img class="img__entete" src="<?php echo $niveau; ?>liaisons/images/img_entete_w470px.jpg" alt="">
 		<nav class="nav_sec">
 			<ul class="nav-sec__liste">
 				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>#" class="nav-sec__lien">Lieux</a></li>
@@ -61,26 +61,27 @@ $pdosResultatActualites->closeCursor();
 		</nav>
 		<hr class="separator">
 		<div id="contenu" class="conteneur">
+			<h1 class="accueil__titre">Actualités brèves</h1>
 			<section class="conteneur_actu">
 				<?php for ($cpt = 0; $cpt < 3; $cpt++) { ?>
 					<article class="articles">
 						<header class="titre">
 							<h3 class="titre_texte"><b><?php echo $arrActualites[$cpt]["titre"]; ?></b></h3>
+							<hr class="hr_article">
+							<p class="auteurs"><?php echo $arrActualites[$cpt]["auteurs"]; ?></p>
+							<p class="articles_texte">
+								<?php echo $arrActualites[$cpt]["article"];
+								if (count(explode(" ", $arrActualites[$cpt]["article"])) >= 45) { ?>
+									<a class="a_points" href="#">...</a>
+								<?php } ?>
+							</p>
+							<footer class="articles__footer">
+								<h4 class="date__article__footer">Le
+									<?php echo $arrJour[$arrActualites[$cpt]["jourSemaine"] - 1]; ?>
+									<?php echo $arrActualites[$cpt]["jour"] . " " . $arrMois[$arrActualites[$cpt]["mois"]] . " " . $arrActualites[$cpt]["annee"]; ?>
+								</h4>
+							</footer>
 						</header>
-						<hr class="hr_article">
-						<p class="auteurs"><?php echo $arrActualites[$cpt]["auteurs"]; ?></p>
-						<p>
-							<?php echo $arrActualites[$cpt]["article"];
-							if (count(explode(" ", $arrActualites[$cpt]["article"])) >= 45) { ?>
-								<a class="a_points" href="#">...</a>
-							<?php } ?>
-						</p>
-						<footer>
-							<h4>Par <?php echo $arrActualites[$cpt]["auteurs"]; ?>, le
-								<?php echo $arrJour[$arrActualites[$cpt]["jourSemaine"] - 1]; ?>
-								<?php echo $arrActualites[$cpt]["jour"] . " " . $arrMois[$arrActualites[$cpt]["mois"]] . " " . $arrActualites[$cpt]["annee"]; ?>
-							</h4>
-						</footer>
 					</article>
 				<?php } ?>
 			</section>
