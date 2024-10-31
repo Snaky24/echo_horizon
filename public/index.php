@@ -40,9 +40,6 @@ $pdosResultatActualites->closeCursor();
 	<meta name="keyword" content="">
 	<meta name="author" content="">
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="<?php echo $niveau; ?>liaisons/css/styles.css">
-	<link rel="stylesheet" href="<?php echo $niveau; ?>liaisons/scss/styles.scss">
-	<link rel="stylesheet" href="<?php echo $niveau; ?>liaisons/scss/layout/accueil.scss">
 	<title>Un beau titre ici!</title>
 	<?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
 </head>
