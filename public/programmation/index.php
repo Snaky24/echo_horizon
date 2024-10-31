@@ -147,7 +147,7 @@ $pdoResultatDates->closeCursor();
     <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
 
     <h1>Programmation</h1>
-    <main>
+    <main class= contenuPrincipal>
         <label for="filtre">Filter par :</label>
         <select name="filtre" id="champFiltre">
             <option value="date">Date </option>
@@ -199,13 +199,13 @@ $pdoResultatDates->closeCursor();
                     <img class="evenementsDesArtistes__image" src="<?php echo $niveau; ?>liaisons/images/artistes/carre/id_<?php echo $arrEvenement["artiste_id"] ?>_artiste_<?php echo rand(1, 5) ?>_w812-carre.jpg"
                         alt="<?php echo $arrEvenement["artiste_id"] ?>" width="50" height="50">
                     <li class="evenementsDesArtistes__item">
-                        <time datetime="<?php echo $arrEvenement['date_et_heure'] ?>">
-                            <?php echo ajouterZero($arrEvenement['heure']) ?>h<?php echo ajouterZero($arrEvenement['minute']) ?>
-                        </time>
                         <a class="evenementsDesArtistes__lien"
                             href='<?php echo $niveau; ?>artistes/fiches/index.php?id_artiste=<?php echo $arrEvenement['artiste_id']; ?>&id_style=<?php echo $arrEvenement['artiste_id']; ?>'>
                             <?php echo $arrEvenement['artistes_nom']; ?></a>
                         <?php echo trouverStylesArtiste($arrEvenement['artiste_id']); ?>
+                        <time datetime="<?php echo $arrEvenement['date_et_heure'] ?>">
+                            <?php echo ajouterZero($arrEvenement['heure']) ?>h<?php echo ajouterZero($arrEvenement['minute']) ?>
+                        </time>
 
                     </li>
 

@@ -1014,10 +1014,16 @@ p {
  * Si le javascript est activé
  */
 /******* MISE EN FORME DE LA LISTE DES LIEUX *******/
+.contenuPrincipal {
+  margin: 0 auto;
+  width: 65%;
+}
+
 /****** LISTE DES LIEUX ***/
 .conteneurEvenements {
   display: flex;
   flex-direction: column;
+  padding: 0;
   color: #000;
 }
 .conteneurEvenements__items {
@@ -1028,19 +1034,35 @@ p {
 .evenementsDesArtistes {
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 .evenementsDesArtistes__item {
-  width: 40%;
-  padding: 1rem;
+  padding: 1rem 0 0.7rem 1.5rem;
+  width: 63%;
+  margin-top: -5rem;
   list-style: none;
   display: flex;
   flex-direction: column;
   background-color: #FFF;
   border: 0.2rem, solid #FEA82F;
 }
+.evenementsDesArtistes__item:nth-of-type(odd) {
+  margin-left: 12rem;
+}
+.evenementsDesArtistes__item:nth-of-type(even) {
+  margin-left: -3rem;
+}
 .evenementsDesArtistes__image {
-  width: 40%;
-  height: 40%;
+  width: 100%;
+  height: 100%;
+  margin-top: 5rem;
+}
+.evenementsDesArtistes__lien {
+  margin-top: 0.4rem;
+}
+
+time {
+  margin-top: 0.4rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
