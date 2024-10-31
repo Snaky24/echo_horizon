@@ -27,6 +27,15 @@ for ($cptEnr = 0; $ligneActualite = $pdosResultatActualites->fetch(); $cptEnr++)
 
 	$arrActualites[$cptEnr]["article"] = implode(" ", $arrArticle);
 }
+
+$nbArticles = rand(3,5);
+		$arrArticlesChoisis = []; 
+		for($intCptPart=0;$intCptPart<$nbArticles;$intCptPart++){
+			$artisteChoisi=rand(0,count($arrActualites)-1);
+			array_push($arrArticlesChoisis,$arrActualites[$artisteChoisi]);
+			array_splice($arrActualites,$artisteChoisi,1);
+	
+		}
 $pdosResultatActualites->closeCursor();
 
 $strRequeteArtiste = 'SELECT id, nom FROM artistes';
@@ -89,22 +98,22 @@ $strRequeteArtiste = 'SELECT id, nom FROM artistes';
 		<div id="contenu" class="conteneur">
 			<h1 class="accueil__titre">Actualités brèves</h1>
 			<section class="conteneur_actu">
-				<?php for ($cpt = 0; $cpt < 3; $cpt++) { ?>
+				<?php for ($cpt = 0; $cpt < count($arrArticlesChoisis); $cpt++) { ?>
 					<article class="articles">
 						<header class="titre">
-							<h3 class="titre_texte"><b><?php echo $arrActualites[$cpt]["titre"]; ?></b></h3>
+							<h3 class="titre_texte"><b><?php echo $arrArticlesChoisis[$cpt]["titre"]; ?></b></h3>
 							<hr class="hr_article">
-							<p class="auteurs"><?php echo $arrActualites[$cpt]["auteurs"]; ?></p>
+							<p class="auteurs"><?php echo $arrArticlesChoisis[$cpt]["auteurs"]; ?></p>
 							<p class="articles_texte">
-								<?php echo $arrActualites[$cpt]["article"];
-								if (count(explode(" ", $arrActualites[$cpt]["article"])) >= 45) { ?>
+								<?php echo $arrArticlesChoisis[$cpt]["article"];
+								if (count(explode(" ", $arrArticlesChoisis[$cpt]["article"])) >= 45) { ?>
 									<a class="a_points" href="#">...</a>
 								<?php } ?>
 							</p>
 							<footer class="articles__footer">
 								<h4 class="date__article__footer">Le
-									<?php echo $arrJour[$arrActualites[$cpt]["jourSemaine"] - 1]; ?>
-									<?php echo $arrActualites[$cpt]["jour"] . " " . $arrMois[$arrActualites[$cpt]["mois"]] . " " . $arrActualites[$cpt]["annee"]; ?>
+									<?php echo $arrJour[$arrArticlesChoisis[$cpt]["jourSemaine"] - 1]; ?>
+									<?php echo $arrArticlesChoisis[$cpt]["jour"] . " " . $arrMois[$arrArticlesChoisis[$cpt]["mois"]] . " " . $arrArticlesChoisis[$cpt]["annee"]; ?>
 								</h4>
 							</footer>
 						</header>
