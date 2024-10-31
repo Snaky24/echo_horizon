@@ -794,8 +794,9 @@ nav ul {
 }
 
 .artiste {
-  margin: 0 1em;
+  margin: 0 auto;
   position: relative;
+  text-align: center;
 }
 @media (min-width: 601px) {
   .artiste {
@@ -808,23 +809,32 @@ nav ul {
   color: #FFF;
   text-decoration: underline 17px #FEA82F solid;
   margin-bottom: 2em;
+  margin-top: 2em;
 }
 .artiste__description {
   color: #000;
   background-color: #FFF;
   border: 3px #FEA82F solid;
   padding: 30px;
+  width: 300px;
+  margin: 1em auto;
 }
 .artiste__titre {
   text-transform: uppercase;
   color: #FFF;
   text-decoration: underline 17px #FEA82F solid;
   margin-bottom: 2em;
+  margin-top: 2em;
+}
+@media (min-width: 601px) {
+  .artiste__description {
+    width: 100%;
+  }
 }
 
 .suggestion__titre {
   text-align: center;
-  margin: 2em 0;
+  margin: 3em 0 1em 0;
   text-transform: uppercase;
   color: #FFF;
   text-decoration: underline 5px #FEA82F solid;
@@ -843,9 +853,9 @@ nav ul {
   }
 }
 
-.website {
+.website__titre {
   text-align: center;
-  margin: 2em 0;
+  margin: 3em 0 1em 0;
   text-transform: uppercase;
   color: #FFF;
   text-decoration: underline 5px #FEA82F solid;
@@ -868,9 +878,10 @@ nav ul {
 
 .infos {
   background-color: #FFF;
-  max-width: 250px;
+  width: 200px;
   border-bottom: #FEA82F 20px solid;
-  padding: 40px;
+  padding: 30px;
+  margin: 2em auto;
 }
 .infos__texte {
   color: #000;
@@ -878,6 +889,15 @@ nav ul {
 .infos__titre {
   color: #000;
   border-bottom: #FEA82F 5px solid;
+}
+@media (min-width: 601px) {
+  .infos {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    max-width: 250px;
+    padding: 40px;
+  }
 }
 
 .icone__lieu {
@@ -889,8 +909,10 @@ nav ul {
   height: 30px;
 }
 
-.picture {
-  width: 100%;
+.picture__img {
+  width: 50%;
+  height: 50%;
+  margin-top: 2em;
 }
 
 .accueil__titre {
@@ -904,10 +926,6 @@ nav ul {
 body {
   background-color: black;
   color: #FFF;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 .container {
@@ -1002,6 +1020,71 @@ p {
   padding: 32px;
   margin: 21px;
   vertical-align: bottom;
+}
+
+/**
+ * @author Elma Atindehou 2233755@csfoy.ca
+ * @todo MISE EN PAGE DE LA PAGE PROGRAMMATION
+**/
+/**
+ * TABLE DES MATIÈRES
+ * Palette de couleurs
+ * Base commune
+ * - Bouton du menu
+ * - Liste du menu
+ * - Liens du menu
+ * Si le javascript est activé
+ */
+/******* MISE EN FORME DE LA LISTE DES LIEUX *******/
+.contenuPrincipal {
+  margin: 0 auto;
+  width: 65%;
+}
+
+/****** LISTE DES LIEUX ***/
+.conteneurEvenements {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  color: #000;
+}
+.conteneurEvenements__items {
+  list-style: none;
+}
+
+/****** LISTE DES ARTISTES ***/
+.evenementsDesArtistes {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.evenementsDesArtistes__item {
+  padding: 1rem 0 0.7rem 1.5rem;
+  width: 63%;
+  margin-top: -5rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  border: 0.2rem, solid #FEA82F;
+}
+.evenementsDesArtistes__item:nth-of-type(odd) {
+  margin-left: 12rem;
+}
+.evenementsDesArtistes__item:nth-of-type(even) {
+  margin-left: -3rem;
+}
+.evenementsDesArtistes__image {
+  width: 100%;
+  height: 100%;
+  margin-top: 5rem;
+}
+.evenementsDesArtistes__lien {
+  margin-top: 0.4rem;
+}
+
+time {
+  margin-top: 0.4rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

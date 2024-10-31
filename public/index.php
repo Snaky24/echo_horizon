@@ -89,10 +89,6 @@ $pdosResultatActualites->closeCursor();
 			</section>
 		</div>
 
-
-		<p><a href="#" class="bouton">Bouton</a></p>
-		<p><a href="#" class="bouton--inverse">Bouton</a></p>
-		<a href="#" class="hyperlien">lien test!</a>
 	</main>
 
 	<hr class="separator">

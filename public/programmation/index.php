@@ -13,7 +13,7 @@ $arrTousLesLieux = array();
 $ligneTousLesLieux = $pdoResultatTousLesLieux->fetchAll();
 // SELECTION DE TOUS LES LIEUX PRÈSENTS DANS LE TABLEAU
 
-foreach($ligneTousLesLieux as $ligneTousLesLieu){
+foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
     $arrTousLesLieux['nom'] = $ligneTousLesLieu['nom'];
 
     // REQUETE DE SELECTION DE TOUS LES LIEUX ET DES ARTISTES PRÉSENTS DANS LES LIEUX
@@ -26,7 +26,7 @@ foreach($ligneTousLesLieux as $ligneTousLesLieu){
         FROM evenements 
         INNER JOIN artistes ON artistes.id  = evenements.artiste_id 
         INNER JOIN lieux ON lieux.id  = evenements.lieu_id 
-        WHERE DAYOFMONTH(evenements.date_et_heure) = ' . $_GET['id_date'] .' ORDER BY lieux_nom';
+        WHERE DAYOFMONTH(evenements.date_et_heure) = ' . $_GET['id_date'] . ' ORDER BY lieux_nom';
     } else {
         $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure, 
          DAYOFMONTH(evenements.date_et_heure) AS jour, 
@@ -59,7 +59,9 @@ foreach($ligneTousLesLieux as $ligneTousLesLieu){
     $pdoResulatLieu->closeCursor();
     $ligneTousLesLieux = $pdoResultatTousLesLieux->fetch();
 }
+
 $pdoResultatTousLesLieux->closeCursor();
+
 
 function trouverStylesArtiste($id)
 {
@@ -111,7 +113,7 @@ function ajouterZero($temps)
 
 // EXTRACTION DES DATES POUR L'AFFICHAGE SELON LES DATES
 
-$strRequeteDates = 'SELECT DISTINCT DAYOFMONTH(evenements.date_et_heure) AS jour, 
+$strRequeteDates = 'SELECT DISTINCT DAYOFWEEK(evenements.date_et_heure) AS jourdesemaine, DAYOFMONTH(evenements.date_et_heure) AS jour, 
                     MONTH(evenements.date_et_heure) AS mois
                     FROM evenements';
 $pdoResultatDates = $objPdo->prepare($strRequeteDates);
@@ -120,6 +122,7 @@ $arrJour = array();
 
 for ($cptDate = 0; $ligneResultatDates = $pdoResultatDates->fetch(); $cptDate++) {
     $arrJour[$cptDate]['id_date'] = $cptDate;
+    $arrJour[$cptDate]['jourdesemaine'] = $ligneResultatDates['jourdesemaine'];
     $arrJour[$cptDate]['jour'] = $ligneResultatDates['jour'];
     $arrJour[$cptDate]['mois'] = $ligneResultatDates['mois'];
 }
@@ -131,28 +134,34 @@ $pdoResultatDates->closeCursor();
 <html>
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="keyword" content="">
-	<meta name="author" content="">
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="../liaisons/css/styles.css">
-    <link rel="stylesheet" href="../liaisons/scss/layout/_entete.scss">
-    <link rel="stylesheet" href="../liaisons/scss/layout/_programmation.scss">
-	<title>Programmation</title>
-	<?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <title>Programmation</title>
+    <?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
 </head>
 
 <body>
-        <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
+    <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
 
     <h1>Programmation</h1>
-    <main>
+    <main class= contenuPrincipal>
+        <label for="filtre">Filter par :</label>
+        <select name="filtre" id="champFiltre">
+            <option value="date">Date </option>
+            <option value="lieu">Lieu</option>
+        </select>
+        <svg width="18" height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 9L0 0H18L9 9Z" fill="#DA4167" />
+        </svg>
 
-    <?php
+        <?php
         if (isset($_GET['id_date']) == true) { ?>
 
-            <h2><?php echo $_GET['id_date'] . " " . afficherMois($arrJour[0]['mois']) ?></h2>
+            <h2><?php echo afficherJour($arrJour[0]['jourdesemaine']) . " " . $_GET['id_date'] . " " . afficherMois($arrJour[0]['mois']) ?>
+            </h2>
 
         <?php } else { ?>
             <h2>Toutes les dates</h2>
@@ -163,41 +172,40 @@ $pdoResultatDates->closeCursor();
         for ($intCpt = 0; $intCpt < count($arrJour); $intCpt++) { ?>
 
             <a href='index.php?id_date=<?php echo $arrJour[$intCpt]['jour'] ?>'>
-                <?php echo $arrJour[$intCpt]['jour'] ?>
+                <?php echo $arrJour[$intCpt]['jour'] . " " . afficherMois($arrJour[0]['mois']) ?>
             </a>
         <?php } ?>
-
-        <ul>
+        
+        <!-- AFFICHAGE DES LIEUX  -->
+        <ul class="conteneurEvenements">
             <?php
             //mémorise le lieu présentement traité
             $lieuActuel = "";
-
             //partout tout les événements
             foreach ($arrEvenements as $arrEvenement) {
-
                 //si le lieu présentement traité
                 if ($lieuActuel != $arrEvenement['lieux_nom']) {
                     if ($lieuActuel != "") { ?>
                     </ul>
                     </li>
                 <?php } ?>
-                <li>
-                    <h3>
+                <li class="conteneurEvenements__items">
+                    <h3 class="titreNiveau3">
                         <?php echo $arrEvenement['lieux_nom'];
                         $lieuActuel = $arrEvenement['lieux_nom']; ?>
                     </h3>
-                    <ul>
+                    <ul class="evenementsDesArtistes">
                     <?php } ?>
-                    <li>
+                    <img class="evenementsDesArtistes__image" src="<?php echo $niveau; ?>liaisons/images/artistes/carre/id_<?php echo $arrEvenement["artiste_id"] ?>_artiste_<?php echo rand(1, 5) ?>_w812-carre.jpg"
+                        alt="<?php echo $arrEvenement["artiste_id"] ?>" width="50" height="50">
+                    <li class="evenementsDesArtistes__item">
+                        <a class="evenementsDesArtistes__lien"
+                            href='<?php echo $niveau; ?>artistes/fiches/index.php?id_artiste=<?php echo $arrEvenement['artiste_id']; ?>&id_style=<?php echo $arrEvenement['artiste_id']; ?>'>
+                            <?php echo $arrEvenement['artistes_nom']; ?></a>
+                        <?php echo trouverStylesArtiste($arrEvenement['artiste_id']); ?>
                         <time datetime="<?php echo $arrEvenement['date_et_heure'] ?>">
                             <?php echo ajouterZero($arrEvenement['heure']) ?>h<?php echo ajouterZero($arrEvenement['minute']) ?>
-                        </time>,
-                        <a
-                            href='<?php echo $niveau; ?>artistes/fiches/index.php?artiste_id=<?php echo $arrEvenement['artiste_id']; ?>&id_style=<?php echo $arrEvenement['artiste_id']; ?>'>
-                            <?php echo $arrEvenement['artistes_nom']; ?></a>,
-                        <?php echo trouverStylesArtiste($arrEvenement['artiste_id']); ?>
-                        <img src="<?php echo $niveau; ?>liaisons/images/artistes/<?php echo $arrEvenement["artiste_id"] ?>_0_carre_w150.jpg"
-                            alt="<?php echo $arrEvenement["artiste_id"] ?>" width="50" height="50">
+                        </time>
 
                     </li>
 
@@ -210,7 +218,7 @@ $pdoResultatDates->closeCursor();
 
     </main>
     <footer>
-    <?php include($niveau . "liaisons/fragments/pieddePage.inc.php"); ?>
+        <?php include($niveau . "liaisons/fragments/pieddePage.inc.php"); ?>
     </footer>
 </body>
 

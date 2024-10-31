@@ -182,9 +182,11 @@ $niveau = '../../';
           <img class="picture__img" src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_1_portrait__w908.jpg" alt="<?php echo $arrArtistes['nom']?>">
     </picture>
 
+    <aside class="website">
        <?php if($arrArtistes['site_web'] != NULL){ ?>
-		<h3 class="website">Site Web:</h3><a class="hyperlien" href='<?php echo $arrArtistes['site_web']; ?>'><?php echo $arrArtistes['site_web']; ?></a>
+		<h3 class="website__titre">Site Web:</h3><a class="hyperlien" href='<?php echo $arrArtistes['site_web']; ?>'><?php echo $arrArtistes['site_web']; ?></a>
         <?php } ?>
+    </aside>
 
     <section class="infos">
         <h3 class="infos__titre">Provenance</h3>
@@ -220,8 +222,6 @@ $niveau = '../../';
                     <span class="icone__calender"></span>
                     <img class="icone__calender" src="<?php echo $niveau; ?>liaisons/images/calender.svg" alt="lieu carte">
                     <?php echo $arrJour[$arrSpectacles[$intCpt]['jourSemaine']-1].' le ' .$arrSpectacles[$intCpt]['jour'].' '.$arrMois[$arrSpectacles[$intCpt]['mois']-1].' à '.$arrSpectacles[$intCpt]['heure'].'h'.$arrSpectacles[$intCpt]['minut']?>
-            
-            
                 </li>
     <?php } ?>
     </ul>
