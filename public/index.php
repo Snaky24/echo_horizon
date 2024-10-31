@@ -51,6 +51,7 @@ $pdosResultatActualites->closeCursor();
 	<main>
 		<span class="centered" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">Festival OFF de Québec</span>
 		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 8 AU 11 JUILLET</span>
+		<img src="<?php echo $niveau; ?>../ressources/liaisons/images/img_entete.jpg" alt="">
 		<nav class="nav_sec">
 			<ul class="nav-sec__liste">
 				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>#" class="nav-sec__lien">Lieux</a></li>
