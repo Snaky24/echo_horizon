@@ -44,12 +44,11 @@ $pdosResultatActualites->closeCursor();
 	<?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
 </head>
 
-<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
+
 
 <body>
-
+<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
 	<main>
-		<link rel="stylesheet" href="<?php echo $niveau; ?>liaisons/fragments/entete.inc.php">
 		<span class="centered" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">Festival OFF de Québec</span>
 		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 8 AU 11 JUILLET</span>
 		<nav class="nav_sec">
