@@ -3,21 +3,34 @@
 @charset "UFT-8";
 
 .accueil {
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+
+  @media(min-width: $desktop) {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__nom {
+    text-align: left;
+  }
 
   &__titre {
-    padding: 20px;
+    text-align: left;
+    margin-left: 150px;
+    @include title;
   }
-
-  &__layout {
-    display: flex;
-    flex-direction: row;
-  }
-
 }
 
 body {
   background-color: black;
   color: #FFF;
+}
+
+.img__entete {
+  width: 1440px;
+  height: 470px;
 }
 
 .container {
@@ -64,15 +77,10 @@ body {
   margin-bottom: 3em;
 }
 
-.conteneur {
-  display: block;
-  justify-content: space-between;
-}
-
 .titre_texte {
   font-size: 20px;
-  margin-bottom: 10px;
   color: #000;
+  padding: 0 32px 0 32px;
 }
 
 .hr_article {
@@ -83,15 +91,22 @@ body {
 }
 
 .auteurs {
+  background-color: #FFF;
   text-transform: none;
   font-size: 14px;
   color: $noir;
+  padding: 0 0 0 32px;
 }
 
-p {
+.articles_texte {
+  background-color: #FFF;
   text-transform: none;
   color: #000;
   font-size: 16px;
+  padding: 0 32px 0 32px;
+  text-align: justify;
+  padding-bottom: 30px;
+  vertical-align: bottom;
 }
 
 .a_points {
@@ -109,9 +124,25 @@ p {
   display: flex;
 }
 
-.articles {
+.titre {
   background-color: #FFF;
-  padding: 32px;
+  padding-top: 20px;
+}
+
+.articles {
   margin: 21px;
-  vertical-align: bottom;
+}
+
+.articles__footer {
+  background-color: $orange;
+  bottom: -170px;
+  padding: 2px;
+}
+
+.date__article__footer {
+  text-align: right;
+  color: $noir;
+  font-weight: 400;
+  margin-right: 20px;
+  font-size: 14px;
 }
