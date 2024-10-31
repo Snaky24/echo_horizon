@@ -165,26 +165,30 @@ $niveau = '../../';
 
 
 
-<body class="artiste">
+<body>
 <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
-<main>
+<nav class="nav_sec">
+			<ul class="nav-sec__liste">
+				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>artistes/index.php" class="nav-sec__lien">Artistes A-Z</a></li>
+				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>#" class="nav-sec__lien">Par style musical</a></li>
+			</ul>
+		</nav>
+        <hr class="separator">
+        
+<main class="artiste">
+        
     <h1 class="artiste__nom"><?php echo $arrArtistes['nom']?></h1>
-	<h2 class="artiste__titre">Description</h2>
-    <p class="artiste__description"><?php echo $arrArtistes['description']?></p>
+    <picture class="picture">
+          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_1_portrait__w590.jpg" media="(max-width:600px)">
+          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_1_portrait__w908.jpg" media="(min-width:601px)">
+          <img class="picture__img" src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_1_portrait__w908.jpg" alt="<?php echo $arrArtistes['nom']?>">
+    </picture>
 
-    <h2 class="artiste__titre">Représentations</h2>
-    <ul class="spectacle">
-        <?php
-            for($intCpt=0;$intCpt<count($arrSpectacles);$intCpt++){?>
-                <li class="spectacle__liste">
-                    <?php echo $arrSpectacles[$intCpt]['nom']?>
-                    <br>
-                    <?php echo $arrJour[$arrSpectacles[$intCpt]['jourSemaine']-1].' le ' .$arrSpectacles[$intCpt]['jour'].' '.$arrMois[$arrSpectacles[$intCpt]['mois']-1].' à '.$arrSpectacles[$intCpt]['heure'].'h'.$arrSpectacles[$intCpt]['minut']?>
-            
-            
-                </li>
-    <?php } ?>
-    </ul>
+    <aside class="website">
+       <?php if($arrArtistes['site_web'] != NULL){ ?>
+		<h3 class="website__titre">Site Web:</h3><a class="hyperlien" href='<?php echo $arrArtistes['site_web']; ?>'><?php echo $arrArtistes['site_web']; ?></a>
+        <?php } ?>
+    </aside>
 
     <section class="infos">
         <h3 class="infos__titre">Provenance</h3>
@@ -193,21 +197,40 @@ $niveau = '../../';
         <p class="infos__texte"><?php echo $arrArtistes['style']?></p>
     </section>
 
-    <?php if($arrArtistes['site_web'] != NULL){ ?>
-		<h3 class="website">Site Web:</h3><a class="hyperlien" href='<?php echo $arrArtistes['site_web']; ?>'><?php echo $arrArtistes['site_web']; ?></a>
+
+    <picture class="picture">
+          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_3_portrait__w590.jpg" media="(max-width:600px)">
+          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/paysage/<?php echo $id_artiste ?>_paysage__w1328.jpg" media="(min-width:601px)">
+          <img class="picture__img" src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_1_portrait__w908.jpg" alt="<?php echo $arrArtistes['nom']?>">
+    </picture>
+
+	<h2 class="artiste__titre">Description</h2>
+    <p class="artiste__description"><?php echo $arrArtistes['description']?></p>
+
+    <picture class="picture">
+          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_2_portrait__w590.jpg" media="(max-width:600px)">
+          <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_2_portrait__w636.jpg" media="(min-width:601px)">
+          <img class="picture__img" src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_1_portrait__w908.jpg" alt="<?php echo $arrArtistes['nom']?>">
+    </picture>
+
+    <h2 class="artiste__titre">Représentations</h2>
+    <ul class="spectacle">
+        <?php
+            for($intCpt=0;$intCpt<count($arrSpectacles);$intCpt++){?>
+                <li class="spectacle__liste">
+                    <img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+                    <?php echo $arrSpectacles[$intCpt]['nom']?>
+                    <br>
+                    <span class="icone__calender"></span>
+                    <img class="icone__calender" src="<?php echo $niveau; ?>liaisons/images/calender.svg" alt="lieu carte">
+                    <?php echo $arrJour[$arrSpectacles[$intCpt]['jourSemaine']-1].' le ' .$arrSpectacles[$intCpt]['jour'].' '.$arrMois[$arrSpectacles[$intCpt]['mois']-1].' à '.$arrSpectacles[$intCpt]['heure'].'h'.$arrSpectacles[$intCpt]['minut']?>
+                </li>
     <?php } ?>
-
-
-    
- 
-    <img src="<?php echo $niveau ?>liaisons/images/artistes/artiste_<?php echo $id_artiste ?>_1__port_w908" alt="photo artiste #<?php echo $id_artiste ?>">
-  
-
-
+    </ul>
 
     <?php if($arrArtistesChoisi != NULL){
 	?>
-    <section class="suggestion">
+    <aside class="suggestion">
         <h3 class="suggestion__titre">Vous pourriez aimer:</h3>
         <ul class="suggestion__liste">
             <?php
@@ -215,9 +238,9 @@ $niveau = '../../';
                 for($intCpt=0;$intCpt<count($arrArtistesChoisi);$intCpt++){?>
                     <li><a class="hyperlien suggestion__artiste" href="<?php echo $niveau ?>artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>"><?php echo $arrArtistesChoisi[$intCpt]['nom'];?></a>
                     </li>
-                <?php } ?>
+            <?php } ?>
         </ul>
-    </section>
+    </aside>
     <?php } ?>          
 </main>
     <?php include($niveau . "liaisons/fragments/piedDePage.inc.php"); ?>

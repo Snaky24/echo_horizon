@@ -1,7 +1,8 @@
 
 
 <footer class="piedDePage">
-    <img class="logo__footer" src="../public/liaisons/images/logo.svg" alt="Logo">
+<hr class="separator">
+    <img class="logo__footer" src="<?php echo $niveau ?>liaisons/images/logo.svg" alt="Logo">
     <nav class="">
         <ul>
             <li><a href="#">LE OFF</a></li>

@@ -1,8 +1,8 @@
 /**
 * @author Jade Mayrand
 */
-$hyperlien: #DA4167;
-$hyperlien_actif: #FFF;
+$hyperlien: $rose;
+$hyperlien_actif: $blanc;
 
 .hyperlien{
   color: $hyperlien;

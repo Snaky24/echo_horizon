@@ -40,20 +40,15 @@ $pdosResultatActualites->closeCursor();
 	<meta name="keyword" content="">
 	<meta name="author" content="">
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="<?php echo $niveau; ?>liaisons/css/styles.css">
-	<link rel="stylesheet" href="<?php echo $niveau; ?>liaisons/scss/styles.scss">
-	<link rel="stylesheet" href="<?php echo $niveau; ?>liaisons/scss/layout/accueil.scss">
 	<title>Un beau titre ici!</title>
 	<?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
 </head>
 
-<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
+
 
 <body>
-
+<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
 	<main>
-		<link rel="stylesheet" href="<?php echo $niveau; ?>liaisons/fragments/entete.inc.php">
-		<img src="<?php echo $niveau; ?>ressources/liaisons/images/img_entete.jpg">
 		<span class="centered" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">Festival OFF de Québec</span>
 		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 8 AU 11 JUILLET</span>
 		<nav class="nav_sec">
@@ -90,13 +85,7 @@ $pdosResultatActualites->closeCursor();
 			</section>
 		</div>
 
-
-		<p><a href="#" class="bouton">Bouton</a></p>
-		<p><a href="#" class="bouton--inverse">Bouton</a></p>
-		<a href="#" class="hyperlien">lien test!</a>
 	</main>
-
-	<hr class="separator">
 
 	<?php include($niveau . "liaisons/fragments/piedDePage.inc.php"); ?>
 

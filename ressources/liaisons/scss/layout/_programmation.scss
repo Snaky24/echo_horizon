@@ -1,19 +1,72 @@
+/**
+ * @author Elma Atindehou 2233755@csfoy.ca
+ * @todo MISE EN PAGE DE LA PAGE PROGRAMMATION
+**/
+
+/**
+ * TABLE DES MATIÈRES
+ * Palette de couleurs
+ * Base commune
+ * - Bouton du menu
+ * - Liste du menu
+ * - Liens du menu
+ * Si le javascript est activé
+ */
+
 @charset "UFT-8";
 
-body {
-  background-color: black;
-  color: #FFF;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+/******* MISE EN FORME DE LA LISTE DES LIEUX *******/
+.contenuPrincipal{
+  margin: 0 auto;
+  width:65%;
 }
 
-.entete {
-  display: block;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 10%;
-  position: relative;
-  width: 100%;
+/****** LISTE DES LIEUX ***/
+.conteneurEvenements{
+  display:flex;
+  flex-direction: column;
+  padding: 0;
+  color:($noir);
+
+  &__items{
+    list-style: none;
+  }
+}
+
+/****** LISTE DES ARTISTES ***/
+.evenementsDesArtistes{
+  display:flex;
+  flex-direction: column;
+  padding: 0;
+
+  &__item{
+    padding:1rem 0 .7rem 1.5rem;
+    width:63%;
+    margin-top:-5rem;
+    list-style: none;
+    display:flex;
+    flex-direction: column;
+    background-color: ($blanc);
+    border: .2rem, solid ($orange);
+  }
+
+  &__item:nth-of-type(odd){
+    margin-left: 12rem ;
+  }
+  &__item:nth-of-type(even){
+    margin-left: -3rem ;
+  }
+
+  &__image{
+    width: 100%;
+    height: 100%;
+    margin-top: 5rem;
+  }
+
+  &__lien{
+    margin-top :.4rem
+  }
+}
+time{
+  margin-top :.4rem;
 }

@@ -2,12 +2,22 @@
 @charset "UFT-8";
 
 .artiste{
-  margin: 0 1em;
+  margin: 0 auto;
   position: relative;
+  text-align: center;
 
   @media(min-width: $desktop){
   max-width: 1000px;
   margin: 0 auto;
+
+  &__nom{
+    text-align: left;
+  }
+
+  &__titre{
+    text-align: left;
+  }
+
   }
 
   &__nom{
@@ -20,15 +30,26 @@
     background-color: $blanc;
     border: 3px $orange solid;
     padding: 30px;
+    width: 300px;
+    margin: 1em auto
   }
 
   &__titre{
     @include title;
   }
+
+  @media(min-width: $desktop){
+    &__description{
+      width: 100%;
+    }
+  }
 }
 
 .suggestion{
- text-align: center;
+
+  &__titre{
+    @include tinytitle;
+  }
 
   &__liste{
     list-style-type: none;
@@ -49,18 +70,23 @@
 }
 
 .website{
-  text-transform: uppercase;
+  &__titre{
+    @include tinytitle;
+  }
+ 
 }
 
 
 .spectacle{
   list-style-type: none;
   display: flex;
-
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-around;
+  
   &__liste{
     color: $orange;
     margin-top: 1.5em;
-    margin-right: 5em;
   }
 
   @media(min-width: $desktop){
@@ -71,9 +97,10 @@
 
 .infos{
   background-color: $blanc;
-  max-width: 250px;
+  width: 200px;
   border-bottom: $orange 20px solid;
-  padding: 40px;
+  padding: 30px;
+  margin: 2em auto;
 
   &__texte{
     color: $noir;
@@ -84,9 +111,31 @@
     border-bottom: $orange 5px solid;
   }
 
-  // @media(min-width: $desktop){
-  //   position: absolute;
-  //   top:20%;
-  //   left: 20%;
-  // }
+  @media(min-width: $desktop){
+    position: absolute;
+    top:20%;
+    left: 20%;
+    max-width: 250px;
+    padding: 40px;
+  }
 }
+
+.icone{
+  &__lieu{
+    @include icone;
+  }
+
+  &__calender{
+    @include icone;
+  }
+}
+
+.picture{
+
+  &__img{
+    width: 50%;
+    height: 50%;
+    margin-top: 2em;
+  }
+}
+
