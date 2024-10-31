@@ -9,6 +9,15 @@
   @media(min-width: $desktop){
   max-width: 1000px;
   margin: 0 auto;
+
+  &__nom{
+    text-align: left;
+  }
+
+  &__titre{
+    text-align: left;
+  }
+
   }
 
   &__nom{
@@ -31,7 +40,7 @@
 
   @media(min-width: $desktop){
     &__description{
-      width: 100%
+      width: 100%;
     }
   }
 }
@@ -71,12 +80,13 @@
 .spectacle{
   list-style-type: none;
   display: flex;
-
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-around;
+  
   &__liste{
     color: $orange;
     margin-top: 1.5em;
-    margin-right: 5em;
-    // font-family: $grosTexte;
   }
 
   @media(min-width: $desktop){

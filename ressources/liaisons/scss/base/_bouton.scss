@@ -1,5 +1,5 @@
 /**
-* @author Prenom Nom courriel
+* @author Camille Marion
 */
 @mixin boutonCommun {
   text-decoration: none;
@@ -10,7 +10,7 @@
 .bouton {
   @include boutonCommun;
   background-color: $noir;
-  color: black;
+  color: $noir;
   &:after {
     //content: "»";
     margin-left: 0.4em;
@@ -32,6 +32,16 @@
       border-color: transparentize($noir, 0.5);
     }
   }
+}
+
+button {
+  text-shadow: $noir;
+  padding: 10px 40px;
+  background: $degrade;
+  color: $blanc;
+  border: none;
+
+  @include bouton
 }
 
 

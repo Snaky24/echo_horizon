@@ -506,14 +506,14 @@ body {
 
 /** Boutons **/
 /**
-* @author Prenom Nom courriel
+* @author Camille Marion
 */
 .bouton {
   text-decoration: none;
   border-radius: 18px;
   padding: 0.5em 1em;
   background-color: #000;
-  color: black;
+  color: #000;
 }
 .bouton:after {
   margin-left: 0.4em;
@@ -536,6 +536,17 @@ body {
 }
 .bouton--inverse:active {
   border-color: rgba(0, 0, 0, 0.5);
+}
+
+button {
+  text-shadow: #000;
+  padding: 10px 40px;
+  background: linear-gradient(160deg, rgb(218, 65, 103) 20%, rgb(254, 168, 47) 70%);
+  color: #FFF;
+  border: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 /** Grille 12 colones **/
@@ -596,8 +607,7 @@ body {
 }
 /****** MODULES *****************************/
 /**
- * @author Prénom Nom courriel
- * @todo ADAPTER ce fichier selon le projet
+ * @author Camille Marion
 **/
 /**
  * TABLE DES MATIÈRES
@@ -704,12 +714,11 @@ Effet actif : #f4d07c
 }
 
 .menu__listeItem,
-a,
-button {
+a {
   font-size: 18px;
-  color: #DA4167;
   text-transform: uppercase;
   text-decoration: none;
+  color: #DA4167;
 }
 
 .entete {
@@ -718,14 +727,6 @@ button {
   align-items: center;
   padding: 30px 10%;
   position: relative;
-}
-
-button {
-  text-shadow: #000;
-  padding: 10px 40px;
-  background: linear-gradient(160deg, rgb(218, 65, 103) 20%, rgb(254, 168, 47) 70%);
-  color: #FFF;
-  border: none;
 }
 
 .container {
@@ -803,6 +804,12 @@ nav ul {
     max-width: 1000px;
     margin: 0 auto;
   }
+  .artiste__nom {
+    text-align: left;
+  }
+  .artiste__titre {
+    text-align: left;
+  }
 }
 .artiste__nom {
   text-transform: uppercase;
@@ -864,11 +871,13 @@ nav ul {
 .spectacle {
   list-style-type: none;
   display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-around;
 }
 .spectacle__liste {
   color: #FEA82F;
   margin-top: 1.5em;
-  margin-right: 5em;
 }
 @media (min-width: 601px) {
   .spectacle {
@@ -965,9 +974,11 @@ body {
 
 .separator {
   background-color: #FEA82F;
-  width: 140px;
-  padding: 20px;
+  width: 100%;
+  padding: 10px;
   border: #FEA82F;
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 
 .conteneur {

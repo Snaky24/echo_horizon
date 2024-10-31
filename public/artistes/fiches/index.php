@@ -167,14 +167,16 @@ $niveau = '../../';
 
 <body>
 <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
-<main class="artiste">
-        <nav class="nav_sec">
+<nav class="nav_sec">
 			<ul class="nav-sec__liste">
 				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>artistes/index.php" class="nav-sec__lien">Artistes A-Z</a></li>
 				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>#" class="nav-sec__lien">Par style musical</a></li>
 			</ul>
 		</nav>
         <hr class="separator">
+        
+<main class="artiste">
+        
     <h1 class="artiste__nom"><?php echo $arrArtistes['nom']?></h1>
     <picture class="picture">
           <source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $id_artiste ?>_1_portrait__w590.jpg" media="(max-width:600px)">

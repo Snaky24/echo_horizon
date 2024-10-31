@@ -88,4 +88,10 @@
     height: 30px;
 }
 
+@mixin bouton {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
 

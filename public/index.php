@@ -91,8 +91,6 @@ $pdosResultatActualites->closeCursor();
 
 	</main>
 
-	<hr class="separator">
-
 	<?php include($niveau . "liaisons/fragments/piedDePage.inc.php"); ?>
 
 </body>
