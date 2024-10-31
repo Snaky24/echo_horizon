@@ -29,6 +29,32 @@ for ($cptEnr = 0; $ligneActualite = $pdosResultatActualites->fetch(); $cptEnr++)
 }
 $pdosResultatActualites->closeCursor();
 
+$strRequeteArtiste = 'SELECT id, nom FROM artistes';
+		$pdosResultatArtistesSug = $objPdo->query($strRequeteArtiste);
+		$pdosResultatArtistesSug->execute();
+	
+		$arrArtistesSug = array();
+		for($intCptEnr=0;$ligne=$pdosResultatArtistesSug->fetch();$intCptEnr++){
+			$arrArtistesSug[$intCptEnr]['id'] = $ligne['id'];
+			$arrArtistesSug[$intCptEnr]['nom'] = $ligne['nom'];
+		}
+		
+		$nbArtistesSug = rand(3,5);
+		//Établie une liste de choix
+		$arrArtistesChoisi = []; //ou $arrParticipantsChoisi = array();
+		//Tant que le nombre de suggestions n'est pas atteintsx
+		for($intCptPart=0;$intCptPart<$nbArtistesSug;$intCptPart++){
+			//Trouve un index au hazard selon le nombre de sugestions
+			$artisteChoisi=rand(0,count($arrArtistesSug)-1);
+			//Prendre la suggestion et la mettre dans les participants choisis
+			array_push($arrArtistesChoisi,$arrArtistesSug[$artisteChoisi]);
+			//Enlever la suggestion des suggestions disponibles (évite les suggestions en doublons)
+			array_splice($arrArtistesSug,$artisteChoisi,1);
+	
+			$pdosResultatArtistesSug ->closecursor();
+	
+		};    
+
 ?>
 
 <!DOCTYPE html>
@@ -84,6 +110,23 @@ $pdosResultatActualites->closeCursor();
 					</article>
 				<?php } ?>
 			</section>
+
+			<h2>En vedette:</h2>
+			<ul>
+			<?php
+				for($intCpt=0;$intCpt<count($arrArtistesChoisi);$intCpt++){?>
+					<li>
+					<a href="<?php echo $niveau ?>artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>">
+					<picture class="picture">
+						<source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w318.jpg" media="(max-width:600px)">
+						<source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg" media="(min-width:601px)">
+						<img class="picture__img" src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg" alt="<?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?>">
+					</picture>
+					<?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?>
+					<a>
+					</li>
+				<?php } ?>
+			</ul>
 		</div>
 
 	</main>
