@@ -4,6 +4,80 @@
 
 /** Polices de caractères **/
 
+/******* FONTS LATO ******/
+@font-face {
+    font-family: LatoBlack;
+    src: url('../fonts/lato-black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: LatoBold;
+    src: url('../fonts/lato-bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: LatoRegular;
+    src: url('../fonts/lato-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: LatoLight;
+    src: url('../fonts/lato-light.ttf') format('truetype');
+}
+@font-face {
+    font-family: LatoThin;
+    src: url('../fonts/lato-thin.ttf') format('truetype');
+}
+/******* LATO ITALIC ******/
+@font-face {
+    font-family: LatoBlackItalic;
+    src: url('../fonts/lato-blackitalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: LatoBoldItalic;
+    src: url('../fonts/lato-bolditalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: LatoItalic;
+    src: url('../fonts/lato-italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: LatoLightItalic;
+    src: url('../fonts/lato-lightitalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: LatoThinItalic;
+    src: url('../fonts/lato-thinitalic.ttf') format('truetype');
+}
+
+/******* FONTS JALDI ******/
+@font-face {
+    font-family: JaldiBold;
+    src: url('../fonts/jaldi-bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: JaldiRegular;
+    src: url('../fonts/jaldi-regular.ttf') format('truetype');
+}
+/******* VARIABLES DES FONTS ******/
+
+/*******  LATO ******/
+$Lato-Black : LatoBlack;
+$titreNiveau1 :LatoBlack;
+$titreNiveau2 :LatoBlack;
+$titreNiveau3 :LatoBold;
+$titreNiveau4 :LatoBold;
+
+/*******  JALDI ******/
+$texteEngrandeTaille : JaldiRegular;
+$texteCourant : JaldiRegular;
+
+
+
 /** Palette de couleurs **/
 
 /* Couleurs de base */
