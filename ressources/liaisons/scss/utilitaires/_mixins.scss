@@ -1,6 +1,8 @@
 /**
-* @author 
-* @author 
+* @author Jade Mayrand
+* @author Elma Atindehou
+* @author Camille Marion
+
 */
 
 /**
@@ -70,16 +72,17 @@
 @mixin title {
     text-transform: uppercase;
     color: $blanc;
-    border-bottom: $orange 20px solid;
-    max-width: 250px;
+    text-decoration: underline 17px $orange solid;
+    margin-bottom: 2em;
+    margin-top: 2em;
 }
 
 @mixin tinytitle {
     text-align: center;
-    margin: 2em 0;
+    margin: 3em 0 1em 0;
     text-transform: uppercase;
     color: $blanc;
-    border-bottom: $orange 5px solid;
+    text-decoration: underline 5px $orange solid;
 }
 
 @mixin icone {
@@ -87,6 +90,7 @@
     height: 30px;
 }
 
+<<<<<<< HEAD
 /********* TAILLES DES POLICES *********/
 
 /**** TABLE *****/
@@ -156,3 +160,10 @@
     font-size: 2.2rem;
     color: $blanc;
 }
+=======
+@mixin bouton {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+>>>>>>> 85f38fc7df9876e25966b606dd8fea8088b3c48a
