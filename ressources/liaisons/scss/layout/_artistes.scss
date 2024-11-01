@@ -40,15 +40,19 @@
 
   @media(min-width: $desktop){
     &__description{
-      width: 100%;
+      width: 80%;
     }
   }
 }
 
 .suggestion{
+  justify-items: center;
+  margin: 5em auto;
 
   &__titre{
     @include tinytitle;
+    margin-left: 2em;
+    margin-bottom: 2em;
   }
 
   &__liste{
@@ -73,7 +77,6 @@
   &__titre{
     @include tinytitle;
   }
- 
 }
 
 
@@ -87,6 +90,7 @@
   &__liste{
     color: $orange;
     margin-top: 1.5em;
+    margin-left: 5em;
   }
 
   @media(min-width: $desktop){
@@ -113,8 +117,8 @@
 
   @media(min-width: $desktop){
     position: absolute;
-    top:20%;
-    left: 20%;
+    top: 5%;
+    left: 28%;
     max-width: 250px;
     padding: 40px;
   }
@@ -133,9 +137,46 @@
 .picture{
 
   &__img{
-    width: 50%;
-    height: 50%;
+    width: 100%;
     margin-top: 2em;
+    max-width: 300px;
+  }
+
+  &__imgPaysage{
+    width: 100%;
+    margin-top: 2em;
+    max-width: 300px;
+  }
+
+  @media(min-width: $desktop){
+    &__imgPaysage{
+      height: 100%;
+      max-width: 600px;
+    }
   }
 }
 
+@media(min-width:$desktop){
+  .wrapper{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 20px;
+    grid-template-areas: ". . . . . . a a a a"
+                        "b b b b b b a a a a"
+                        "b b b b b b a a a a"
+                        "c c c c c c d d d d";
+
+  &__element1{
+    grid-area: a;
+  }
+  &__element2{
+    grid-area: b;
+  }
+  &__element3{
+    grid-area: c;
+  }
+  &__element4{
+    grid-area: d;
+  }
+}
+}
