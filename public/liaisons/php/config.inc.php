@@ -21,8 +21,8 @@ if ($blnLocal) {
     //en ligne
     $strHost = 'timunix3.csfoy.ca';
     $strBD='25_rpni1_OFF';
-    $strUser = 'echohorizon';
-    $strPassword = 'bananebleue';
+    $strUser = '24_rpni1_echo';
+    $strPassword = 'i]Bue8SqW1yaJoQj';
     error_reporting(E_ALL & ~E_NOTICE);
     //error_reporting(0);
 }
