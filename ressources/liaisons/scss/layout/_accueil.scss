@@ -26,6 +26,7 @@
 body {
   background-color: black;
   color: #FFF;
+  width: 1440px;
 }
 
 .img__entete {
@@ -77,6 +78,22 @@ body {
   margin-bottom: 3em;
 }
 
+.accueil__titre {
+  text-transform: uppercase;
+  color: #FFF;
+  text-decoration: underline 17px #FEA82F solid;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  margin-right: 150px;
+  float: left;
+  font-size: 40px;
+}
+
+.conteneur {
+  display: block;
+  position: relative;
+}
+
 .titre_texte {
   font-size: 20px;
   color: #000;
@@ -122,20 +139,24 @@ body {
 
 .conteneur_actu {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-end;
 }
 
 .titre {
-  background-color: #FFF;
   padding-top: 20px;
 }
 
 .articles {
+  background-color: #FFF;
+  justify-content: space-between;
   margin: 21px;
+  width: 320px;
 }
 
 .articles__footer {
   background-color: $orange;
-  bottom: -170px;
   padding: 2px;
 }
 
@@ -145,4 +166,39 @@ body {
   font-weight: 400;
   margin-right: 20px;
   font-size: 14px;
+}
+
+.artistes__titre {
+  text-transform: uppercase;
+  color: #FFF;
+  text-decoration: underline 17px #FEA82F solid;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  margin-right: 150px;
+  float: right;
+  font-size: 40px;
+}
+
+.artistes__sect {
+  width: 100%;
+  position: relative;
+}
+
+.img_artistes__ul {
+  display: flex;
+  width: 100%;
+  list-style: none;
+}
+
+.img_artistes__li {
+  margin: 21px;
+}
+
+.picture__img {
+  width: 235px;
+  height: auto;
+}
+
+.noms__artiste {
+  text-align: center;
 }

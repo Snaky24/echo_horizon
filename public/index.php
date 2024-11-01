@@ -28,41 +28,42 @@ for ($cptEnr = 0; $ligneActualite = $pdosResultatActualites->fetch(); $cptEnr++)
 	$arrActualites[$cptEnr]["article"] = implode(" ", $arrArticle);
 }
 
-$nbArticles = rand(3,5);
-		$arrArticlesChoisis = []; 
-		for($intCptPart=0;$intCptPart<$nbArticles;$intCptPart++){
-			$artisteChoisi=rand(0,count($arrActualites)-1);
-			array_push($arrArticlesChoisis,$arrActualites[$artisteChoisi]);
-			array_splice($arrActualites,$artisteChoisi,1);
-	
-		}
+$nbArticles = rand(3, 5);
+$arrArticlesChoisis = [];
+for ($intCptPart = 0; $intCptPart < $nbArticles; $intCptPart++) {
+	$artisteChoisi = rand(0, count($arrActualites) - 1);
+	array_push($arrArticlesChoisis, $arrActualites[$artisteChoisi]);
+	array_splice($arrActualites, $artisteChoisi, 1);
+
+}
 $pdosResultatActualites->closeCursor();
 
 $strRequeteArtiste = 'SELECT id, nom FROM artistes';
-		$pdosResultatArtistesSug = $objPdo->query($strRequeteArtiste);
-		$pdosResultatArtistesSug->execute();
-	
-		$arrArtistesSug = array();
-		for($intCptEnr=0;$ligne=$pdosResultatArtistesSug->fetch();$intCptEnr++){
-			$arrArtistesSug[$intCptEnr]['id'] = $ligne['id'];
-			$arrArtistesSug[$intCptEnr]['nom'] = $ligne['nom'];
-		}
-		
-		$nbArtistesSug = rand(3,5);
-		//Établie une liste de choix
-		$arrArtistesChoisi = []; //ou $arrParticipantsChoisi = array();
-		//Tant que le nombre de suggestions n'est pas atteintsx
-		for($intCptPart=0;$intCptPart<$nbArtistesSug;$intCptPart++){
-			//Trouve un index au hazard selon le nombre de sugestions
-			$artisteChoisi=rand(0,count($arrArtistesSug)-1);
-			//Prendre la suggestion et la mettre dans les participants choisis
-			array_push($arrArtistesChoisi,$arrArtistesSug[$artisteChoisi]);
-			//Enlever la suggestion des suggestions disponibles (évite les suggestions en doublons)
-			array_splice($arrArtistesSug,$artisteChoisi,1);
-	
-			$pdosResultatArtistesSug ->closecursor();
-	
-		};    
+$pdosResultatArtistesSug = $objPdo->query($strRequeteArtiste);
+$pdosResultatArtistesSug->execute();
+
+$arrArtistesSug = array();
+for ($intCptEnr = 0; $ligne = $pdosResultatArtistesSug->fetch(); $intCptEnr++) {
+	$arrArtistesSug[$intCptEnr]['id'] = $ligne['id'];
+	$arrArtistesSug[$intCptEnr]['nom'] = $ligne['nom'];
+}
+
+$nbArtistesSug = rand(3, 5);
+//Établie une liste de choix
+$arrArtistesChoisi = []; //ou $arrParticipantsChoisi = array();
+//Tant que le nombre de suggestions n'est pas atteintsx
+for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
+	//Trouve un index au hazard selon le nombre de sugestions
+	$artisteChoisi = rand(0, count($arrArtistesSug) - 1);
+	//Prendre la suggestion et la mettre dans les participants choisis
+	array_push($arrArtistesChoisi, $arrArtistesSug[$artisteChoisi]);
+	//Enlever la suggestion des suggestions disponibles (évite les suggestions en doublons)
+	array_splice($arrArtistesSug, $artisteChoisi, 1);
+
+	$pdosResultatArtistesSug->closecursor();
+
+}
+;
 
 ?>
 
@@ -110,33 +111,44 @@ $strRequeteArtiste = 'SELECT id, nom FROM artistes';
 									<a class="a_points" href="#">...</a>
 								<?php } ?>
 							</p>
-							<footer class="articles__footer">
-								<h4 class="date__article__footer">Le
-									<?php echo $arrJour[$arrArticlesChoisis[$cpt]["jourSemaine"] - 1]; ?>
-									<?php echo $arrArticlesChoisis[$cpt]["jour"] . " " . $arrMois[$arrArticlesChoisis[$cpt]["mois"]] . " " . $arrArticlesChoisis[$cpt]["annee"]; ?>
-								</h4>
-							</footer>
 						</header>
+						<footer class="articles__footer">
+							<h4 class="date__article__footer">Le
+								<?php echo $arrJour[$arrArticlesChoisis[$cpt]["jourSemaine"] - 1]; ?>
+								<?php echo $arrArticlesChoisis[$cpt]["jour"] . " " . $arrMois[$arrArticlesChoisis[$cpt]["mois"]] . " " . $arrArticlesChoisis[$cpt]["annee"]; ?>
+							</h4>
+						</footer>
 					</article>
 				<?php } ?>
 			</section>
+		</div>
 
-			<h2>En vedette:</h2>
-			<ul>
-			<?php
-				for($intCpt=0;$intCpt<count($arrArtistesChoisi);$intCpt++){?>
-					<li>
-					<a href="<?php echo $niveau ?>artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>">
-					<picture class="picture">
-						<source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w318.jpg" media="(max-width:600px)">
-						<source srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg" media="(min-width:601px)">
-						<img class="picture__img" src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg" alt="<?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?>">
-					</picture>
-					<?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?>
-					<a>
-					</li>
-				<?php } ?>
-			</ul>
+		<div id="contenu" class="conteneur">
+			<h1 class="artistes__titre">Artistes à découvrir</h1>
+			<section class="artistes__sect">
+				<ul class="img_artistes__ul">
+					<?php
+					for ($intCpt = 0; $intCpt < count($arrArtistesChoisi); $intCpt++) { ?>
+						<li class="img_artistes__li">
+							<a
+								href="<?php echo $niveau ?>artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>">
+								<picture class="picture__artistes">
+									<source
+										srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w318.jpg"
+										media="(max-width:600px)">
+									<source
+										srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg"
+										media="(min-width:601px)">
+									<img class="picture__img"
+										src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg"
+										alt="<?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?>">
+								</picture>
+								<p class="noms__artiste"><?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?></p>
+								<a>
+						</li>
+					<?php } ?>
+				</ul>
+			</section>
 		</div>
 
 	</main>
