@@ -155,24 +155,16 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 			</section>
 		</div>
 
-		<div id="contenu" class="conteneur">
+		<h1 class="tarifs__titre">Tarifs</h1>
+		<section class="tarifs__sect">
 			<h1 class="tarifs__titre">Tarifs</h1>
-			<section class="tarifs__sect">
-				<article class="articles">
-					<header class="titre">
-						<h3 class="titre_texte"><b></b></h3>
-						<hr class="hr_article">
-						<p class="auteurs"></p>
-						<p class="articles_texte">
-						</p>
-					</header>
-					<footer class="articles__footer">
-						<h4 class="date__article__footer">Le
-						</h4>
-					</footer>
-				</article>
-			</section>
-		</div>
+			<ul class="liste__tarifs">
+				<li class="liste__tarifs-items"></li>
+				<li class="liste__tarifs-items"></li>
+				<li class="liste__tarifs-items"></li>
+				<li class="liste__tarifs-items"></li>
+			</ul>
+		</section>
 
 	</main>
 

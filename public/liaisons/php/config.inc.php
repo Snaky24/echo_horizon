@@ -19,10 +19,10 @@ if ($blnLocal) {
     error_reporting(E_ALL);
 } else {
     //en ligne
-    $strHost = 'localhost';
+    $strHost = 'timunix3.csfoy.ca';
     $strBD='25_rpni1_OFF';
-    $strUser = '25_rpni1_user';
-    $strPassword = '25_rpni1_mdp';
+    $strUser = 'echohorizon';
+    $strPassword = 'bananebleue';
     error_reporting(E_ALL & ~E_NOTICE);
     //error_reporting(0);
 }
