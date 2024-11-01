@@ -228,7 +228,47 @@ body {
   text-decoration: underline 17px #FEA82F solid;
   margin-bottom: 2em;
   margin-top: 2em;
-  margin-right: 150px;
-  float: left;
+  margin-left: 150px;
   font-size: 40px;
+}
+
+.tarifs__sect {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.liste__tarifs-items {
+  background-color: $blanc;
+  width: 310px;
+  margin: 21px;
+}
+
+.items_tarifs {
+  font-size: 25px;
+  padding: 0 30px 0 30px;
+  color: $noir;
+}
+
+.items_tarifs-conditions {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 30px 0 30px;
+  margin-bottom: 20px;
+  color: $noir;
+  text-transform: none;
+  opacity: .6;
+}
+
+.tarifs__prix {
+  background-color: $orange;
+  padding: 0.5px;
+  box-shadow: 0 3px 10px $noir;
+}
+
+.tarifs_items-prix {
+  text-align: center;
+  color: $noir;
 }

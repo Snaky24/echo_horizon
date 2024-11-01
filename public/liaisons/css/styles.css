@@ -511,10 +511,6 @@ th {
   width: auto;
 }
 
-/********* TAILLES DES POLICES *********/
-/**** TABLE *****/
-/**** MOBILE *****/
-/**** TEXTE COURANT *****/
 /****** BASE ********************************/
 /** Typographie **/
 /**
@@ -537,32 +533,6 @@ body {
   /* 16px pour toutes les largeurs d'écran */
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
 }
-.titrePrincipal {
-  margin: 0 auto;
-  font-family: LatoBlack;
-  font-size: 4.5rem;
-  text-transform: uppercase;
-  color: #FFF;
-  background-image: url(../images/Rectangle\ 61.png);
-  background-repeat: no-repeat;
-}
-
-.titreNiveau2 {
-  font-family: LatoBlack;
-  font-size: 3rem;
-  text-transform: uppercase;
-  color: #FFF;
-  border-bottom: #FEA82F 1.3rem solid;
-}
-
-.titreNiveau3 {
-  font-family: LatoBold;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  color: #FFF;
-  border-bottom: #FEA82F 0.9rem solid;
-}
-
 /** Hyperliens **/
 /**
 * @author Jade Mayrand
@@ -1262,9 +1232,49 @@ body {
   text-decoration: underline 17px #FEA82F solid;
   margin-bottom: 2em;
   margin-top: 2em;
-  margin-right: 150px;
-  float: left;
+  margin-left: 150px;
   font-size: 40px;
+}
+
+.tarifs__sect {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.liste__tarifs-items {
+  background-color: #FFF;
+  width: 310px;
+  margin: 21px;
+}
+
+.items_tarifs {
+  font-size: 25px;
+  padding: 0 30px 0 30px;
+  color: #000;
+}
+
+.items_tarifs-conditions {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 30px 0 30px;
+  margin-bottom: 20px;
+  color: #000;
+  text-transform: none;
+  opacity: 0.6;
+}
+
+.tarifs__prix {
+  background-color: #FEA82F;
+  padding: 0.5px;
+  box-shadow: 0 3px 10px #000;
+}
+
+.tarifs_items-prix {
+  text-align: center;
+  color: #000;
 }
 
 /**
@@ -1282,8 +1292,6 @@ body {
  */
 /******* MISE EN FORME DE LA LISTE DES LIEUX *******/
 .contenuPrincipal {
-  font-family: JaldiRegular;
-  font-size: 1.3rem;
   margin: 0 auto;
   max-width: 65%;
 }
