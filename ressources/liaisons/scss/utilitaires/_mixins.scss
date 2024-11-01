@@ -90,8 +90,80 @@
     height: 30px;
 }
 
+<<<<<<< HEAD
+/********* TAILLES DES POLICES *********/
+
+/**** TABLE *****/
+@mixin h1Table {
+    font-family:($titreNiveau1);
+    font-size: 6.5rem;
+    text-transform: uppercase;
+    color: $blanc;
+    border-bottom: $orange 20px solid;
+    
+}
+@mixin h2Table {
+    font-family:($titreNiveau2);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: $blanc;
+    border-bottom: $orange 20px solid;
+}
+@mixin h3Table {
+    font-family:($titreNiveau3);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: $blanc;
+    border-bottom: $orange 20px solid;
+}
+@mixin h4Table {
+    font-family:($titreNiveau4);
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: $blanc;
+    border-bottom: $orange 20px solid;
+}
+/**** MOBILE *****/
+@mixin h1Mobile{
+    margin: 0 auto;
+    font-family:($titreNiveau1);
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    color: $blanc;
+    background-image: url(../images/Rectangle\ 61.png);
+    background-repeat: no-repeat;
+}
+@mixin h2Mobile{
+    font-family:($titreNiveau2);
+    font-size:3rem;
+    text-transform: uppercase;
+    color: $blanc;
+    border-bottom: $orange 1.3rem solid;
+}
+
+@mixin h3Mobile{
+    font-family:($titreNiveau3);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: $blanc;
+    border-bottom: $orange .9rem solid;
+}
+
+/**** TEXTE COURANT *****/
+
+@mixin texteCourant{
+    font-family:($texteCourant);
+    font-size: 1.3rem;
+}
+@mixin texteDeGrandeTaille{
+    font-family:($texteEngrandeTaille);
+    font-size: 2.2rem;
+    color: $blanc;
+}
+=======
 @mixin bouton {
     font-size: 18px;
     text-transform: uppercase;
     text-decoration: none;
 }
+>>>>>>> 85f38fc7df9876e25966b606dd8fea8088b3c48a

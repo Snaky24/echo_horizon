@@ -411,6 +411,60 @@ th {
 * @author Jade Mayrand
 */
 /** Polices de caractères **/
+/******* FONTS LATO ******/
+@font-face {
+  font-family: LatoBlack;
+  src: url("../fonts/lato-black.ttf") format("truetype");
+}
+@font-face {
+  font-family: LatoBold;
+  src: url("../fonts/lato-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: LatoRegular;
+  src: url("../fonts/lato-regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: LatoLight;
+  src: url("../fonts/lato-light.ttf") format("truetype");
+}
+@font-face {
+  font-family: LatoThin;
+  src: url("../fonts/lato-thin.ttf") format("truetype");
+}
+/******* LATO ITALIC ******/
+@font-face {
+  font-family: LatoBlackItalic;
+  src: url("../fonts/lato-blackitalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: LatoBoldItalic;
+  src: url("../fonts/lato-bolditalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: LatoItalic;
+  src: url("../fonts/lato-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: LatoLightItalic;
+  src: url("../fonts/lato-lightitalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: LatoThinItalic;
+  src: url("../fonts/lato-thinitalic.ttf") format("truetype");
+}
+/******* FONTS JALDI ******/
+@font-face {
+  font-family: JaldiBold;
+  src: url("../fonts/jaldi-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: JaldiRegular;
+  src: url("../fonts/jaldi-regular.ttf") format("truetype");
+}
+/******* VARIABLES DES FONTS ******/
+/*******  LATO ******/
+/*******  JALDI ******/
 /** Palette de couleurs **/
 /* Couleurs de base */
 /** Points de rupture **/
@@ -457,6 +511,10 @@ th {
   width: auto;
 }
 
+/********* TAILLES DES POLICES *********/
+/**** TABLE *****/
+/**** MOBILE *****/
+/**** TEXTE COURANT *****/
 /****** BASE ********************************/
 /** Typographie **/
 /**
@@ -472,12 +530,6 @@ html {
   font-size: 62.5%;
 }
 
-h1,
-h2,
-h3 {
-  color: #FFF;
-}
-
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -485,6 +537,32 @@ body {
   /* 16px pour toutes les largeurs d'écran */
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
 }
+.titrePrincipal {
+  margin: 0 auto;
+  font-family: LatoBlack;
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  color: #FFF;
+  background-image: url(../images/Rectangle\ 61.png);
+  background-repeat: no-repeat;
+}
+
+.titreNiveau2 {
+  font-family: LatoBlack;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #FFF;
+  border-bottom: #FEA82F 1.3rem solid;
+}
+
+.titreNiveau3 {
+  font-family: LatoBold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #FFF;
+  border-bottom: #FEA82F 0.9rem solid;
+}
+
 /** Hyperliens **/
 /**
 * @author Jade Mayrand
@@ -1204,8 +1282,10 @@ body {
  */
 /******* MISE EN FORME DE LA LISTE DES LIEUX *******/
 .contenuPrincipal {
+  font-family: JaldiRegular;
+  font-size: 1.3rem;
   margin: 0 auto;
-  width: 65%;
+  max-width: 65%;
 }
 
 /****** LISTE DES LIEUX ***/

@@ -34,12 +34,6 @@ html {
   font-size: 62.5%;
 }
 
-h1,
-h2,
-h3{
-  color: $blanc;
-}
-
 body {
   font-family: $fonteSecondaire;
   @include fontSize(16px); /* 16px pour toutes les largeurs d'écran */
@@ -47,5 +41,18 @@ body {
   @media (min-width: 601px) {
 
   }
+}
+
+.titrePrincipal{
+  @include h1Mobile;
+}
+.titreNiveau2{
+  @include h2Mobile;
+}
+.titreNiveau3{
+  @include h3Mobile;
+}
+.evenementsDesArtistes__lien{
+  
 }
 

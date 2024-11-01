@@ -17,8 +17,9 @@
 
 /******* MISE EN FORME DE LA LISTE DES LIEUX *******/
 .contenuPrincipal{
+  @include texteCourant;
   margin: 0 auto;
-  width:65%;
+  max-width:65%;
 }
 
 /****** LISTE DES LIEUX ***/
@@ -32,6 +33,7 @@
     list-style: none;
   }
 }
+
 
 /****** LISTE DES ARTISTES ***/
 .evenementsDesArtistes{

@@ -146,25 +146,17 @@ $pdoResultatDates->closeCursor();
 <body>
     <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
 
-    <h1>Programmation</h1>
+    <h1 class="titrePrincipal">Programmation</h1>
     <main class= contenuPrincipal>
-        <label for="filtre">Filter par :</label>
-        <select name="filtre" id="champFiltre">
-            <option value="date">Date </option>
-            <option value="lieu">Lieu</option>
-        </select>
-        <svg width="18" height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 9L0 0H18L9 9Z" fill="#DA4167" />
-        </svg>
 
         <?php
         if (isset($_GET['id_date']) == true) { ?>
 
-            <h2><?php echo afficherJour($arrJour[0]['jourdesemaine']) . " " . $_GET['id_date'] . " " . afficherMois($arrJour[0]['mois']) ?>
+            <h2 class="titreNiveau2"><?php echo afficherJour($arrJour[0]['jourdesemaine']) . " " . $_GET['id_date'] . " " . afficherMois($arrJour[0]['mois']) ?>
             </h2>
 
         <?php } else { ?>
-            <h2>Toutes les dates</h2>
+            <h2 class="titreNiveau2">Toutes les dates</h2>
         <?php } ?>
 
 
