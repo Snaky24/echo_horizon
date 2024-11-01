@@ -1094,6 +1094,7 @@ body {
 }
 
 .conteneur_actu {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -1136,6 +1137,7 @@ body {
 }
 
 .artistes__sect {
+  align-items: center;
   width: 100%;
   position: relative;
 }
@@ -1155,8 +1157,36 @@ body {
   height: auto;
 }
 
+.noms__artistes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.artistes__noms {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+}
+
 .noms__artiste {
+  width: 225px;
   text-align: center;
+  padding: 4px;
+  background-color: #DA4167;
+}
+
+.tarifs__titre {
+  text-transform: uppercase;
+  color: #FFF;
+  text-decoration: underline 17px #FEA82F solid;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  margin-right: 150px;
+  float: left;
+  font-size: 40px;
 }
 
 /**

@@ -143,11 +143,34 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 										src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg"
 										alt="<?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?>">
 								</picture>
-								<p class="noms__artiste"><?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?></p>
+								<section class="noms__artistes">
+									<div class="artistes__noms">
+										<p class="noms__artiste"><?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?></p>
+									</div>
+								</section>
 								<a>
 						</li>
 					<?php } ?>
 				</ul>
+			</section>
+		</div>
+
+		<div id="contenu" class="conteneur">
+			<h1 class="tarifs__titre">Tarifs</h1>
+			<section class="tarifs__sect">
+				<article class="articles">
+					<header class="titre">
+						<h3 class="titre_texte"><b></b></h3>
+						<hr class="hr_article">
+						<p class="auteurs"></p>
+						<p class="articles_texte">
+						</p>
+					</header>
+					<footer class="articles__footer">
+						<h4 class="date__article__footer">Le
+						</h4>
+					</footer>
+				</article>
 			</section>
 		</div>
 
