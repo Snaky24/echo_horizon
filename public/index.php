@@ -123,56 +123,70 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 			</section>
 		</div>
 
-		<div id="contenu" class="conteneur">
-			<h1 class="artistes__titre">Artistes à découvrir</h1>
-			<section class="artistes__sect">
-				<ul class="img_artistes__ul">
-					<?php
-					for ($intCpt = 0; $intCpt < count($arrArtistesChoisi); $intCpt++) { ?>
-						<li class="img_artistes__li">
-							<a
-								href="<?php echo $niveau ?>artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>">
-								<picture class="picture__artistes">
-									<source
-										srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w318.jpg"
-										media="(max-width:600px)">
-									<source
-										srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg"
-										media="(min-width:601px)">
-									<img class="picture__img"
-										src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg"
-										alt="<?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?>">
-								</picture>
-								<section class="noms__artistes">
-									<div class="artistes__noms">
-										<p class="noms__artiste"><?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?></p>
-									</div>
-								</section>
-								<a>
-						</li>
-					<?php } ?>
-				</ul>
-			</section>
-		</div>
+		<h1 class="artistes__titre">Artistes à découvrir</h1>
+		<section class="artistes__sect">
+			<ul class="img_artistes__ul">
+				<?php
+				for ($intCpt = 0; $intCpt < count($arrArtistesChoisi); $intCpt++) { ?>
+					<li class="img_artistes__li">
+						<a
+							href="<?php echo $niveau ?>artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>">
+							<picture class="picture__artistes">
+								<source
+									srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w318.jpg"
+									media="(max-width:600px)">
+								<source
+									srcset="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg"
+									media="(min-width:601px)">
+								<img class="picture__img"
+									src="<?php echo $niveau ?>liaisons/images/artistes/portrait/<?php echo $arrArtistesChoisi[$intCpt]["id"]; ?>_1_portrait__w482.jpg"
+									alt="<?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?>">
+							</picture>
+							<section class="noms__artistes">
+								<div class="artistes__noms">
+									<p class="noms__artiste"><?php echo $arrArtistesChoisi[$intCpt]["nom"]; ?></p>
+								</div>
+							</section>
+							<a>
+					</li>
+				<?php } ?>
+			</ul>
+		</section>
 
-		<div id="contenu" class="conteneur">
-			<h1 class="tarifs__titre">Tarifs</h1>
-			<section class="tarifs__sect">
-				<article class="articles">
-					<header class="titre">
-						<h3 class="titre_texte"><b></b></h3>
-						<hr class="hr_article">
-						<p class="auteurs"></p>
-						<p class="articles_texte">
-						</p>
-					</header>
-					<footer class="articles__footer">
-						<h4 class="date__article__footer">Le
-						</h4>
-					</footer>
-				</article>
-			</section>
-		</div>
+
+		<h1 class="tarifs__titre">Tarifs</h1>
+		<section class="tarifs__sect">
+			<div class="liste__tarifs-items">
+				<h2 class="items_tarifs">Passeport</h2>
+				<li class="items_tarifs-conditions">Toute la durée du festival</li>
+				<div class="tarifs__prix">
+					<p class="tarifs_items-prix">10$</p>
+				</div>
+			</div>
+			<div class="liste__tarifs-items">
+				<h2 class="items_tarifs">À la porte</h2>
+				<li class="items_tarifs-conditions">Disponibles les soirs</li>
+				<li class="items_tarifs-conditions">Spectacles à Méduse</li>
+				<div class="tarifs__prix">
+					<p class="tarifs_items-prix">5$</p>
+				</div>
+			</div>
+			<div class="liste__tarifs-items">
+				<h2 class="items_tarifs">Spectacles extérieurs</h2>
+				<div class="tarifs__prix">
+					<p class="tarifs_items-prix">Gratuit</p>
+				</div>
+			</div>
+			<div class="liste__tarifs-items">
+				<h2 class="items_tarifs">Spectacles</h2>
+				<li class="items_tarifs-conditions">Parvis de l’Église Saint-Jean-Baptiste</li>
+				<li class="items_tarifs-conditions">Bar le Sacrilège</li>
+				<li class="items_tarifs-conditions">Bar Fou-Bar</li>
+				<div class="tarifs__prix">
+					<p class="tarifs_items-prix">Gratuit</p>
+				</div>
+			</div>
+		</section>
 
 	</main>
 

@@ -511,10 +511,13 @@ th {
   width: auto;
 }
 
+<<<<<<< HEAD
 /********* TAILLES DES POLICES *********/
 /**** TABLE & MOBILE *****/
 /**** TEXTE COURANT *****/
 /**** LIENS DATES *****/
+=======
+>>>>>>> 0aae08b8bc38a4408d97f8fb26c9a959f345d1c8
 /****** BASE ********************************/
 /** Typographie **/
 /**
@@ -537,6 +540,7 @@ body {
   /* 16px pour toutes les largeurs d'écran */
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
 }
+<<<<<<< HEAD
 .titrePrincipal {
   font-family: LatoBlack;
   font-size: 2.9rem;
@@ -581,6 +585,8 @@ body {
   }
 }
 
+=======
+>>>>>>> 0aae08b8bc38a4408d97f8fb26c9a959f345d1c8
 /** Hyperliens **/
 /**
 * @author Jade Mayrand
@@ -1274,9 +1280,49 @@ body {
   text-decoration: underline 17px #FEA82F solid;
   margin-bottom: 2em;
   margin-top: 2em;
-  margin-right: 150px;
-  float: left;
+  margin-left: 150px;
   font-size: 40px;
+}
+
+.tarifs__sect {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.liste__tarifs-items {
+  background-color: #FFF;
+  width: 310px;
+  margin: 21px;
+}
+
+.items_tarifs {
+  font-size: 25px;
+  padding: 0 30px 0 30px;
+  color: #000;
+}
+
+.items_tarifs-conditions {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 30px 0 30px;
+  margin-bottom: 20px;
+  color: #000;
+  text-transform: none;
+  opacity: 0.6;
+}
+
+.tarifs__prix {
+  background-color: #FEA82F;
+  padding: 0.5px;
+  box-shadow: 0 3px 10px #000;
+}
+
+.tarifs_items-prix {
+  text-align: center;
+  color: #000;
 }
 
 /**
@@ -1339,9 +1385,12 @@ a {
 /******* MISE EN FORME DES LIENS DE CHAQUE ÉVENEMENTS*******/
 /******* MISE EN FORME DE LA LISTE DES LIEUX *******/
 .contenuPrincipal {
+<<<<<<< HEAD
   font-family: JaldiRegular;
   font-size: 1.5rem;
   font-weight: 900;
+=======
+>>>>>>> 0aae08b8bc38a4408d97f8fb26c9a959f345d1c8
   margin: 0 auto;
   max-width: 70%;
   background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png), url(../images/feux_dartifices3.png);
