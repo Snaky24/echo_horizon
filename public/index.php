@@ -63,8 +63,6 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 	$pdosResultatArtistesSug->closecursor();
 
 }
-;
-
 ?>
 
 <!DOCTYPE html>
@@ -162,6 +160,40 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 				<div class="tarifs__prix">
 					<p class="tarifs_items-prix">10$</p>
 				</div>
+			</div>
+			<div class="liste__tarifs-items">
+				<h2 class="items_tarifs">À la porte</h2>
+				<li class="items_tarifs-conditions">Disponibles les soirs</li>
+				<li class="items_tarifs-conditions">Spectacles à Méduse</li>
+				<div class="tarifs__prix">
+					<p class="tarifs_items-prix">5$</p>
+				</div>
+			</div>
+			<div class="liste__tarifs-items">
+				<h2 class="items_tarifs">Spectacles extérieurs</h2>
+				<div class="tarifs__prix">
+					<p class="tarifs_items-prix">Gratuit</p>
+				</div>
+			</div>
+			<div class="liste__tarifs-items">
+				<h2 class="items_tarifs">Spectacles</h2>
+				<li class="items_tarifs-conditions">Parvis de l’Église Saint-Jean-Baptiste</li>
+				<li class="items_tarifs-conditions">Bar le Sacrilège</li>
+				<li class="items_tarifs-conditions">Bar Fou-Bar</li>
+				<div class="tarifs__prix">
+					<p class="tarifs_items-prix">Gratuit</p>
+				</div>
+			</div>
+		</section>
+
+		<h1 class="lieux__titre">Lieux de spectacles</h1>
+		<section class="lieux__sect">
+			<div>
+				<img class="img_lieux" src="liaisons/images/lieux/lieux_foubar_interieur.jpg" alt="">
+			</div>
+			<section class="liste__tarifs-items">
+				<h3 class="noms__lieux">Provenance</h3>
+			</section>
 			</div>
 			<div class="liste__tarifs-items">
 				<h2 class="items_tarifs">À la porte</h2>
