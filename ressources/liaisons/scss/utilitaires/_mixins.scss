@@ -23,7 +23,10 @@
     html {
         box-sizing: border-box;
     }
-    *, *:before, *:after {
+
+    *,
+    *:before,
+    *:after {
         box-sizing: inherit;
     }
 }
@@ -90,80 +93,123 @@
     height: 30px;
 }
 
-<<<<<<< HEAD
 /********* TAILLES DES POLICES *********/
 
-/**** TABLE *****/
-@mixin h1Table {
-    font-family:($titreNiveau1);
-    font-size: 6.5rem;
+/**** TABLE & MOBILE *****/
+
+@mixin h1Taille {
+    font-family: ($titreNiveau1);
+    font-size: 2.9rem;
     text-transform: uppercase;
     color: $blanc;
-    border-bottom: $orange 20px solid;
-    
-}
-@mixin h2Table {
-    font-family:($titreNiveau2);
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: $blanc;
-    border-bottom: $orange 20px solid;
-}
-@mixin h3Table {
-    font-family:($titreNiveau3);
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    color: $blanc;
-    border-bottom: $orange 20px solid;
-}
-@mixin h4Table {
-    font-family:($titreNiveau4);
-    font-size: 6rem;
-    text-transform: uppercase;
-    color: $blanc;
-    border-bottom: $orange 20px solid;
-}
-/**** MOBILE *****/
-@mixin h1Mobile{
-    margin: 0 auto;
-    font-family:($titreNiveau1);
-    font-size: 4.5rem;
-    text-transform: uppercase;
-    color: $blanc;
-    background-image: url(../images/Rectangle\ 61.png);
+    background-image: url(../images/bordure_jaune.jpg);
     background-repeat: no-repeat;
-}
-@mixin h2Mobile{
-    font-family:($titreNiveau2);
-    font-size:3rem;
-    text-transform: uppercase;
-    color: $blanc;
-    border-bottom: $orange 1.3rem solid;
+    background-size: 40% 30%;
+    background-position: bottom -10% left 80%;
+
+    @media(min-width:$desktop) {
+        font-size: 7rem;
+    }
 }
 
-@mixin h3Mobile{
-    font-family:($titreNiveau3);
-    font-size: 1.2rem;
+@mixin h2Taille {
+    font-family: ($titreNiveau2);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    color: $blanc;
+
+    @media(min-width:$desktop) {
+        font-size: 5rem;
+    }
+}
+
+@mixin h3Taille {
+    font-family: ($titreNiveau3);
+    font-size: 2rem;
+    text-align: center;
     text-transform: uppercase;
     color: $blanc;
     border-bottom: $orange .9rem solid;
+
+    @media(min-width:$desktop) {
+        font-size: 3.5rem;
+        text-align: left;
+        width: 70%;
+    }
+}
+
+@mixin h4Taille {
+    font-family: ($titreNiveau4);
+    font-size: 1.7rem;
+    text-transform: uppercase;
+
+    @media(min-width:$desktop) {
+        width: 70%;
+        font-size: 4.5vh;
+        color:$blanc;
+        background-image: url(../images/bordure_jaune.jpg);
+        background-repeat: no-repeat;
+        background-size: 40% 40%;
+        background-position: bottom -10% left 50%;
+    }
 }
 
 /**** TEXTE COURANT *****/
 
-@mixin texteCourant{
-    font-family:($texteCourant);
-    font-size: 1.3rem;
+@mixin texteCourant {
+    font-family: ($texteCourant);
+    font-size: 1.5rem;
+    font-weight: 900;
+
+    @media(min-width:$desktop) {
+        font-size: 2rem;
+    }
 }
-@mixin texteDeGrandeTaille{
-    font-family:($texteEngrandeTaille);
-    font-size: 2.2rem;
-    color: $blanc;
+
+@mixin texteDeGrandeTaille {
+    font-family: ($texteEngrandeTaille);
+    font-size: 1.5rem;
+
+    @media(min-width:$desktop) {
+        font-size: 2.2rem;
+    }
 }
-=======
-@mixin bouton {
-    font-size: 18px;
-    text-transform: uppercase;
-    text-decoration: none;
+
+/**** LIENS DATES *****/
+
+@mixin dates {
+    font-weight:normal;
+    font-size: 3.5rem;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__item{
+        width: calc(100%/4);
+        list-style: none;
+        padding: 1rem 0;
+        border-bottom: .2rem solid ($blanc);
+    }
+    &__item:hover{
+        border-bottom: .2rem solid ($rose);
+    }
+    &__item:active{
+        border-bottom: .2rem solid ($rose);
+    }
+    &__item:visited{
+        border-bottom: .2rem solid ($rose);
+    }
+
+    &__lien, &__lien:link{
+        color: $blanc;
+    }
+    &__lien:hover, &__lien:visited{
+        color: $blanc;
+    }
+    @media(min-width:$desktop) {
+       flex-direction: row;
+    }
+
 }
->>>>>>> 85f38fc7df9876e25966b606dd8fea8088b3c48a

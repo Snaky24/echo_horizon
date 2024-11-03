@@ -44,15 +44,15 @@ body {
 }
 
 .titrePrincipal{
-  @include h1Mobile;
+  @include h1Taille;
 }
 .titreNiveau2{
-  @include h2Mobile;
+  @include h2Taille;
 }
 .titreNiveau3{
-  @include h3Mobile;
+  @include h3Taille;
 }
-.evenementsDesArtistes__lien{
+// .evenementsDesArtistes__lien{
   
-}
+// }
 

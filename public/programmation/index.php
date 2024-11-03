@@ -146,13 +146,14 @@ $pdoResultatDates->closeCursor();
 <body>
     <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
 
-    <h1 class="titrePrincipal">Programmation</h1>
-    <main class= contenuPrincipal>
+    <main class=contenuPrincipal>
+        <h1 class="titrePrincipal">Programmation</h1>
 
         <?php
         if (isset($_GET['id_date']) == true) { ?>
 
-            <h2 class="titreNiveau2"><?php echo afficherJour($arrJour[0]['jourdesemaine']) . " " . $_GET['id_date'] . " " . afficherMois($arrJour[0]['mois']) ?>
+            <h2 class="titreNiveau2">
+                <?php echo afficherJour($arrJour[0]['jourdesemaine']) . " " . $_GET['id_date'] . " " . afficherMois($arrJour[0]['mois']) ?>
             </h2>
 
         <?php } else { ?>
@@ -160,14 +161,18 @@ $pdoResultatDates->closeCursor();
         <?php } ?>
 
 
-        <?php
-        for ($intCpt = 0; $intCpt < count($arrJour); $intCpt++) { ?>
+        <ul class="lienDate">
+            <?php
+            for ($intCpt = 0; $intCpt < count($arrJour); $intCpt++) { ?>
+                <li class="lienDate__item">
+                    <a class="lienDate__lien" href='index.php?id_date=<?php echo $arrJour[$intCpt]['jour'] ?>'>
+                        <?php echo $arrJour[$intCpt]['jour'] . " " . afficherMois($arrJour[0]['mois']) ?>
+                    </a>
+                </li>
 
-            <a href='index.php?id_date=<?php echo $arrJour[$intCpt]['jour'] ?>'>
-                <?php echo $arrJour[$intCpt]['jour'] . " " . afficherMois($arrJour[0]['mois']) ?>
-            </a>
-        <?php } ?>
-        
+            <?php } ?>
+        </ul>
+
         <!-- AFFICHAGE DES LIEUX  -->
         <ul class="conteneurEvenements">
             <?php
@@ -188,17 +193,23 @@ $pdoResultatDates->closeCursor();
                     </h3>
                     <ul class="evenementsDesArtistes">
                     <?php } ?>
-                    <img class="evenementsDesArtistes__image" src="<?php echo $niveau; ?>liaisons/images/artistes/carre/id_<?php echo $arrEvenement["artiste_id"] ?>_artiste_<?php echo rand(1, 5) ?>_w812-carre.jpg"
-                        alt="<?php echo $arrEvenement["artiste_id"] ?>" width="50" height="50">
                     <li class="evenementsDesArtistes__item">
-                        <a class="evenementsDesArtistes__lien"
-                            href='<?php echo $niveau; ?>artistes/fiches/index.php?id_artiste=<?php echo $arrEvenement['artiste_id']; ?>&id_style=<?php echo $arrEvenement['artiste_id']; ?>'>
-                            <?php echo $arrEvenement['artistes_nom']; ?></a>
-                        <?php echo trouverStylesArtiste($arrEvenement['artiste_id']); ?>
-                        <time datetime="<?php echo $arrEvenement['date_et_heure'] ?>">
-                            <?php echo ajouterZero($arrEvenement['heure']) ?>h<?php echo ajouterZero($arrEvenement['minute']) ?>
-                        </time>
-
+                        <picture >
+                            <source srcset="<?php echo $niveau; ?>liaisons/images/artistes/carre/id_<?php echo $arrEvenement["artiste_id"] ?>_artiste_<?php echo rand(1, 5) ?>_w812-carre.jpg" media="(max-width:600px)">
+                            <source srcset="<?php echo $niveau; ?>liaisons/images/artistes/portrait/<?php echo $arrEvenement["artiste_id"] ?>_<?php echo rand(1, 2) ?>_portrait__w636.jpg" media="(min-width:601px)">
+                            <img class="evenementsDesArtistes__image"
+                            src="<?php echo $niveau; ?>liaisons/images/artistes/portrait/<?php echo $arrEvenement["artiste_id"] ?>_<?php echo rand(1, 2) ?>_portrait__w636.jpg"
+                            alt="<?php echo $arrEvenement["artiste_id"] ?>" width="50" height="50">
+                        </picture>
+                        <div class="infoArtiste">
+                            <a class="evenementsDesArtistes__lien"
+                                href='<?php echo $niveau; ?>artistes/fiches/index.php?id_artiste=<?php echo $arrEvenement['artiste_id']; ?>&id_style=<?php echo $arrEvenement['artiste_id']; ?>'>
+                                <?php echo $arrEvenement['artistes_nom']; ?></a>
+                           <p class="styleArtiste"><?php echo trouverStylesArtiste($arrEvenement['artiste_id']); ?></p>
+                            <time datetime="<?php echo $arrEvenement['date_et_heure'] ?>">
+                                <?php echo ajouterZero($arrEvenement['heure']) ?>h<?php echo ajouterZero($arrEvenement['minute']) ?>
+                            </time>
+                        </div>
                     </li>
 
                 <?php } ?>
