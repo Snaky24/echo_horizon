@@ -1642,11 +1642,6 @@ a {
     background-position: top 10% right 10%, top 100% left 90%, top 50% left 90%;
   }
 }
-@media (min-width: 601px) {
-  .contenuPrincipal {
-    font-size: 2rem;
-  }
-}
 
 /****** LISTE DES LIEUX ***/
 .conteneurEvenements {
@@ -1679,12 +1674,14 @@ a {
 /****** LISTE DES ARTISTES ***/
 .infoArtiste {
   display: flex;
+  position: relative;
   flex-direction: column;
   background-color: #FFF;
   border: 0.2rem, solid #FEA82F;
   padding: 1rem 1.5rem 0.7rem 0.5rem;
   width: 63%;
   margin-top: -5rem;
+  z-index: 999;
 }
 .infoArtiste:nth-of-type(odd) {
   margin-left: 12rem;
@@ -1770,13 +1767,6 @@ a {
   font-family: LatoBold;
   font-size: 1.7rem;
   text-transform: uppercase;
-  background-color: white;
-  padding: 1rem;
-  width: 110%;
-  border-top: 0.2rem solid #FEA82F;
-  border-left: 0.2rem solid #FEA82F;
-  margin-left: -0.7rem;
-  margin-top: -1.2rem;
 }
 @media (min-width: 601px) {
   .evenementsDesArtistes__lien {

@@ -20,6 +20,7 @@ foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
     if (isset($_GET['id_date']) == true) {
 
         $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
+        DAYOFWEEK(evenements.date_et_heure) AS jourSemaine,
         DAYOFMONTH(evenements.date_et_heure) AS jour, 
         MONTH(evenements.date_et_heure) AS mois, 
         HOUR (evenements.date_et_heure) AS heure, 
@@ -31,6 +32,7 @@ foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
 
         if(isset($_GET['tri']) == 1){
         $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
+             DAYOFWEEK(evenements.date_et_heure) AS jourSemaine,
         DAYOFMONTH(evenements.date_et_heure) AS jour, 
         MONTH(evenements.date_et_heure) AS mois, 
         HOUR (evenements.date_et_heure) AS heure, 
@@ -40,19 +42,10 @@ foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
         INNER JOIN lieux ON lieux.id  = evenements.lieu_id 
         WHERE DAYOFMONTH(evenements.date_et_heure) = ' . $_GET['id_date'] . ' ORDER BY dates_et_heures';
         }
-       else if(isset($_GET['tri']) == 2){
-            $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
-            DAYOFMONTH(evenements.date_et_heure) AS jour, 
-            MONTH(evenements.date_et_heure) AS mois, 
-            HOUR (evenements.date_et_heure) AS heure, 
-            MINUTE (evenements.date_et_heure) AS minute 
-            FROM evenements 
-            INNER JOIN artistes ON artistes.id  = evenements.artiste_id 
-            INNER JOIN lieux ON lieux.id  = evenements.lieu_id 
-            WHERE DAYOFMONTH(evenements.date_et_heure) = ' . $_GET['id_date'] . ' ORDER BY lieux_nom';
-        }
+    
     } else {
         $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
+              DAYOFWEEK(evenements.date_et_heure) AS jourSemaine,
          DAYOFMONTH(evenements.date_et_heure) AS jour, 
         MONTH(evenements.date_et_heure) AS mois, 
         HOUR (evenements.date_et_heure) AS heure, 
@@ -65,6 +58,7 @@ foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
 
         if(isset($_GET['tri']) == 1){
             $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
+                DAYOFWEEK(evenements.date_et_heure) AS jourSemaine,
             DAYOFMONTH(evenements.date_et_heure) AS jour, 
            MONTH(evenements.date_et_heure) AS mois, 
            HOUR (evenements.date_et_heure) AS heure, 
@@ -76,18 +70,6 @@ foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
            ORDER BY dates_et_heures';
         }
         
-       else{
-        $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
-         DAYOFMONTH(evenements.date_et_heure) AS jour, 
-        MONTH(evenements.date_et_heure) AS mois, 
-        HOUR (evenements.date_et_heure) AS heure, 
-        MINUTE (evenements.date_et_heure) AS minute 
-        FROM evenements 
-        INNER JOIN artistes ON artistes.id  = evenements.artiste_id
-        INNER JOIN lieux ON lieux.id  = evenements.lieu_id
-        WHERE lieux.id = evenements.lieu_id
-        ORDER BY lieux_nom';
-        }
     }
     $pdoResulatLieu = $objPdo->prepare($strRequeteLieu);
     $pdoResulatLieu->execute();
@@ -101,6 +83,7 @@ foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
         $arrEvenements[$intCptEvent]['artistes_nom'] = $ligneResulatLieu['artistes_nom'];
         $arrEvenements[$intCptEvent]['dates_et_heures'] = $ligneResulatLieu['dates_et_heures'];
         $arrEvenements[$intCptEvent]['jour'] = $ligneResulatLieu['jour'];
+        $arrEvenements[$intCptEvent]['jourSemaine'] = $ligneResulatLieu['jourSemaine'];
         $arrEvenements[$intCptEvent]['mois'] = $ligneResulatLieu['mois'];
         $arrEvenements[$intCptEvent]['heure'] = $ligneResulatLieu['heure'];
         $arrEvenements[$intCptEvent]['minute'] = $ligneResulatLieu['minute'];
@@ -200,11 +183,11 @@ $pdoResultatDates->closeCursor();
             <?php
         if (isset($_GET['id_date']) == true) { ?>
          <li class="nav-sec__listeItem"><a href="index.php?id_date=<?php echo $_GET['id_date']?>&tri=1" class="nav-sec__lien">Par date</a></li>
-         <li class="nav-sec__listeItem"><a href="index.php?id_date=<?php echo $_GET['id_date']?>&tri=2" class="nav-sec__lien">Par lieu</a></li>
+         <li class="nav-sec__listeItem"><a href="index.php?id_date=<?php echo $_GET['id_date']?>" class="nav-sec__lien">Par lieu</a></li>
         
          <?php } else { ?>
             <li class="nav-sec__listeItem"><a href="index.php?tri=1" class="nav-sec__lien">Par date</a></li>
-            <li class="nav-sec__listeItem"><a href="index.php?tri=2" class="nav-sec__lien">Par lieu</a></li>
+            <li class="nav-sec__listeItem"><a href="index.php" class="nav-sec__lien">Par lieu</a></li>
         <?php } ?>
 
 			</ul>
@@ -215,22 +198,25 @@ $pdoResultatDates->closeCursor();
         <h1 class="titrePrincipal">Programmation</h1>
 
         <?php
-        if (isset($_GET['id_date']) == true) { ?>
-
+        if (isset($_GET['id_jour']) == true ) { ?>
+   <?php 
+//    if($arrJour[0]['jourdesemaine']==$_GET['id_date'])
+   ?>
             <h2 class="titreNiveau2">
-                <?php echo afficherJour($arrJour[0]['jourdesemaine']) . " " . $_GET['id_date'] . " " . afficherMois($arrJour[0]['mois']) ?>
+                <?php echo afficherJour($arrJour[$_GET['id_jour']-3]['jourdesemaine']) . " " . $_GET['id_date'] . " " . afficherMois($arrJour[0]['mois']) ?>
             </h2>
 
         <?php } else { ?>
             <h2 class="titreNiveau2">Toutes les dates</h2>
         <?php } ?>
 
-
         <ul class="lienDate">
             <?php
-            for ($intCpt = 0; $intCpt < count($arrJour); $intCpt++) { ?>
+            for ($intCpt = 0; $intCpt < count($arrJour); $intCpt++) {  ?>
+            <?php
+             ?>
                 <li class="lienDate__item">
-                    <a class="lienDate__lien" href='index.php?id_date=<?php echo $arrJour[$intCpt]['jour'] ?>'>
+                    <a class="lienDate__lien" href='index.php?id_date=<?php echo $arrJour[$intCpt]['jour'] ?>&id_jour=<?php echo $arrJour[$intCpt]['jourdesemaine'] ?>'>
                         <?php echo $arrJour[$intCpt]['jour'] . " " . afficherMois($arrJour[0]['mois']) ?>
                     </a>
                 </li>
