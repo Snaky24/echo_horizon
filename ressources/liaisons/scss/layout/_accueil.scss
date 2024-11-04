@@ -24,8 +24,8 @@
 }
 
 body {
-  background-color: black;
-  color: #FFF;
+  background-color: $noir;
+  color: $blanc;
 }
 
 .img__entete {
@@ -34,7 +34,7 @@ body {
 }
 
 .container {
-  color: white;
+  color: $blanc;
   padding: 10px;
   position: relative;
 }
@@ -69,29 +69,29 @@ body {
 }
 
 .separator {
-  background-color: #FEA82F;
+  background-color: $orange;
   width: 100%;
   padding: 10px;
-  border: #FEA82F;
+  border: $orange;
   margin-top: 3em;
   margin-bottom: 3em;
 }
 
 .titre_texte {
   font-size: 20px;
-  color: #000;
+  color: $noir;
   padding: 0 32px 0 32px;
 }
 
 .hr_article {
-  background-color: #FEA82F;
+  background-color: $orange;
   width: 162px;
   padding: 4px;
-  border: #FEA82F;
+  border: $orange;
 }
 
 .auteurs {
-  background-color: #FFF;
+  background-color: $blanc;
   text-transform: none;
   font-size: 14px;
   color: $noir;
@@ -99,9 +99,9 @@ body {
 }
 
 .articles_texte {
-  background-color: #FFF;
+  background-color: $blanc;
   text-transform: none;
-  color: #000;
+  color: $noir;
   font-size: 16px;
   padding: 0 32px 0 32px;
   text-align: justify;
@@ -110,7 +110,7 @@ body {
 }
 
 .a_points {
-  color: #DA4167;
+  color: $rose;
   cursor: pointer;
   font-size: 16px;
   letter-spacing: 2px;
@@ -125,7 +125,7 @@ body {
 }
 
 .titre {
-  background-color: #FFF;
+  background-color: $blanc;
   padding-top: 20px;
 }
 

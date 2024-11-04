@@ -86,6 +86,7 @@
   flex-direction: column;
   text-align: left;
   justify-content: space-around;
+  font-size: 1.4em;
   
   &__liste{
     color: $orange;
@@ -117,7 +118,7 @@
 
   @media(min-width: $desktop){
     position: absolute;
-    top: 5%;
+    top: 3%;
     left: 28%;
     max-width: 250px;
     padding: 40px;

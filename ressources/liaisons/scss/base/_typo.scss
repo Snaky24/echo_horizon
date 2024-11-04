@@ -38,10 +38,11 @@ h1,
 h2,
 h3{
   color: $blanc;
+  font-family: $fontePrimaire;
 }
 
 body {
-  font-family: $fonteSecondaire;
+  font-family: $fontePrimaire;
   @include fontSize(16px); /* 16px pour toutes les largeurs d'écran */
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
   @media (min-width: 601px) {
