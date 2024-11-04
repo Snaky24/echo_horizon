@@ -273,7 +273,7 @@ $pdoResultatDates->closeCursor();
 
     </main>
     <footer>
-        <?php include($niveau . "liaisons/fragments/pieddePage.inc.php"); ?>
+        <?php include($niveau . "liaisons/fragments/piedDePage.inc.php"); ?>
     </footer>
 </body>
 
