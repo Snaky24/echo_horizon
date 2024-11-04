@@ -181,13 +181,10 @@
 
 @mixin texteCourant {
     font-family: ($texteCourant);
-    font-size: 1.5rem;
-    font-weight: 900;
 }
 
 @mixin texteDeGrandeTaille {
     font-family: ($texteEngrandeTaille);
-    font-size: 1.5rem;
 
     @media(min-width:$desktop) {
         font-size: 2.2rem;
