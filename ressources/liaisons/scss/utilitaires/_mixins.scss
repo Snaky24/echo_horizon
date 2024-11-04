@@ -108,6 +108,8 @@
     background-position: bottom -10% left 80%;
 
     @media(min-width:$desktop) {
+        background-size: 25% 30%;
+        background-position: bottom -10% left 47%;
         font-size: 7rem;
     }
 }
@@ -147,7 +149,13 @@
         width: 70%;
         font-size: 4.5vh;
         color:$blanc;
-        background-image: url(../images/bordure_jaune.jpg);
+        background-image: url(../images/bordure_blanche.jpg);
+        background-repeat: no-repeat;
+        background-size: 40% 40%;
+        background-position: bottom -35% left 50%;
+    }
+    &:hover{
+        background-image: url(../images/bordure_rose.jpg);
         background-repeat: no-repeat;
         background-size: 40% 40%;
         background-position: bottom -10% left 50%;
@@ -160,10 +168,10 @@
     font-family: ($texteCourant);
     font-size: 1.5rem;
     font-weight: 900;
-
     @media(min-width:$desktop) {
         font-size: 2rem;
     }
+
 }
 
 @mixin texteDeGrandeTaille {
@@ -178,16 +186,18 @@
 /**** LIENS DATES *****/
 
 @mixin dates {
+    width: 100%;
     font-weight:normal;
     font-size: 3.5rem;
     padding: 0;
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     &__item{
-        width: calc(100%/4);
+        margin-bottom: 3rem;
+        width: calc(100%/2);
         list-style: none;
         padding: 1rem 0;
         border-bottom: .2rem solid ($blanc);

@@ -18,7 +18,8 @@ foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
 
     // REQUETE DE SELECTION DE TOUS LES LIEUX ET DES ARTISTES PRÉSENTS DANS LES LIEUX
     if (isset($_GET['id_date']) == true) {
-        $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure, 
+
+        $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
         DAYOFMONTH(evenements.date_et_heure) AS jour, 
         MONTH(evenements.date_et_heure) AS mois, 
         HOUR (evenements.date_et_heure) AS heure, 
@@ -27,8 +28,31 @@ foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
         INNER JOIN artistes ON artistes.id  = evenements.artiste_id 
         INNER JOIN lieux ON lieux.id  = evenements.lieu_id 
         WHERE DAYOFMONTH(evenements.date_et_heure) = ' . $_GET['id_date'] . ' ORDER BY lieux_nom';
+
+        if(isset($_GET['tri']) == 1){
+        $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
+        DAYOFMONTH(evenements.date_et_heure) AS jour, 
+        MONTH(evenements.date_et_heure) AS mois, 
+        HOUR (evenements.date_et_heure) AS heure, 
+        MINUTE (evenements.date_et_heure) AS minute 
+        FROM evenements 
+        INNER JOIN artistes ON artistes.id  = evenements.artiste_id 
+        INNER JOIN lieux ON lieux.id  = evenements.lieu_id 
+        WHERE DAYOFMONTH(evenements.date_et_heure) = ' . $_GET['id_date'] . ' ORDER BY dates_et_heures';
+        }
+       else if(isset($_GET['tri']) == 2){
+            $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
+            DAYOFMONTH(evenements.date_et_heure) AS jour, 
+            MONTH(evenements.date_et_heure) AS mois, 
+            HOUR (evenements.date_et_heure) AS heure, 
+            MINUTE (evenements.date_et_heure) AS minute 
+            FROM evenements 
+            INNER JOIN artistes ON artistes.id  = evenements.artiste_id 
+            INNER JOIN lieux ON lieux.id  = evenements.lieu_id 
+            WHERE DAYOFMONTH(evenements.date_et_heure) = ' . $_GET['id_date'] . ' ORDER BY lieux_nom';
+        }
     } else {
-        $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure, 
+        $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
          DAYOFMONTH(evenements.date_et_heure) AS jour, 
         MONTH(evenements.date_et_heure) AS mois, 
         HOUR (evenements.date_et_heure) AS heure, 
@@ -38,6 +62,32 @@ foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
         INNER JOIN lieux ON lieux.id  = evenements.lieu_id
         WHERE lieux.id = evenements.lieu_id
         ORDER BY lieux_nom';
+
+        if(isset($_GET['tri']) == 1){
+            $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
+            DAYOFMONTH(evenements.date_et_heure) AS jour, 
+           MONTH(evenements.date_et_heure) AS mois, 
+           HOUR (evenements.date_et_heure) AS heure, 
+           MINUTE (evenements.date_et_heure) AS minute 
+           FROM evenements 
+           INNER JOIN artistes ON artistes.id  = evenements.artiste_id
+           INNER JOIN lieux ON lieux.id  = evenements.lieu_id
+           WHERE lieux.id = evenements.lieu_id
+           ORDER BY dates_et_heures';
+        }
+        
+       else{
+        $strRequeteLieu = 'SELECT lieu_id, artiste_id, lieux.nom AS lieux_nom, artistes.nom AS artistes_nom, date_et_heure AS dates_et_heures, 
+         DAYOFMONTH(evenements.date_et_heure) AS jour, 
+        MONTH(evenements.date_et_heure) AS mois, 
+        HOUR (evenements.date_et_heure) AS heure, 
+        MINUTE (evenements.date_et_heure) AS minute 
+        FROM evenements 
+        INNER JOIN artistes ON artistes.id  = evenements.artiste_id
+        INNER JOIN lieux ON lieux.id  = evenements.lieu_id
+        WHERE lieux.id = evenements.lieu_id
+        ORDER BY lieux_nom';
+        }
     }
     $pdoResulatLieu = $objPdo->prepare($strRequeteLieu);
     $pdoResulatLieu->execute();
@@ -49,7 +99,7 @@ foreach ($ligneTousLesLieux as $ligneTousLesLieu) {
         $arrEvenements[$intCptEvent]['artiste_id'] = $ligneResulatLieu['artiste_id'];
         $arrEvenements[$intCptEvent]['lieux_nom'] = $ligneResulatLieu['lieux_nom'];
         $arrEvenements[$intCptEvent]['artistes_nom'] = $ligneResulatLieu['artistes_nom'];
-        $arrEvenements[$intCptEvent]['date_et_heure'] = $ligneResulatLieu['date_et_heure'];
+        $arrEvenements[$intCptEvent]['dates_et_heures'] = $ligneResulatLieu['dates_et_heures'];
         $arrEvenements[$intCptEvent]['jour'] = $ligneResulatLieu['jour'];
         $arrEvenements[$intCptEvent]['mois'] = $ligneResulatLieu['mois'];
         $arrEvenements[$intCptEvent]['heure'] = $ligneResulatLieu['heure'];
@@ -145,6 +195,21 @@ $pdoResultatDates->closeCursor();
 
 <body>
     <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
+    <nav class="nav_sec">
+			<ul class="nav-sec__liste">
+            <?php
+        if (isset($_GET['id_date']) == true) { ?>
+         <li class="nav-sec__listeItem"><a href="index.php?id_date=<?php echo $_GET['id_date']?>&tri=1" class="nav-sec__lien">Par date</a></li>
+         <li class="nav-sec__listeItem"><a href="index.php?id_date=<?php echo $_GET['id_date']?>&tri=2" class="nav-sec__lien">Par lieu</a></li>
+        
+         <?php } else { ?>
+            <li class="nav-sec__listeItem"><a href="index.php?tri=1" class="nav-sec__lien">Par date</a></li>
+            <li class="nav-sec__listeItem"><a href="index.php?tri=2" class="nav-sec__lien">Par lieu</a></li>
+        <?php } ?>
+
+			</ul>
+		</nav>
+        <hr class="separator">
 
     <main class=contenuPrincipal>
         <h1 class="titrePrincipal">Programmation</h1>
@@ -206,7 +271,7 @@ $pdoResultatDates->closeCursor();
                                 href='<?php echo $niveau; ?>artistes/fiches/index.php?id_artiste=<?php echo $arrEvenement['artiste_id']; ?>&id_style=<?php echo $arrEvenement['artiste_id']; ?>'>
                                 <?php echo $arrEvenement['artistes_nom']; ?></a>
                            <p class="styleArtiste"><?php echo trouverStylesArtiste($arrEvenement['artiste_id']); ?></p>
-                            <time datetime="<?php echo $arrEvenement['date_et_heure'] ?>">
+                            <time datetime="<?php echo $arrEvenement['dates_et_heures'] ?>">
                                 <?php echo ajouterZero($arrEvenement['heure']) ?>h<?php echo ajouterZero($arrEvenement['minute']) ?>
                             </time>
                         </div>

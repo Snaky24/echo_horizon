@@ -549,6 +549,8 @@ body {
 }
 @media (min-width: 601px) {
   .titrePrincipal {
+    background-size: 25% 30%;
+    background-position: bottom -10% left 47%;
     font-size: 7rem;
   }
 }
@@ -1340,17 +1342,19 @@ a {
 
 /******* MISE EN FORME DES LIENS AFFICHANT LES DATES*******/
 .lienDate {
+  width: 100%;
   font-weight: normal;
   font-size: 3.5rem;
   padding: 0;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 .lienDate__item {
-  width: 25%;
+  margin-bottom: 3rem;
+  width: 50%;
   list-style: none;
   padding: 1rem 0;
   border-bottom: 0.2rem solid #FFF;
@@ -1397,6 +1401,8 @@ a {
 @media (min-width: 601px) {
   .contenuPrincipal {
     max-width: 90%;
+    background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png), url(../images/feux_dartifices3.png);
+    background-repeat: no-repeat, no-repeat, no-repeat;
     background-size: 60%, 60%, 50%;
     background-position: top 10% right 10%, top 100% left 90%, top 50% left 90%;
   }
@@ -1529,11 +1535,17 @@ a {
     width: 70%;
     font-size: 4.5vh;
     color: #FFF;
-    background-image: url(../images/bordure_jaune.jpg);
+    background-image: url(../images/bordure_blanche.jpg);
     background-repeat: no-repeat;
     background-size: 40% 40%;
-    background-position: bottom -10% left 50%;
+    background-position: bottom -35% left 50%;
   }
+}
+.evenementsDesArtistes__lien:hover {
+  background-image: url(../images/bordure_rose.jpg);
+  background-repeat: no-repeat;
+  background-size: 40% 40%;
+  background-position: bottom -10% left 50%;
 }
 
 time {
