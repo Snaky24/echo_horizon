@@ -2,6 +2,34 @@
 
 @charset "UFT-8";
 
+.accueil {
+  @include texteCourant;
+  margin: 0 auto;
+  max-width: 100%;
+  background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png), url(../images/feux_dartifices3.png);
+  background-repeat: no-repeat;
+  background-size: 100%, 100%, 100%;
+  background-position: top 12.3% right 100%, top 35% left 60%, top 64% left 100%;
+  @media(min-width:$desktop) {
+    max-width: 100%;
+    background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png), url(../images/feux_dartifices3.png);
+    background-repeat: no-repeat;
+    background-size: 60%, 60%, 50%;
+    background-position: top 10% right 70%, top 100% left 50%, top 50% left 90%;
+  }
+  
+}
+
+.accueil__titre {
+  @include h1__accueil;
+}
+
+.nav_sec {
+  background-color: $noir;
+  padding: 3%;
+  align-items: center;
+}
+
 * {
   margin: 0;
   padding: 0;
