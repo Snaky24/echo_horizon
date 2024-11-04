@@ -1,19 +1,41 @@
+<?php $niveau = ""; ?>
+<?php include($niveau . "liaisons/php/config.inc.php"); ?>
 
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <title>Un beau titre ici!</title>
+    <?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
+</head>
 
 <footer class="piedDePage">
-<hr class="separator">
-    <img class="logo__footer" src="<?php echo $niveau ?>liaisons/images/logo.svg" alt="Logo">
-    <nav class="">
-        <ul>
-            <li><a href="#">LE OFF</a></li>
-            <li><a href="#">PROGRAMMATION</a></li>
-            <li><a href="#">ARTISTES</a></li>
-            <li><a href="#">PARTENAIRES</a></li>
-            <li><a href="#">LIEUX</a></li>
-            <li><a href="#">TARIFS</a></li>
-            <li><a href="#">CONTACT</a></li>
-        </ul>
-    </nav>
+    <hr class="separator">
+    <div class="section__footer">
+        <div class="section__logo">
+            <img class="logo__footer" src="<?php echo $niveau ?>liaisons/images/logo.svg" alt="Logo">
+        </div>
+        <div class="section__nav">
+            <nav class="nav__footer">
+                <ul class="nav__principal">
+                    <li class="nav__principal-items"><a href="#">LE OFF</a></li>
+                    <li class="nav__principal-items"><a href="#">PROGRAMMATION</a></li>
+                    <li class="nav__principal-items"><a href="#">ARTISTES</a></li>
+                    <li class="nav__principal-items"><a href="#">PARTENAIRES</a></li>
+                </ul>
+                <ul class="nav__secondaire">
+                    <li class="nav__secondaire-items"><a href="#">LIEUX</a></li>
+                    <li class="nav__secondaire-items"><a href="#">TARIFS</a></li>
+                    <li class="nav__secondaire-items"><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
     <div class="footer">
         <div class="contact">
             <h2>COORDONNÉES</h2>
@@ -41,7 +63,7 @@
         <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
     </div>
     </div>
-    <h5 class="piedDePage__copyRights">@Copyrights Michel Rouleau</h5>
+    <h5 class="piedDePage__copyRights">@Copyrights Équipe Echo Horizon</h5>
 </footer>
 
 <script src="public/liaisons/js/_menu.js"></script>

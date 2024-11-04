@@ -2,15 +2,15 @@
 
 @charset "UFT-8";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .accueil {
   margin: 0 auto;
-  position: absolute;
   text-align: center;
-
-  @media(min-width: $desktop) {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
 
   &__nom {
     text-align: left;
@@ -24,8 +24,8 @@
 }
 
 body {
-  background-color: black;
-  color: #FFF;
+  background-color: $noir;
+  color: $blanc;
   max-width: 1440px;
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 .container {
-  color: white;
+  color: $blanc;
   padding: 10px;
   position: relative;
 }
@@ -70,18 +70,18 @@ body {
 }
 
 .separator {
-  background-color: #FEA82F;
+  background-color: $orange;
   width: 100%;
   padding: 10px;
-  border: #FEA82F;
+  border: $orange;
   margin-top: 3em;
   margin-bottom: 3em;
 }
 
 .accueil__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-right: 150px;
@@ -96,19 +96,19 @@ body {
 
 .titre_texte {
   font-size: 20px;
-  color: #000;
+  color: $noir;
   padding: 0 32px 0 32px;
 }
 
 .hr_article {
-  background-color: #FEA82F;
+  background-color: $orange;
   width: 162px;
   padding: 4px;
-  border: #FEA82F;
+  border: $orange;
 }
 
 .auteurs {
-  background-color: #FFF;
+  background-color: $blanc;
   text-transform: none;
   font-size: 14px;
   color: $noir;
@@ -116,9 +116,9 @@ body {
 }
 
 .articles_texte {
-  background-color: #FFF;
+  background-color: $blanc;
   text-transform: none;
-  color: #000;
+  color: $noir;
   font-size: 16px;
   padding: 0 32px 0 32px;
   text-align: justify;
@@ -127,7 +127,7 @@ body {
 }
 
 .a_points {
-  color: #DA4167;
+  color: $rose;
   cursor: pointer;
   font-size: 16px;
   letter-spacing: 2px;
@@ -146,11 +146,12 @@ body {
 }
 
 .titre {
+  background-color: $blanc;
   padding-top: 20px;
 }
 
 .articles {
-  background-color: #FFF;
+  background-color: $blanc;
   justify-content: space-between;
   margin: 21px;
   width: 320px;
@@ -171,8 +172,8 @@ body {
 
 .artistes__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-right: 150px;
@@ -211,7 +212,7 @@ body {
 .artistes__noms {
   font-size: 20px;
   font-weight: bold;
-  color: #ffffff;
+  color: $blanc;
   display: flex;
 }
 
@@ -224,8 +225,8 @@ body {
 
 .tarifs__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-left: 150px;
@@ -256,7 +257,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   padding: 0 30px 0 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: $noir;
   text-transform: none;
   opacity: .6;
@@ -264,11 +265,126 @@ body {
 
 .tarifs__prix {
   background-color: $orange;
-  padding: 0.5px;
   box-shadow: 0 3px 10px $noir;
 }
 
 .tarifs_items-prix {
   text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 8px;
   color: $noir;
+}
+
+.infos__tarifs {
+  display: flex;
+  gap: 50px;
+  max-width: 1440px;
+  padding: 20px;
+  align-items: center;
+}
+
+.infos__textes__tarifs {
+  width: 50%;
+}
+
+.textes__tarifs {
+  width: 60%;
+  color: $blanc;
+  text-align: center;
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.lien__tarif {
+  color: $rose;
+  text-decoration: none;
+}
+
+.lieux__billets__tarifs {
+  display: flex;
+  flex-direction: column;
+}
+
+.icone__lieux__tarifs {
+  display: flex;
+  align-items: center;
+  text-align: left;
+<<<<<<< HEAD
+  font-size: 16px;
+  color: #FFF;
+=======
+  font-size: 18px;
+  color: $orange;
+>>>>>>> 722aaac9bb0cd96f99e984f0ab4109f8295203d8
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.icone__lieux {
+  color: #FFF;
+}
+
+.lieux__titre {
+  text-transform: uppercase;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  margin-right: 150px;
+  float: right;
+  font-size: 40px;
+}
+
+.lieux__sect {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.gallery {
+  position: relative;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  width: 40%;
+}
+
+.gallery-item {
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 260px;
+}
+
+.label {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $degrade;
+  color: $blanc;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+.location {
+  margin-top: 10px;
+  font-size: 16px;
+  color: $blanc;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }

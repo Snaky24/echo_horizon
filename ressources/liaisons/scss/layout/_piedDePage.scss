@@ -1,22 +1,36 @@
+// Camille
+
 @charset "UFT-8";
 
 .container {
   padding: 20px;
-  text-align: center;
+  display: flex;
+}
+
+.section__footer {
+  display: flex;
+  align-items: center;
+}
+
+.section__logo {
+  float: left;
+  margin: 20px;
 }
 
 .logo__footer {
-  display: block;
+  display: flex;
   height: 84px;
   cursor: pointer;
 }
 
-nav ul {
+.section__nav {
+  float: right;
+  margin-left: 200px;
+}
+
+.nav__footer {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
+  display: block;
   gap: 20px;
 }
 
@@ -24,14 +38,16 @@ nav ul {
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 40px;
   padding: 20px 0;
-  border-top: 1px solid #FFA500;
+  border-top: 1px solid $orange;
 }
 
 .contact,
 .newsletter {
   width: 45%;
+  margin-top: 20px;
 }
 
 .newsletter form {
@@ -47,7 +63,7 @@ nav ul {
 
 .newsletter button {
   padding: 10px;
-  background-color: #FFA500;
+  background-color: $orange;
   border: none;
   border-radius: 0 5px 5px 0;
   color: #fff;
@@ -64,4 +80,8 @@ nav ul {
 .socials a img {
   width: 30px;
   height: 30px;
+}
+
+.nav__principal {
+  text-align: right;
 }
