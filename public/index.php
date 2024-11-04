@@ -194,27 +194,57 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 			</div>
 			<div class="lieux__billets__tarifs">
 				<div class="icone__lieux__tarifs">
-					<img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+					<svg class="icone__lieux" width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+						shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+						image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+						viewBox="0 0 384 511.49">
+						<path fill="#fff"
+							d="M285.17 442.38c-23.26 25.51-50.35 48.35-80.78 66.86-3.76 2.75-8.84 3.09-13.01.42-44.94-28.6-82.7-62.95-112.39-100.3C38.06 358 12.3 301.06 3.46 246.2c-9-55.61-.58-109.13 27.1-152.65C41.48 76.38 55.4 60.7 72.41 47.19 111.43 16.1 156.03-.33 200.47.01c42.77.33 85.04 16.25 121.56 49.6 12.83 11.67 23.59 25.01 32.43 39.52 29.76 49.02 36.18 111.55 23.09 174.91-12.92 62.62-44.94 126.23-92.38 178.25v.09zm-93.2-343.5c52.77 0 95.54 42.77 95.54 95.55 0 52.77-42.77 95.54-95.54 95.54-52.78 0-95.55-42.77-95.55-95.54 0-52.78 42.77-95.55 95.55-95.55z" />
+					</svg>
 					<br>
 					<span>Érico<br>634 Rue Saint-Jean, Québec</span>
 				</div>
 				<div class="icone__lieux__tarifs">
-					<img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+					<svg class="icone__lieux" width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+						shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+						image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+						viewBox="0 0 384 511.49">
+						<path fill="#fff"
+							d="M285.17 442.38c-23.26 25.51-50.35 48.35-80.78 66.86-3.76 2.75-8.84 3.09-13.01.42-44.94-28.6-82.7-62.95-112.39-100.3C38.06 358 12.3 301.06 3.46 246.2c-9-55.61-.58-109.13 27.1-152.65C41.48 76.38 55.4 60.7 72.41 47.19 111.43 16.1 156.03-.33 200.47.01c42.77.33 85.04 16.25 121.56 49.6 12.83 11.67 23.59 25.01 32.43 39.52 29.76 49.02 36.18 111.55 23.09 174.91-12.92 62.62-44.94 126.23-92.38 178.25v.09zm-93.2-343.5c52.77 0 95.54 42.77 95.54 95.55 0 52.77-42.77 95.54-95.54 95.54-52.78 0-95.55-42.77-95.55-95.54 0-52.78 42.77-95.55 95.55-95.55z" />
+					</svg>
 					<br>
 					<span>Le Sacrilège<br>447 Rue Saint-Jean, Québec</span>
 				</div>
 				<div class="icone__lieux__tarifs">
-					<img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+					<svg class="icone__lieux" width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+						shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+						image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+						viewBox="0 0 384 511.49">
+						<path fill="#fff"
+							d="M285.17 442.38c-23.26 25.51-50.35 48.35-80.78 66.86-3.76 2.75-8.84 3.09-13.01.42-44.94-28.6-82.7-62.95-112.39-100.3C38.06 358 12.3 301.06 3.46 246.2c-9-55.61-.58-109.13 27.1-152.65C41.48 76.38 55.4 60.7 72.41 47.19 111.43 16.1 156.03-.33 200.47.01c42.77.33 85.04 16.25 121.56 49.6 12.83 11.67 23.59 25.01 32.43 39.52 29.76 49.02 36.18 111.55 23.09 174.91-12.92 62.62-44.94 126.23-92.38 178.25v.09zm-93.2-343.5c52.77 0 95.54 42.77 95.54 95.55 0 52.77-42.77 95.54-95.54 95.54-52.78 0-95.55-42.77-95.55-95.54 0-52.78 42.77-95.55 95.55-95.55z" />
+					</svg>
 					<br>
 					<span>Le Bonnet d'âne<br>298 Rue Saint-Jean, Québec</span>
 				</div>
 				<div class="icone__lieux__tarifs">
-					<img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+					<svg class="icone__lieux" width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+						shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+						image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+						viewBox="0 0 384 511.49">
+						<path fill="#fff"
+							d="M285.17 442.38c-23.26 25.51-50.35 48.35-80.78 66.86-3.76 2.75-8.84 3.09-13.01.42-44.94-28.6-82.7-62.95-112.39-100.3C38.06 358 12.3 301.06 3.46 246.2c-9-55.61-.58-109.13 27.1-152.65C41.48 76.38 55.4 60.7 72.41 47.19 111.43 16.1 156.03-.33 200.47.01c42.77.33 85.04 16.25 121.56 49.6 12.83 11.67 23.59 25.01 32.43 39.52 29.76 49.02 36.18 111.55 23.09 174.91-12.92 62.62-44.94 126.23-92.38 178.25v.09zm-93.2-343.5c52.77 0 95.54 42.77 95.54 95.55 0 52.77-42.77 95.54-95.54 95.54-52.78 0-95.55-42.77-95.55-95.54 0-52.78 42.77-95.55 95.55-95.55z" />
+					</svg>
 					<br>
 					<span>Le Sacrilège<br>Disquaire CD Mélomane<br>248 rue Saint-Jean, Québec</span>
 				</div>
 				<div class="icone__lieux__tarifs">
-					<img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+					<svg class="icone__lieux" width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+						shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+						image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+						viewBox="0 0 384 511.49">
+						<path fill="#fff"
+							d="M285.17 442.38c-23.26 25.51-50.35 48.35-80.78 66.86-3.76 2.75-8.84 3.09-13.01.42-44.94-28.6-82.7-62.95-112.39-100.3C38.06 358 12.3 301.06 3.46 246.2c-9-55.61-.58-109.13 27.1-152.65C41.48 76.38 55.4 60.7 72.41 47.19 111.43 16.1 156.03-.33 200.47.01c42.77.33 85.04 16.25 121.56 49.6 12.83 11.67 23.59 25.01 32.43 39.52 29.76 49.02 36.18 111.55 23.09 174.91-12.92 62.62-44.94 126.23-92.38 178.25v.09zm-93.2-343.5c52.77 0 95.54 42.77 95.54 95.55 0 52.77-42.77 95.54-95.54 95.54-52.78 0-95.55-42.77-95.55-95.54 0-52.78 42.77-95.55 95.55-95.55z" />
+					</svg>
 					<br>
 					<span>Le Knock-Out<br>832 St-Joseph Est, Québec</span>
 				</div>
@@ -233,23 +263,24 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 							alt="lieu carte"> 591, rue de Saint-Vallier Est, Québec</p>
 				</div>
 				<div class="gallery">
-				<div class="gallery-item">
-					<div class="image-container">
-						<img src="liaisons/images/lieux/lieux_meduse4.png" alt="Méduse">
-						<div class="label">MÉDUSE</div>
+					<div class="gallery-item">
+						<div class="image-container">
+							<img src="liaisons/images/lieux/lieux_meduse4.png" alt="Méduse">
+							<div class="label">MÉDUSE</div>
+						</div>
+						<p class="location"><img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg"
+								alt="lieu carte"> 591, rue de Saint-Vallier Est, Québec</p>
 					</div>
-					<p class="location"><img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg"
-							alt="lieu carte"> 591, rue de Saint-Vallier Est, Québec</p>
-				</div>
-				<div class="gallery">
-				<div class="gallery-item">
-					<div class="image-container">
-						<img src="liaisons/images/lieux/lieux_meduse4.png" alt="Méduse">
-						<div class="label">MÉDUSE</div>
-					</div>
-					<p class="location"><img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg"
-							alt="lieu carte"> 591, rue de Saint-Vallier Est, Québec</p>
-				</div>
+					<div class="gallery">
+						<div class="gallery-item">
+							<div class="image-container">
+								<img src="liaisons/images/lieux/lieux_meduse4.png" alt="Méduse">
+								<div class="label">MÉDUSE</div>
+							</div>
+							<p class="location"><img class="icone__lieu"
+									src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte"> 591, rue de
+								Saint-Vallier Est, Québec</p>
+						</div>
 		</section>
 
 	</main>

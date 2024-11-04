@@ -1318,7 +1318,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   padding: 0 30px 0 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #000;
   text-transform: none;
   opacity: 0.6;
@@ -1326,12 +1326,14 @@ body {
 
 .tarifs__prix {
   background-color: #FEA82F;
-  padding: 0.5px;
   box-shadow: 0 3px 10px #000;
 }
 
 .tarifs_items-prix {
   text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 8px;
   color: #000;
 }
 
@@ -1370,10 +1372,14 @@ body {
   display: flex;
   align-items: center;
   text-align: left;
-  font-size: 18px;
-  color: #FEA82F;
+  font-size: 16px;
+  color: #FFF;
   gap: 10px;
   margin-bottom: 20px;
+}
+
+.icone__lieux {
+  color: #FFF;
 }
 
 .lieux__titre {
