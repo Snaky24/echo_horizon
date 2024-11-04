@@ -1,6 +1,19 @@
 // JADE
 @charset "UFT-8";
 
+/**
+ * ----------------------------
+ * TABLE DES MATIERES - FICHE DE L'ARTISTE
+ * ----------------------------
+ * ARTISTES
+ * ARTISTES SUGGÉRÉS
+ * SITE WEB
+ * REPRÉSENTATIONS
+ * PROVENANCE ET STYLE MUSICAL
+ * IMAGES
+ */
+
+// ARTISTES
 .artiste{
   margin: 0 auto;
   position: relative;
@@ -12,6 +25,7 @@
 
   &__nom{
     text-align: left;
+   
   }
 
   &__titre{
@@ -22,20 +36,23 @@
 
   &__nom{
     @include title;
+    font-size: 5rem;
   }
 
   &__description{
-    // mixin cadre blanc
     color: $noir ;
     background-color: $blanc;
     border: 3px $orange solid;
     padding: 30px;
     width: 300px;
-    margin: 1em auto
+    margin: 1em auto;
+    font-family: $texteCourant;
+    font-size: 2rem;
   }
 
   &__titre{
     @include title;
+    font-size: 3rem;
   }
 
   @media(min-width: $desktop){
@@ -49,122 +66,7 @@
     background-image: url(../images/feux_dartifices.png);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-size: 60%, 60%, 50%;
-    background-position: top 40% left 20%;
-  }
-}
-
-.suggestion{
-  justify-items: center;
-  margin: 5em auto;
-
-  &__titre{
-    @include tinytitle;
-    margin-left: 2em;
-    margin-bottom: 2em;
-  }
-
-  &__liste{
-    list-style-type: none;
-  }
-
-  @media(min-width: $desktop){
-    &__liste{
-    display: flex;
-    list-style-type: none;
-    }
-  
-    &__artiste{
-      flex-direction: row;
-      padding: 20px;
-    }
-  
-  }
-}
-
-.website{
-  &__titre{
-    @include tinytitle;
-  }
-}
-
-
-.spectacle{
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  justify-content: space-around;
-  font-size: 1.4em;
-  
-  &__liste{
-    color: $orange;
-    margin-top: 1.5em;
-    margin-left: 5em;
-  }
-
-  @media(min-width: $desktop){
-    flex-direction: row;
-  }
-  
-}
-
-.infos{
-  background-color: $blanc;
-  width: 250px;
-  border-bottom: $orange 20px solid;
-  padding: 30px;
-  margin: 2em auto;
-
-  &__texte{
-    color: $noir;
-    padding-top: 1em;
-  }
-
-  &__texte:nth-of-type(1){
-   margin-bottom: 1.5em;
-  }
-
-  &__titre{
-    color: $noir;
-    border-bottom: $orange 5px solid;
-  }
-
-  @media(min-width: $desktop){
-    position: absolute;
-    top: 3%;
-    left: 28%;
-  }
-}
-
-.icone{
-  &__lieu{
-    @include icone;
-  }
-
-  &__calender{
-    @include icone;
-  }
-}
-
-.picture{
-
-  &__img{
-    width: 100%;
-    margin-top: 2em;
-    max-width: 300px;
-  }
-
-  &__imgPaysage{
-    width: 100%;
-    margin-top: 2em;
-    max-width: 300px;
-  }
-
-  @media(min-width: $desktop){
-    &__imgPaysage{
-      height: 100%;
-      max-width: 600px;
-    }
+    background-position: top 60% left 30%;
   }
 }
 
@@ -193,3 +95,129 @@
   }
 }
 }
+
+// ARTISTES SUGGERÉS
+.suggestion{
+  justify-items: center;
+  margin: 5em auto;
+
+  &__titre{
+    @include tinytitle;
+    margin-left: 2em;
+    margin-bottom: 2em;
+  }
+
+  &__liste{
+    list-style-type: none;
+  }
+
+  @media(min-width: $desktop){
+    &__liste{
+    display: flex;
+    list-style-type: none;
+    }
+  
+    &__artiste{
+      flex-direction: row;
+      padding: 20px;
+    }
+  
+  }
+}
+
+// SITE WEB
+.website{
+  &__titre{
+    @include tinytitle;
+  }
+}
+
+// REPRÉSENTATIONS
+.spectacle{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-around;
+  font-size: 1.4em;
+  
+  &__liste{
+    color: $orange;
+    margin-top: 1.5em;
+    margin-left: 5em;
+    font-family: ($texteEngrandeTaille);
+    font-size: 2.5rem;
+  }
+
+  @media(min-width: $desktop){
+    flex-direction: row;
+  }
+  
+}
+
+// PROVENANCE ET STYLE MUSICAL
+.infos{
+  background-color: $blanc;
+  width: 280px;
+  border-bottom: $orange 20px solid;
+  padding: 30px;
+  margin: 2em auto;
+
+  &__texte{
+    color: $noir;
+    padding-top: 1em;
+    font-family: $texteCourant;
+    font-size: 2rem;
+  }
+
+  &__texte:nth-of-type(1){
+   margin-bottom: 1.5em;
+  }
+
+  &__titre{
+    color: $noir;
+    border-bottom: $orange 5px solid;
+    font-family: ($titreNiveau4);
+    font-size: 2.3rem;
+  }
+
+  @media(min-width: $desktop){
+    position: absolute;
+    top: 4%;
+    left: 28%;
+  }
+}
+
+.icone{
+  &__lieu{
+    @include icone;
+  }
+
+  &__calender{
+    @include icone;
+  }
+}
+
+// IMAGES
+.picture{
+
+  &__img{
+    width: 100%;
+    margin-top: 2em;
+    max-width: 300px;
+  }
+
+  &__imgPaysage{
+    width: 100%;
+    margin-top: 2em;
+    max-width: 300px;
+  }
+
+  @media(min-width: $desktop){
+    &__imgPaysage{
+      height: 100%;
+      max-width: 600px;
+    }
+  }
+}
+

@@ -78,6 +78,12 @@
     text-decoration: underline 17px $orange solid;
     margin-bottom: 2em;
     margin-top: 2em;
+    font-family: ($titreNiveau1);
+
+    // @media(min-width:$desktop){
+    //     margin-left: 8rem;
+    // }
+    
 }
 
 @mixin tinytitle {
@@ -86,6 +92,8 @@
     text-transform: uppercase;
     color: $blanc;
     text-decoration: underline 5px $orange solid;
+    font-family: ($titreNiveau3);
+    font-size: 2rem;
 }
 
 @mixin icone {
@@ -175,10 +183,6 @@
     font-family: ($texteCourant);
     font-size: 1.5rem;
     font-weight: 900;
-    // @media(min-width:$desktop) {
-    //     font-size: 2rem;
-    // }
-
 }
 
 @mixin texteDeGrandeTaille {

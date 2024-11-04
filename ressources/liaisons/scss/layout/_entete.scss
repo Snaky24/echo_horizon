@@ -47,10 +47,11 @@ a {
   }
 
   .entete {
-    padding: 20px 5%;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    display: flex;
+		position: relative;
+		top: 0;
+		right: 0;
+		width: $desktop;
   }
 
   .logo {

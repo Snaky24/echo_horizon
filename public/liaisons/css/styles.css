@@ -729,6 +729,7 @@ Effet actif : #f4d07c
   padding: 10px;
   min-width: 40px;
   width: 80px;
+  float: right;
 }
 @media (min-width: 601px) {
   .menu__controle {
@@ -775,7 +776,7 @@ Effet actif : #f4d07c
 }
 .menu__lien:focus {
   /*outline: none;
-  border-left: 5px solid #f5ae09;*/
+      border-left: 5px solid #f5ae09;*/
   outline-offset: -5px;
   outline: #f5ae09 auto 5px;
 }
@@ -785,9 +786,9 @@ Effet actif : #f4d07c
 
 /* Si le javascript est activé */
 /* Pour des raisons d'accessibilité, on ne cache le menu mobile
- * que si Javascript est activé. De cette façon, s'il est désactivé,
- * le menu restera tout de même visible à l'utilisateur.
- */
+     * que si Javascript est activé. De cette façon, s'il est désactivé,
+     * le menu restera tout de même visible à l'utilisateur.
+     */
 .js .menu__liste {
   max-height: 100vh;
   overflow: hidden;
@@ -847,10 +848,11 @@ a {
     box-sizing: border-box;
   }
   .entete {
-    padding: 20px 5%;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    display: flex;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 601px;
   }
   .logo {
     height: 70px;
@@ -943,6 +945,17 @@ a {
   text-align: right;
 }
 
+/**
+ * ----------------------------
+ * TABLE DES MATIERES - FICHE DE L'ARTISTE
+ * ----------------------------
+ * ARTISTES
+ * ARTISTES SUGGÉRÉS
+ * SITE WEB
+ * REPRÉSENTATIONS
+ * PROVENANCE ET STYLE MUSICAL
+ * IMAGES
+ */
 .artiste {
   margin: 0 auto;
   position: relative;
@@ -966,6 +979,8 @@ a {
   text-decoration: underline 17px #FEA82F solid;
   margin-bottom: 2em;
   margin-top: 2em;
+  font-family: LatoBlack;
+  font-size: 5rem;
 }
 .artiste__description {
   color: #000;
@@ -974,6 +989,8 @@ a {
   padding: 30px;
   width: 300px;
   margin: 1em auto;
+  font-family: JaldiRegular;
+  font-size: 2rem;
 }
 .artiste__titre {
   text-transform: uppercase;
@@ -981,6 +998,8 @@ a {
   text-decoration: underline 17px #FEA82F solid;
   margin-bottom: 2em;
   margin-top: 2em;
+  font-family: LatoBlack;
+  font-size: 3rem;
 }
 @media (min-width: 601px) {
   .artiste__description {
@@ -993,10 +1012,31 @@ a {
     background-image: url(../images/feux_dartifices.png);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-size: 60%, 60%, 50%;
-    background-position: top 40% left 20%;
+    background-position: top 60% left 30%;
   }
 }
 
+@media (min-width: 601px) {
+  .wrapper {
+    margin-top: 7em;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 20px;
+    grid-template-areas: ". . . . . . a a a a" "b b b b b b a a a a" "b b b b b b a a a a" "c c c c c c d d d d";
+  }
+  .wrapper__element1 {
+    grid-area: a;
+  }
+  .wrapper__element2 {
+    grid-area: b;
+  }
+  .wrapper__element3 {
+    grid-area: c;
+  }
+  .wrapper__element4 {
+    grid-area: d;
+  }
+}
 .suggestion {
   justify-items: center;
   margin: 5em auto;
@@ -1007,6 +1047,8 @@ a {
   text-transform: uppercase;
   color: #FFF;
   text-decoration: underline 5px #FEA82F solid;
+  font-family: LatoBold;
+  font-size: 2rem;
   margin-left: 2em;
   margin-bottom: 2em;
 }
@@ -1030,6 +1072,8 @@ a {
   text-transform: uppercase;
   color: #FFF;
   text-decoration: underline 5px #FEA82F solid;
+  font-family: LatoBold;
+  font-size: 2rem;
 }
 
 .spectacle {
@@ -1044,6 +1088,8 @@ a {
   color: #FEA82F;
   margin-top: 1.5em;
   margin-left: 5em;
+  font-family: JaldiRegular;
+  font-size: 2.5rem;
 }
 @media (min-width: 601px) {
   .spectacle {
@@ -1053,7 +1099,7 @@ a {
 
 .infos {
   background-color: #FFF;
-  width: 250px;
+  width: 280px;
   border-bottom: #FEA82F 20px solid;
   padding: 30px;
   margin: 2em auto;
@@ -1061,6 +1107,8 @@ a {
 .infos__texte {
   color: #000;
   padding-top: 1em;
+  font-family: JaldiRegular;
+  font-size: 2rem;
 }
 .infos__texte:nth-of-type(1) {
   margin-bottom: 1.5em;
@@ -1068,11 +1116,13 @@ a {
 .infos__titre {
   color: #000;
   border-bottom: #FEA82F 5px solid;
+  font-family: LatoBold;
+  font-size: 2.3rem;
 }
 @media (min-width: 601px) {
   .infos {
     position: absolute;
-    top: 3%;
+    top: 4%;
     left: 28%;
   }
 }
@@ -1103,91 +1153,63 @@ a {
   }
 }
 
-@media (min-width: 601px) {
-  .wrapper {
-    margin-top: 7em;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-gap: 20px;
-    grid-template-areas: ". . . . . . a a a a" "b b b b b b a a a a" "b b b b b b a a a a" "c c c c c c d d d d";
-  }
-  .wrapper__element1 {
-    grid-area: a;
-  }
-  .wrapper__element2 {
-    grid-area: b;
-  }
-  .wrapper__element3 {
-    grid-area: c;
-  }
-  .wrapper__element4 {
-    grid-area: d;
-  }
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.accueil {
-  margin: 0 auto;
-}
-.accueil__nom {
-  text-align: left;
-}
-.accueil__titre {
-  text-align: left;
-  margin-left: 150px;
-}
-
 body {
   background-color: #000;
   color: #FFF;
-  max-width: 1440px;
 }
 
-.img__entete {
+.accueil {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+@media (min-width: 601px) {
+  .accueil {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+.accueil .img__entete {
   width: 1440px;
   height: 470px;
 }
-
-.container {
+.accueil .container {
   color: #FFF;
   padding: 10px;
   position: relative;
 }
-
-.centered {
+.accueil .centered {
   position: absolute;
   padding-top: 50px;
   padding-left: 200px;
   font-size: 40px;
 }
-
-.centered_dates {
+.accueil .centered_dates {
   position: absolute;
   padding-top: 110px;
   padding-left: 200px;
   font-size: 30px;
 }
-
-.nav-sec__liste {
+.accueil .nav-sec__liste {
   justify-content: center;
   display: flex;
   list-style: none;
 }
-
-.nav-sec__listeItem {
+.accueil .nav-sec__listeItem {
   padding: 14px 140px;
   font-size: 20px;
+  text-decoration: underline 10px #DA4167 solid;
 }
-
-.nav-sec__lien {
+.accueil .nav-sec__lien {
   color: #FFF;
 }
-
-.separator {
+.accueil .separator {
   background-color: #FEA82F;
   width: 100%;
   padding: 10px;
@@ -1195,20 +1217,17 @@ body {
   margin-top: 3em;
   margin-bottom: 3em;
 }
-
-.conteneur {
+.accueil .conteneur {
   display: block;
   position: relative;
   width: 100%;
 }
-
-.titre_texte {
+.accueil .titre_texte {
   font-size: 20px;
   color: #000;
   padding: 0 32px 0 32px;
 }
-
-.hr__actu {
+.accueil .hr__actu {
   padding: 3px;
   background-color: #FEA82F;
   border: none;
@@ -1216,8 +1235,7 @@ body {
   display: flex;
   align-items: center;
 }
-
-.auteurs {
+.accueil .auteurs {
   background-color: #FFF;
   text-transform: none;
   text-decoration-line: underline;
@@ -1228,8 +1246,7 @@ body {
   color: #000;
   padding: 0 0 0 32px;
 }
-
-.articles_texte {
+.accueil .articles_texte {
   background-color: #FFF;
   text-transform: none;
   color: #000;
@@ -1238,51 +1255,43 @@ body {
   text-align: justify;
   padding-bottom: 30px;
 }
-
-.a_points {
+.accueil .a_points {
   color: #DA4167;
   cursor: pointer;
   font-size: 16px;
   letter-spacing: 2px;
 }
-
-.a_points:hover {
+.accueil .a_points:hover {
   font-weight: bold;
 }
-
-.conteneur_actu {
+.accueil .conteneur_actu {
   margin: 20px;
   display: flex;
   width: 100%;
   align-items: flex-end;
 }
-
-.titre {
+.accueil .titre {
   background-color: #FFF;
   padding-top: 20px;
 }
-
-.articles {
+.accueil .articles {
   background-color: #FFF;
   justify-content: space-between;
   margin: 21px;
   width: 320px;
 }
-
-.articles__footer {
+.accueil .articles__footer {
   background-color: #FEA82F;
   padding: 2px;
 }
-
-.date__article__footer {
+.accueil .date__article__footer {
   text-align: right;
   color: #000;
   font-weight: 400;
   margin-right: 20px;
   font-size: 14px;
 }
-
-.artistes__titre {
+.accueil .artistes__titre {
   text-transform: uppercase;
   color: #FFF;
   text-decoration: underline 17px #FEA82F solid;
@@ -1292,50 +1301,42 @@ body {
   float: right;
   font-size: 40px;
 }
-
-.artistes__sect {
+.accueil .artistes__sect {
   align-items: center;
   width: 100%;
   position: relative;
 }
-
-.img_artistes__ul {
+.accueil .img_artistes__ul {
   display: flex;
   width: 100%;
   list-style: none;
 }
-
-.img_artistes__li {
+.accueil .img_artistes__li {
   margin: 21px;
 }
-
-.picture__img {
+.accueil .picture__img {
   width: 235px;
   height: auto;
 }
-
-.noms__artistes {
+.accueil .noms__artistes {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
 }
-
-.artistes__noms {
+.accueil .artistes__noms {
   font-size: 20px;
   font-weight: bold;
   color: #FFF;
   display: flex;
 }
-
-.noms__artiste {
+.accueil .noms__artiste {
   width: 225px;
   text-align: center;
   padding: 4px;
   background-color: #DA4167;
 }
-
-.tarifs__titre {
+.accueil .tarifs__titre {
   text-transform: uppercase;
   color: #FFF;
   text-decoration: underline 17px #FEA82F solid;
@@ -1344,28 +1345,24 @@ body {
   margin-left: 150px;
   font-size: 40px;
 }
-
-.tarifs__sect {
+.accueil .tarifs__sect {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   align-items: flex-start;
 }
-
-.liste__tarifs-items {
+.accueil .liste__tarifs-items {
   background-color: #FFF;
   width: 310px;
   margin: 21px;
 }
-
-.items_tarifs {
+.accueil .items_tarifs {
   font-size: 25px;
   padding: 0 30px 0 30px;
   color: #000;
 }
-
-.items_tarifs-conditions {
+.accueil .items_tarifs-conditions {
   font-size: 16px;
   font-weight: 500;
   padding: 0 30px 0 30px;
@@ -1374,33 +1371,28 @@ body {
   text-transform: none;
   opacity: 0.6;
 }
-
-.tarifs__prix {
+.accueil .tarifs__prix {
   background-color: #FEA82F;
   box-shadow: 0 3px 10px #000;
 }
-
-.tarifs_items-prix {
+.accueil .tarifs_items-prix {
   text-align: center;
   font-size: 20px;
   text-transform: uppercase;
   padding: 8px;
   color: #000;
 }
-
-.infos__tarifs {
+.accueil .infos__tarifs {
   display: flex;
   gap: 50px;
   max-width: 1440px;
   padding: 20px;
   align-items: center;
 }
-
-.infos__textes__tarifs {
+.accueil .infos__textes__tarifs {
   width: 50%;
 }
-
-.textes__tarifs {
+.accueil .textes__tarifs {
   width: 60%;
   color: #FFF;
   text-align: center;
@@ -1408,18 +1400,15 @@ body {
   font-size: 16px;
   margin-bottom: 30px;
 }
-
-.lien__tarif {
+.accueil .lien__tarif {
   color: #DA4167;
   text-decoration: none;
 }
-
-.lieux__billets__tarifs {
+.accueil .lieux__billets__tarifs {
   display: flex;
   flex-direction: column;
 }
-
-.icone__lieux__tarifs {
+.accueil .icone__lieux__tarifs {
   display: flex;
   align-items: center;
   text-align: left;
@@ -1428,12 +1417,10 @@ body {
   gap: 10px;
   margin-bottom: 20px;
 }
-
-.icone__lieux {
+.accueil .icone__lieux {
   color: #FFF;
 }
-
-.lieux__titre {
+.accueil .lieux__titre {
   text-transform: uppercase;
   color: #FFF;
   text-decoration: underline 17px #FEA82F solid;
@@ -1443,8 +1430,7 @@ body {
   float: right;
   font-size: 40px;
 }
-
-.lieux__sect {
+.accueil .lieux__sect {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -1452,31 +1438,26 @@ body {
   padding: 20px;
   align-items: flex-start;
 }
-
-.gallery {
+.accueil .gallery {
   position: relative;
   align-items: center;
   display: flex;
   gap: 20px;
   width: 40%;
 }
-
-.gallery-item {
+.accueil .gallery-item {
   text-align: center;
 }
-
-.image-container {
+.accueil .image-container {
   position: relative;
   width: 260px;
   height: 260px;
   overflow: hidden;
 }
-
-.image-container img {
+.accueil .image-container img {
   width: 260px;
 }
-
-.label {
+.accueil .label {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -1486,8 +1467,7 @@ body {
   padding: 5px 10px;
   font-weight: bold;
 }
-
-.location {
+.accueil .location {
   margin-top: 10px;
   font-size: 16px;
   color: #FFF;
@@ -1496,63 +1476,28 @@ body {
   gap: 5px;
 }
 
-@media (max-width: 1440px) {
-  .nav-sec__listeItem {
-    padding: 14px 80px;
-  }
-  .centered, .centered_dates {
-    padding-left: 50px;
-  }
-}
 @media (max-width: 601px) {
-  .titre_texte {
-    font-size: 18px;
-  }
-  .centered, .centered_dates {
-    padding-left: 20px;
-    font-size: 24px;
-  }
-  .nav-sec__listeItem {
-    padding: 14px 40px;
-  }
   .img__entete {
+    width: 100%;
     height: auto;
   }
-}
-@media (max-width: 601px) {
-  .titre_texte, .nav-sec__listeItem, .auteurs {
-    font-size: 14px;
-    padding: 0 8px;
+  .container {
+    color: #FFF;
+    padding: 10px;
+    position: relative;
+    width: 100%;
   }
   .centered {
+    position: absolute;
     padding-top: 20px;
-    padding-left: 10px;
-    font-size: 24px;
+    padding-left: 80px;
+    font-size: 30px;
   }
   .centered_dates {
+    position: absolute;
     padding-top: 70px;
-    padding-left: 10px;
-    font-size: 18px;
-  }
-  .img__entete {
-    width: 100%;
-    height: auto;
-  }
-  .a_points {
-    font-size: 14px;
-  }
-  .conteneur_actu {
-    display: block;
-    position: relative;
-    margin: 21px;
-  }
-  .articles {
-    width: 100%;
-    margin: 10px 0;
-  }
-  .picture__img, .image-container img {
-    max-width: 100%;
-    height: auto;
+    padding-left: 80px;
+    font-size: 20px;
   }
 }
 /**

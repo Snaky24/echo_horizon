@@ -159,6 +159,7 @@ $niveau = '../../';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="<?php echo $niveau; ?>liaisons/images/logo.svg">
     <?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
     <title>Fiche de l'artiste</title>
 </head>
@@ -170,7 +171,7 @@ $niveau = '../../';
 <nav class="nav_sec">
 			<ul class="nav-sec__liste">
 				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>artistes/index.php" class="nav-sec__lien">Artistes A-Z</a></li>
-				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>#" class="nav-sec__lien">Par style musical</a></li>
+				<li class="nav-sec__listeItem"><a href="<?php echo $niveau; ?>artistes/index.php" class="nav-sec__lien">Par style musical</a></li>
 			</ul>
 		</nav>
         <hr class="separator">

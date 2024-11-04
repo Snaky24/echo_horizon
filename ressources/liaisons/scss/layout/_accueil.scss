@@ -8,212 +8,15 @@
   box-sizing: border-box;
 }
 
-.accueil {
-  margin: 0 auto;
-
-  &__nom {
-    text-align: left;
-  }
-
-  &__titre {
-    text-align: left;
-    margin-left: 150px;
-  }
-}
-
 body {
   background-color: $noir;
   color: $blanc;
-  max-width: 1440px;
 }
 
-.img__entete {
-  width: 1440px;
-  height: 470px;
-}
-
-.container {
-  color: $blanc;
-  padding: 10px;
+.accueil {
+  margin: 0 auto;
   position: relative;
-}
-
-.centered {
-  position: absolute;
-  padding-top: 50px;
-  padding-left: 200px;
-  font-size: 40px;
-}
-
-.centered_dates {
-  position: absolute;
-  padding-top: 110px;
-  padding-left: 200px;
-  font-size: 30px;
-}
-
-.nav-sec__liste {
-  justify-content: center;
-  display: flex;
-  list-style: none;
-}
-
-.nav-sec__listeItem {
-  padding: 14px 140px;
-  font-size: 20px;
-}
-
-.nav-sec__lien {
-  color: $blanc;
-}
-
-.separator {
-  background-color: $orange;
-  width: 100%;
-  padding: 10px;
-  border: $orange;
-  margin-top: 3em;
-  margin-bottom: 3em;
-}
-
-.conteneur {
-  display: block;
-  position: relative;
-  width: 100%;
-}
-
-.titre_texte {
-  font-size: 20px;
-  color: $noir;
-  padding: 0 32px 0 32px;
-}
-
-.hr__actu {
-  padding: 3px;
-  background-color: $orange;
-  border: none;
-  margin: 20px 40px 0 40px;
-  display: flex;
-  align-items: center;
-}
-
-.auteurs {
-  background-color: $blanc;
-  text-transform: none;
-  text-decoration-line: underline;
-  text-decoration-color: $orange;
-  text-underline-offset: 4px;
-  list-style: 2px;
-  font-size: 14px;
-  color: $noir;
-  padding: 0 0 0 32px;
-}
-
-.articles_texte {
-  background-color: $blanc;
-  text-transform: none;
-  color: $noir;
-  font-size: 16px;
-  padding: 0 32px 0 32px;
-  text-align: justify;
-  padding-bottom: 30px;
-}
-
-.a_points {
-  color: $rose;
-  cursor: pointer;
-  font-size: 16px;
-  letter-spacing: 2px;
-}
-
-.a_points:hover {
-  font-weight: bold;
-}
-
-.conteneur_actu {
-  margin: 20px;
-  display: flex;
-  width: 100%;
-  align-items: flex-end;
-}
-
-.titre {
-  background-color: $blanc;
-  padding-top: 20px;
-}
-
-.articles {
-  background-color: $blanc;
-  justify-content: space-between;
-  margin: 21px;
-  width: 320px;
-}
-
-.articles__footer {
-  background-color: $orange;
-  padding: 2px;
-}
-
-.date__article__footer {
-  text-align: right;
-  color: $noir;
-  font-weight: 400;
-  margin-right: 20px;
-  font-size: 14px;
-}
-
-.artistes__titre {
-  text-transform: uppercase;
-  color: $blanc;
-  text-decoration: underline 17px $orange solid;
-  margin-bottom: 2em;
-  margin-top: 2em;
-  margin-right: 150px;
-  float: right;
-  font-size: 40px;
-}
-
-.artistes__sect {
-  align-items: center;
-  width: 100%;
-  position: relative;
-}
-
-.img_artistes__ul {
-  display: flex;
-  width: 100%;
-  list-style: none;
-}
-
-.img_artistes__li {
-  margin: 21px;
-}
-
-.picture__img {
-  width: 235px;
-  height: auto;
-}
-
-.noms__artistes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
-
-.artistes__noms {
-  font-size: 20px;
-  font-weight: bold;
-  color: $blanc;
-  display: flex;
-}
-
-.noms__artiste {
-  width: 225px;
   text-align: center;
-  padding: 4px;
-  background-color: $rose;
-}
 
 .tarifs__titre {
   text-transform: uppercase;
@@ -389,62 +192,388 @@ body {
 @media (max-width: 601px) {
   .titre_texte {
     font-size: 18px;
+  @media(min-width: $desktop) {
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
-  .centered, .centered_dates {
-    padding-left: 20px;
-    font-size: 24px;
+
+  .img__entete {
+    width: 1440px;
+    height: 470px;
+  }
+
+  .container {
+    color: $blanc;
+    padding: 10px;
+    position: relative;
+  }
+
+  .centered {
+    position: absolute;
+    padding-top: 50px;
+    padding-left: 200px;
+    font-size: 40px;
+  }
+
+  .centered_dates {
+    position: absolute;
+    padding-top: 110px;
+    padding-left: 200px;
+    font-size: 30px;
+  }
+
+  .nav-sec__liste {
+    justify-content: center;
+    display: flex;
+    list-style: none;
   }
 
   .nav-sec__listeItem {
-    padding: 14px 40px;
+    padding: 14px 140px;
+    font-size: 20px;
+    text-decoration: underline 10px $rose solid;
   }
-  
-  .img__entete {
+
+  .nav-sec__lien {
+    color: $blanc;
+  }
+
+  .separator {
+    background-color: $orange;
+    width: 100%;
+    padding: 10px;
+    border: $orange;
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+
+  .conteneur {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  .titre_texte {
+    font-size: 20px;
+    color: $noir;
+    padding: 0 32px 0 32px;
+  }
+
+  .hr__actu {
+    padding: 3px;
+    background-color: $orange;
+    border: none;
+    margin: 20px 40px 0 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .auteurs {
+    background-color: $blanc;
+    text-transform: none;
+    text-decoration-line: underline;
+    text-decoration-color: $orange;
+    text-underline-offset: 4px;
+    list-style: 2px;
+    font-size: 14px;
+    color: $noir;
+    padding: 0 0 0 32px;
+  }
+
+  .articles_texte {
+    background-color: $blanc;
+    text-transform: none;
+    color: $noir;
+    font-size: 16px;
+    padding: 0 32px 0 32px;
+    text-align: justify;
+    padding-bottom: 30px;
+  }
+
+  .a_points {
+    color: $rose;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .a_points:hover {
+    font-weight: bold;
+  }
+
+  .conteneur_actu {
+    margin: 20px;
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+  }
+
+  .titre {
+    background-color: $blanc;
+    padding-top: 20px;
+  }
+
+  .articles {
+    background-color: $blanc;
+    justify-content: space-between;
+    margin: 21px;
+    width: 320px;
+  }
+
+  .articles__footer {
+    background-color: $orange;
+    padding: 2px;
+  }
+
+  .date__article__footer {
+    text-align: right;
+    color: $noir;
+    font-weight: 400;
+    margin-right: 20px;
+    font-size: 14px;
+  }
+
+  .artistes__titre {
+    text-transform: uppercase;
+    color: $blanc;
+    text-decoration: underline 17px $orange solid;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    margin-right: 150px;
+    float: right;
+    font-size: 40px;
+  }
+
+  .artistes__sect {
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+
+  .img_artistes__ul {
+    display: flex;
+    width: 100%;
+    list-style: none;
+  }
+
+  .img_artistes__li {
+    margin: 21px;
+  }
+
+  .picture__img {
+    width: 235px;
     height: auto;
+  }
+
+  .noms__artistes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .artistes__noms {
+    font-size: 20px;
+    font-weight: bold;
+    color: $blanc;
+    display: flex;
+  }
+
+  .noms__artiste {
+    width: 225px;
+    text-align: center;
+    padding: 4px;
+    background-color: $rose;
+  }
+
+  .tarifs__titre {
+    text-transform: uppercase;
+    color: $blanc;
+    text-decoration: underline 17px $orange solid;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    margin-left: 150px;
+    font-size: 40px;
+  }
+
+  .tarifs__sect {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .liste__tarifs-items {
+    background-color: $blanc;
+    width: 310px;
+    margin: 21px;
+  }
+
+  .items_tarifs {
+    font-size: 25px;
+    padding: 0 30px 0 30px;
+    color: $noir;
+  }
+
+  .items_tarifs-conditions {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 30px 0 30px;
+    margin-bottom: 30px;
+    color: $noir;
+    text-transform: none;
+    opacity: .6;
+  }
+
+  .tarifs__prix {
+    background-color: $orange;
+    box-shadow: 0 3px 10px $noir;
+  }
+
+  .tarifs_items-prix {
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 8px;
+    color: $noir;
+  }
+
+  .infos__tarifs {
+    display: flex;
+    gap: 50px;
+    max-width: 1440px;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .infos__textes__tarifs {
+    width: 50%;
+  }
+
+  .textes__tarifs {
+    width: 60%;
+    color: $blanc;
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .lien__tarif {
+    color: $rose;
+    text-decoration: none;
+  }
+
+  .lieux__billets__tarifs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icone__lieux__tarifs {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-size: 16px;
+    color: $blanc;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .icone__lieux {
+    color: $blanc;
+  }
+
+  .lieux__titre {
+    text-transform: uppercase;
+    color: $blanc;
+    text-decoration: underline 17px $orange solid;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    margin-right: 150px;
+    float: right;
+    font-size: 40px;
+  }
+
+  .lieux__sect {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px;
+    align-items: flex-start;
+  }
+
+  .gallery {
+    position: relative;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    width: 40%;
+  }
+
+  .gallery-item {
+    text-align: center;
+  }
+
+  .image-container {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    width: 260px;
+  }
+
+  .label {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $degrade;
+    color: $blanc;
+    padding: 5px 10px;
+    font-weight: bold;
+  }
+
+  .location {
+    margin-top: 10px;
+    font-size: 16px;
+    color: $blanc;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 }
 
 @media (max-width: 601px) {
-  .titre_texte, .nav-sec__listeItem, .auteurs {
-    font-size: 14px;
-    padding: 0 8px;
-  }
-
-  .centered {
-    padding-top: 20px;
-    padding-left: 10px;
-    font-size: 24px;
-  }
-
-  .centered_dates {
-    padding-top: 70px;
-    padding-left: 10px;
-    font-size: 18px;
-  }
 
   .img__entete {
     width: 100%;
     height: auto;
   }
 
-  .a_points {
-    font-size: 14px;
-  }
-
-  .conteneur_actu {
-    display: block;
+  .container {
+    color: $blanc;
+    padding: 10px;
     position: relative;
-    margin: 21px;
-  }
-
-  .articles {
     width: 100%;
-    margin: 10px 0;
   }
 
-  .picture__img, .image-container img {
-    max-width: 100%;
-    height: auto;
+  .centered {
+    position: absolute;
+    padding-top: 20px;
+    padding-left: 80px;
+    font-size: 30px;
+  }
+
+  .centered_dates {
+    position: absolute;
+    padding-top: 70px;
+    padding-left: 80px;
+    font-size: 20px;
   }
 }
