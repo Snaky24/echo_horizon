@@ -2,6 +2,17 @@
 
 @charset "UTF-8";
 
+:root {
+  background: $noir;
+  max-width: 1440px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .logo {
   display: block;
   height: 84px;
@@ -10,8 +21,9 @@
 
 .menu__listeItem,
 a {
-
- color: $rose;
+  color: $rose;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .entete {
@@ -20,6 +32,35 @@ a {
   align-items: center;
   padding: 30px 10%;
   position: relative;
+}
+
+@media (max-width: 601px) {
+  :root {
+    background: $noir;
+    max-width: $desktop;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .entete {
+    padding: 20px 5%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    height: 70px;
+  }
+
+  .menu__listeItem,
+  a {
+    font-size: 16px;
+  }
 }
 
 

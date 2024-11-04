@@ -804,6 +804,17 @@ Effet actif : #f4d07c
 }
 
 /****** LAYOUT *****************************/
+:root {
+  background: #000;
+  max-width: 1440px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .logo {
   display: block;
   height: 84px;
@@ -813,6 +824,8 @@ Effet actif : #f4d07c
 .menu__listeItem,
 a {
   color: #DA4167;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .entete {
@@ -823,6 +836,30 @@ a {
   position: relative;
 }
 
+@media (max-width: 601px) {
+  :root {
+    background: #000;
+    max-width: 601px;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .entete {
+    padding: 20px 5%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .logo {
+    height: 70px;
+  }
+  .menu__listeItem,
+  a {
+    font-size: 16px;
+  }
+}
 .container {
   padding: 20px;
   display: flex;
@@ -1147,20 +1184,10 @@ body {
   margin-bottom: 3em;
 }
 
-.accueil__titre {
-  text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
-  margin-bottom: 2em;
-  margin-top: 2em;
-  margin-right: 150px;
-  float: left;
-  font-size: 40px;
-}
-
 .conteneur {
   display: block;
   position: relative;
+  width: 100%;
 }
 
 .titre_texte {
@@ -1458,56 +1485,62 @@ body {
 }
 
 @media (max-width: 1440px) {
-  .conteneur {
-    display: block;
-    text-align: center;
+  .nav-sec__listeItem {
+    padding: 14px 80px;
   }
-  .accueil__titre {
-    text-transform: uppercase;
-    color: #FFF;
-    text-decoration: underline 6px #FEA82F solid;
-    margin-bottom: 2em;
-    margin-top: 2em;
-    float: center;
-    font-size: 20px;
-  }
-  .titre_texte, .articles_texte {
-    padding: 0 16px;
-    font-size: 20px;
-  }
-  .conteneur_actu {
-    flex-direction: column;
-    align-items: center;
-    width: 340px;
-  }
-  .articles {
-    width: 60%;
-    margin: 0 20px 0 20px;
+  .centered, .centered_dates {
+    padding-left: 50px;
   }
 }
 @media (max-width: 601px) {
-  .titre_texte, .articles_texte, .auteurs {
+  .titre_texte {
+    font-size: 18px;
+  }
+  .centered, .centered_dates {
+    padding-left: 20px;
+    font-size: 24px;
+  }
+  .nav-sec__listeItem {
+    padding: 14px 40px;
+  }
+  .img__entete {
+    height: auto;
+  }
+}
+@media (max-width: 601px) {
+  .titre_texte, .nav-sec__listeItem, .auteurs {
     font-size: 14px;
     padding: 0 8px;
   }
-  .hr__actu {
-    margin: 10px 20px;
+  .centered {
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 24px;
   }
-  .artistes__titre {
-    font-size: 28px;
+  .centered_dates {
+    padding-top: 70px;
+    padding-left: 10px;
+    font-size: 18px;
+  }
+  .img__entete {
+    width: 100%;
+    height: auto;
   }
   .a_points {
     font-size: 14px;
+  }
+  .conteneur_actu {
+    display: block;
+    position: relative;
+    margin: 21px;
   }
   .articles {
     width: 100%;
     margin: 10px 0;
   }
-  .picture__img {
+  .picture__img, .image-container img {
     max-width: 100%;
-  }
-  .noms__artiste {
-    max-width: 180px;
+    height: auto;
   }
 }
 /**
