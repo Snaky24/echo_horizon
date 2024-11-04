@@ -1,5 +1,5 @@
 /**
-* @author Prenom Nom courriel
+* @author Elma Atindehou
 */
 
 /******** Typographie *********/
@@ -34,7 +34,6 @@ html {
   font-size: 62.5%;
 }
 
-<<<<<<< HEAD
 h1,
 h2,
 h3{
@@ -42,8 +41,6 @@ h3{
   font-family: $fontePrimaire;
 }
 
-=======
->>>>>>> 6068b61ea346ebb438a15cf53939fbab4c698847
 body {
   font-family: $fontePrimaire;
   @include fontSize(16px); /* 16px pour toutes les largeurs d'écran */
@@ -62,7 +59,4 @@ body {
 .titreNiveau3{
   @include h3Taille;
 }
-// .evenementsDesArtistes__lien{
-  
-// }
 
