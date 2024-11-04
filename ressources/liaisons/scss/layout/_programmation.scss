@@ -27,8 +27,28 @@ a {
 }
 
 /******* MISE EN FORME DES LIENS DE CHAQUE ÉVENEMENTS*******/
+.separator{
+  background-color: #FEA82F;
+  width: 100%;
+  padding: 10px;
+  border: #FEA82F;
+  margin-top: 3em;
+  margin-bottom: 3em;
 
+}
+.nav-sec__liste{
+  
+  justify-content: center;
+    display: flex;
+    list-style: none;
+}
+.nav-sec__listeItem {
+  padding: 14px 140px;
+  font-size: 20px;
+  text-decoration: underline 10px #DA4167 solid;}
 
+  .nav-sec__lien {
+    color: #FFF;}
 /******* MISE EN FORME DE LA LISTE DES LIEUX *******/
 .contenuPrincipal {
   margin: 0 auto;
