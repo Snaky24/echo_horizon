@@ -602,7 +602,7 @@ body {
   text-decoration: underline;
 }
 .hyperlien:visited {
-  color: rgb(151.4977973568, 29.5022026432, 59.8017621145);
+  color: #971e3c;
 }
 .hyperlien:hover {
   color: #FFF;
