@@ -547,9 +547,6 @@ button {
   background: linear-gradient(160deg, rgb(218, 65, 103) 20%, rgb(254, 168, 47) 70%);
   color: #FFF;
   border: none;
-  font-size: 18px;
-  text-transform: uppercase;
-  text-decoration: none;
 }
 
 /** Grille 12 colones **/
