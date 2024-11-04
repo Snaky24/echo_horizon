@@ -31,7 +31,6 @@ a {
 
 /******* MISE EN FORME DE LA LISTE DES LIEUX *******/
 .contenuPrincipal {
-  @include texteCourant;
   margin: 0 auto;
   max-width: 70%;
   background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png), url(../images/feux_dartifices3.png);
@@ -45,13 +44,14 @@ a {
     background-size: 60%, 60%, 50%;
     background-position: top 10% right 10%, top 100% left 90%, top 50% left 90%;
   }
-  
+  @include texteCourant;
 }
 
 /****** LISTE DES LIEUX ***/
 .conteneurEvenements {
 
   display: grid;
+  margin: 0 auto;
   // flex-direction: column;
   grid-template-columns: 1fr;
   grid-template-areas: "liste"
