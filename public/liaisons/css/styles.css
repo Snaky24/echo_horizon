@@ -602,7 +602,7 @@ body {
   text-decoration: underline;
 }
 .hyperlien:visited {
-  color: #971e3c;
+  color: rgb(151.4977973568, 29.5022026432, 59.8017621145);
 }
 .hyperlien:hover {
   color: #FFF;
@@ -943,6 +943,17 @@ a {
   text-align: right;
 }
 
+/**
+ * ----------------------------
+ * TABLE DES MATIERES - FICHE DE L'ARTISTE
+ * ----------------------------
+ * ARTISTES
+ * ARTISTES SUGGÉRÉS
+ * SITE WEB
+ * REPRÉSENTATIONS
+ * PROVENANCE ET STYLE MUSICAL
+ * IMAGES
+ */
 .artiste {
   margin: 0 auto;
   position: relative;
@@ -966,6 +977,13 @@ a {
   text-decoration: underline 17px #FEA82F solid;
   margin-bottom: 2em;
   margin-top: 2em;
+  font-family: LatoBlack;
+  font-size: 5rem;
+}
+@media (min-width: 601px) {
+  .artiste__nom {
+    margin-left: 8rem;
+  }
 }
 .artiste__description {
   color: #000;
@@ -974,6 +992,8 @@ a {
   padding: 30px;
   width: 300px;
   margin: 1em auto;
+  font-family: JaldiRegular;
+  font-size: 2rem;
 }
 .artiste__titre {
   text-transform: uppercase;
@@ -981,6 +1001,13 @@ a {
   text-decoration: underline 17px #FEA82F solid;
   margin-bottom: 2em;
   margin-top: 2em;
+  font-family: LatoBlack;
+  font-size: 3rem;
+}
+@media (min-width: 601px) {
+  .artiste__titre {
+    margin-left: 8rem;
+  }
 }
 @media (min-width: 601px) {
   .artiste__description {
@@ -993,10 +1020,31 @@ a {
     background-image: url(../images/feux_dartifices.png);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-size: 60%, 60%, 50%;
-    background-position: top 40% left 20%;
+    background-position: top 60% left 30%;
   }
 }
 
+@media (min-width: 601px) {
+  .wrapper {
+    margin-top: 7em;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 20px;
+    grid-template-areas: ". . . . . . a a a a" "b b b b b b a a a a" "b b b b b b a a a a" "c c c c c c d d d d";
+  }
+  .wrapper__element1 {
+    grid-area: a;
+  }
+  .wrapper__element2 {
+    grid-area: b;
+  }
+  .wrapper__element3 {
+    grid-area: c;
+  }
+  .wrapper__element4 {
+    grid-area: d;
+  }
+}
 .suggestion {
   justify-items: center;
   margin: 5em auto;
@@ -1007,6 +1055,8 @@ a {
   text-transform: uppercase;
   color: #FFF;
   text-decoration: underline 5px #FEA82F solid;
+  font-family: LatoBold;
+  font-size: 2rem;
   margin-left: 2em;
   margin-bottom: 2em;
 }
@@ -1030,6 +1080,8 @@ a {
   text-transform: uppercase;
   color: #FFF;
   text-decoration: underline 5px #FEA82F solid;
+  font-family: LatoBold;
+  font-size: 2rem;
 }
 
 .spectacle {
@@ -1044,6 +1096,8 @@ a {
   color: #FEA82F;
   margin-top: 1.5em;
   margin-left: 5em;
+  font-family: JaldiRegular;
+  font-size: 2.5rem;
 }
 @media (min-width: 601px) {
   .spectacle {
@@ -1053,7 +1107,7 @@ a {
 
 .infos {
   background-color: #FFF;
-  width: 250px;
+  width: 280px;
   border-bottom: #FEA82F 20px solid;
   padding: 30px;
   margin: 2em auto;
@@ -1061,6 +1115,8 @@ a {
 .infos__texte {
   color: #000;
   padding-top: 1em;
+  font-family: JaldiRegular;
+  font-size: 2rem;
 }
 .infos__texte:nth-of-type(1) {
   margin-bottom: 1.5em;
@@ -1068,11 +1124,13 @@ a {
 .infos__titre {
   color: #000;
   border-bottom: #FEA82F 5px solid;
+  font-family: LatoBold;
+  font-size: 2.3rem;
 }
 @media (min-width: 601px) {
   .infos {
     position: absolute;
-    top: 3%;
+    top: 4%;
     left: 28%;
   }
 }
@@ -1103,27 +1161,6 @@ a {
   }
 }
 
-@media (min-width: 601px) {
-  .wrapper {
-    margin-top: 7em;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-gap: 20px;
-    grid-template-areas: ". . . . . . a a a a" "b b b b b b a a a a" "b b b b b b a a a a" "c c c c c c d d d d";
-  }
-  .wrapper__element1 {
-    grid-area: a;
-  }
-  .wrapper__element2 {
-    grid-area: b;
-  }
-  .wrapper__element3 {
-    grid-area: c;
-  }
-  .wrapper__element4 {
-    grid-area: d;
-  }
-}
 * {
   margin: 0;
   padding: 0;
@@ -1181,6 +1218,7 @@ body {
 .nav-sec__listeItem {
   padding: 14px 140px;
   font-size: 20px;
+  text-decoration: underline 10px #DA4167 solid;
 }
 
 .nav-sec__lien {

@@ -74,6 +74,7 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 	<meta name="keyword" content="">
 	<meta name="author" content="">
 	<meta charset="utf-8">
+	<link rel="icon" type="image/x-icon" href="<?php echo $niveau; ?>liaisons/images/logo.svg">
 	<title>Un beau titre ici!</title>
 	<?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
 </head>
