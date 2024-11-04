@@ -1,3 +1,5 @@
+// Camille
+
 @charset "UFT-8";
 
 .container {
@@ -36,9 +38,10 @@
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 40px;
   padding: 20px 0;
-  border-top: 1px solid #FFA500;
+  border-top: 1px solid $orange;
 }
 
 .contact,
@@ -60,7 +63,7 @@
 
 .newsletter button {
   padding: 10px;
-  background-color: #FFA500;
+  background-color: $orange;
   border: none;
   border-radius: 0 5px 5px 0;
   color: #fff;

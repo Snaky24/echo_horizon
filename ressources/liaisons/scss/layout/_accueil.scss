@@ -24,8 +24,8 @@
 }
 
 body {
-  background-color: black;
-  color: #FFF;
+  background-color: $noir;
+  color: $blanc;
   max-width: 1440px;
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 .container {
-  color: white;
+  color: $blanc;
   padding: 10px;
   position: relative;
 }
@@ -70,18 +70,18 @@ body {
 }
 
 .separator {
-  background-color: #FEA82F;
+  background-color: $orange;
   width: 100%;
   padding: 10px;
-  border: #FEA82F;
+  border: $orange;
   margin-top: 3em;
   margin-bottom: 3em;
 }
 
 .accueil__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-right: 150px;
@@ -96,19 +96,19 @@ body {
 
 .titre_texte {
   font-size: 20px;
-  color: #000;
+  color: $noir;
   padding: 0 32px 0 32px;
 }
 
 .hr_article {
-  background-color: #FEA82F;
+  background-color: $orange;
   width: 162px;
   padding: 4px;
-  border: #FEA82F;
+  border: $orange;
 }
 
 .auteurs {
-  background-color: #FFF;
+  background-color: $blanc;
   text-transform: none;
   font-size: 14px;
   color: $noir;
@@ -116,9 +116,9 @@ body {
 }
 
 .articles_texte {
-  background-color: #FFF;
+  background-color: $blanc;
   text-transform: none;
-  color: #000;
+  color: $noir;
   font-size: 16px;
   padding: 0 32px 0 32px;
   text-align: justify;
@@ -127,7 +127,7 @@ body {
 }
 
 .a_points {
-  color: #DA4167;
+  color: $rose;
   cursor: pointer;
   font-size: 16px;
   letter-spacing: 2px;
@@ -146,11 +146,12 @@ body {
 }
 
 .titre {
+  background-color: $blanc;
   padding-top: 20px;
 }
 
 .articles {
-  background-color: #FFF;
+  background-color: $blanc;
   justify-content: space-between;
   margin: 21px;
   width: 320px;
@@ -171,8 +172,8 @@ body {
 
 .artistes__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-right: 150px;
@@ -211,7 +212,7 @@ body {
 .artistes__noms {
   font-size: 20px;
   font-weight: bold;
-  color: #ffffff;
+  color: $blanc;
   display: flex;
 }
 
@@ -224,8 +225,8 @@ body {
 
 .tarifs__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-left: 150px;
@@ -289,7 +290,7 @@ body {
 
 .textes__tarifs {
   width: 60%;
-  color: #FFF;
+  color: $blanc;
   text-align: center;
   font-style: italic;
   font-size: 16px;
@@ -297,7 +298,7 @@ body {
 }
 
 .lien__tarif {
-  color: #DA4167;
+  color: $rose;
   text-decoration: none;
 }
 
@@ -310,8 +311,13 @@ body {
   display: flex;
   align-items: center;
   text-align: left;
+<<<<<<< HEAD
   font-size: 16px;
   color: #FFF;
+=======
+  font-size: 18px;
+  color: $orange;
+>>>>>>> 722aaac9bb0cd96f99e984f0ab4109f8295203d8
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -322,8 +328,8 @@ body {
 
 .lieux__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-right: 150px;
@@ -368,8 +374,8 @@ body {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(to right, #ff6347, #ffa500);
-  color: white;
+  background: $degrade;
+  color: $blanc;
   padding: 5px 10px;
   font-weight: bold;
 }
@@ -377,7 +383,7 @@ body {
 .location {
   margin-top: 10px;
   font-size: 16px;
-  color: #fff;
+  color: $blanc;
   display: flex;
   align-items: center;
   gap: 5px;

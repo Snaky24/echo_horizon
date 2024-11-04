@@ -63,7 +63,7 @@
         <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
     </div>
     </div>
-    <h5 class="piedDePage__copyRights">@Copyrights Michel Rouleau</h5>
+    <h5 class="piedDePage__copyRights">@Copyrights Équipe Echo Horizon</h5>
 </footer>
 
 <script src="public/liaisons/js/_menu.js"></script>
