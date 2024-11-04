@@ -134,7 +134,6 @@ function afficherJour($jour)
     $arrJours = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
     return $arrJours[$jour - 1];
 }
-
 function ajouterZero($temps)
 {
     if ($temps <= 9) {
@@ -167,11 +166,11 @@ $pdoResultatDates->closeCursor();
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keyword" content="">
-    <meta name="author" content="">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Un nouveau festival à Québec. De sombreux artistes seront invités pour participer à ce grand évenement">
+    <meta name="keyword" content="festival, artistes, fête, soirée, jeunes, enfants, musique, québec">
+    <meta name="author" content="Atindehou Elma">
     <link rel="icon" type="image/x-icon" href="<?php echo $niveau; ?>liaisons/images/logo.svg">
     <title>Programmation</title>
     <?php include($niveau . "liaisons/fragments/headlinks.inc.php"); ?>
@@ -201,7 +200,6 @@ $pdoResultatDates->closeCursor();
         <?php
         if (isset($_GET['id_jour']) == true ) { ?>
    <?php 
-//    if($arrJour[0]['jourdesemaine']==$_GET['id_date'])
    ?>
             <h2 class="titreNiveau2">
                 <?php echo afficherJour($arrJour[$_GET['id_jour']-3]['jourdesemaine']) . " " . $_GET['id_date'] . " " . afficherMois($arrJour[0]['mois']) ?>
@@ -269,7 +267,6 @@ $pdoResultatDates->closeCursor();
             </ul>
         </li>
         </ul>
-
 
     </main>
     <footer>
