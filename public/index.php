@@ -185,21 +185,71 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 				</div>
 			</div>
 		</section>
-		<section class="infos__tarifs__sect">
+		<div class="infos__tarifs">
 			<div class="infos__textes__tarifs">
-				<p class="textes__tarifs">Procurez-vous un passeport en ligne à <a href="#">lepointdevente.com</a> et
+				<p class="textes__tarifs">*Procurez-vous un passeport en ligne à <a class="lien__tarif"
+						href="#">lepointdevente.com</a> et
 					profitez d’offres spéciales!</p>
+				<p class="textes__tarifs">*Les passeports sont aussi disponibles en prévente chez nos partenaires.</p>
 			</div>
-		</section>
+			<div class="lieux__billets__tarifs">
+				<div class="icone__lieux__tarifs">
+					<img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+					<br>
+					<span>Érico<br>634 Rue Saint-Jean, Québec</span>
+				</div>
+				<div class="icone__lieux__tarifs">
+					<img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+					<br>
+					<span>Le Sacrilège<br>447 Rue Saint-Jean, Québec</span>
+				</div>
+				<div class="icone__lieux__tarifs">
+					<img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+					<br>
+					<span>Le Bonnet d'âne<br>298 Rue Saint-Jean, Québec</span>
+				</div>
+				<div class="icone__lieux__tarifs">
+					<img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+					<br>
+					<span>Le Sacrilège<br>Disquaire CD Mélomane<br>248 rue Saint-Jean, Québec</span>
+				</div>
+				<div class="icone__lieux__tarifs">
+					<img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte">
+					<br>
+					<span>Le Knock-Out<br>832 St-Joseph Est, Québec</span>
+				</div>
+			</div>
+		</div>
 
 		<h1 class="lieux__titre">Lieux de spectacles</h1>
 		<section class="lieux__sect">
-			<div class="conteneur__image">
-				<img class="img_lieux" src="liaisons/images/lieux/lieux_meduse4.png" alt="">
-			</div>
-			<div class="lieux__sect__items">
-				<h3 class="noms__lieux">Méduse</h3>
-			</div>
+			<div class="gallery">
+				<div class="gallery-item">
+					<div class="image-container">
+						<img src="liaisons/images/lieux/lieux_meduse4.png" alt="Méduse">
+						<div class="label">MÉDUSE</div>
+					</div>
+					<p class="location"><img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg"
+							alt="lieu carte"> 591, rue de Saint-Vallier Est, Québec</p>
+				</div>
+				<div class="gallery">
+				<div class="gallery-item">
+					<div class="image-container">
+						<img src="liaisons/images/lieux/lieux_meduse4.png" alt="Méduse">
+						<div class="label">MÉDUSE</div>
+					</div>
+					<p class="location"><img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg"
+							alt="lieu carte"> 591, rue de Saint-Vallier Est, Québec</p>
+				</div>
+				<div class="gallery">
+				<div class="gallery-item">
+					<div class="image-container">
+						<img src="liaisons/images/lieux/lieux_meduse4.png" alt="Méduse">
+						<div class="label">MÉDUSE</div>
+					</div>
+					<p class="location"><img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg"
+							alt="lieu carte"> 591, rue de Saint-Vallier Est, Québec</p>
+				</div>
 		</section>
 
 	</main>

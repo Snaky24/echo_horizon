@@ -1045,9 +1045,14 @@ nav ul {
     grid-area: d;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .accueil {
   margin: 0 auto;
-  position: absolute;
   text-align: center;
 }
 .accueil__nom {
@@ -1313,17 +1318,45 @@ body {
   color: #000;
 }
 
-.infos__tarifs__sect {
-  padding: 30px;
+.infos__tarifs {
+  display: flex;
+  gap: 50px;
+  max-width: 1440px;
+  padding: 20px;
+  align-items: center;
 }
 
 .infos__textes__tarifs {
-  float: left;
+  width: 50%;
 }
 
 .textes__tarifs {
+  width: 60%;
+  color: #FFF;
+  text-align: center;
   font-style: italic;
   font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.lien__tarif {
+  color: #DA4167;
+  text-decoration: none;
+}
+
+.lieux__billets__tarifs {
+  display: flex;
+  flex-direction: column;
+}
+
+.icone__lieux__tarifs {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 18px;
+  color: #FEA82F;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .lieux__titre {
@@ -1337,26 +1370,56 @@ body {
   font-size: 40px;
 }
 
-.conteneur__image {
-  display: flex;
-  justify-content: center;
+.lieux__sect {
   align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.gallery {
+  position: relative;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  width: 40%;
+}
+
+.gallery-item {
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
+}
+
+.image-container img {
   width: 260px;
 }
 
-.img_lieux {
-  width: 162.5%;
+.label {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #ff6347, #ffa500);
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
 }
 
-.noms__lieux {
-  color: white;
-  text-align: center;
-  position: absolute;
-  left: 2%;
-  right: 2%;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  z-index: 1;
+.location {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /**
