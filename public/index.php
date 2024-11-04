@@ -83,7 +83,7 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 
 <body>
 	<?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
-	<main>
+	<main class="accueil">
 		<span class="centered" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">Festival OFF de Québec</span>
 		<span class="centered_dates" style="text-shadow: 1px 1px 2px #000, 0 0 40em #000;">DU 8 AU 11 JUILLET</span>
 		<img class="img__entete" src="<?php echo $niveau; ?>liaisons/images/img_entete_w470px.jpg" alt="">

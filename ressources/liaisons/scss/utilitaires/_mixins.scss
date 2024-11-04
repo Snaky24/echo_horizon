@@ -227,3 +227,24 @@
     }
 
 }
+
+// @mixins Camille
+
+@mixin h1__accueil {
+    font-family: ($titreNiveau1);
+    font-size: 1.88rem;
+    float: left;
+    text-transform: uppercase;
+    color: $blanc;
+    background-image: url(../images/bordure_jaune.jpg);
+    background-repeat: no-repeat;
+    background-size: 40% 30%;
+    background-position: bottom -10% left 100%;
+
+    @media(min-width:$desktop) {
+        background-size: 60% 40%;
+        background-position: bottom -30% left 100%;
+        font-size: 5.4rem;
+        margin-left: 4%;
+    }
+}
