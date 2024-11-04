@@ -814,21 +814,28 @@ a {
 
 .container {
   padding: 20px;
-  text-align: center;
+  display: flex;
+}
+
+.section__logo {
+  float: left;
+  margin: 20px;
 }
 
 .logo__footer {
-  display: block;
+  display: flex;
   height: 84px;
   cursor: pointer;
 }
 
-nav ul {
+.section__nav {
+  float: right;
+  margin-left: 200px;
+}
+
+.nav__footer {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
+  display: block;
   gap: 20px;
 }
 
@@ -843,6 +850,7 @@ nav ul {
 .contact,
 .newsletter {
   width: 45%;
+  margin-top: 20px;
 }
 
 .newsletter form {
@@ -875,6 +883,10 @@ nav ul {
 .socials a img {
   width: 30px;
   height: 30px;
+}
+
+.nav__principal {
+  text-align: right;
 }
 
 .artiste {
