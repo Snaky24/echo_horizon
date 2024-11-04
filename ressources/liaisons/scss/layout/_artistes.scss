@@ -43,6 +43,14 @@
       width: 80%;
     }
   }
+
+  @media(min-width:$desktop) {
+    max-width: 90%;
+    background-image: url(../images/feux_dartifices.png);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 60%, 60%, 50%;
+    background-position: top 40% left 20%;
+  }
 }
 
 .suggestion{
@@ -102,13 +110,18 @@
 
 .infos{
   background-color: $blanc;
-  width: 200px;
+  width: 250px;
   border-bottom: $orange 20px solid;
   padding: 30px;
   margin: 2em auto;
 
   &__texte{
     color: $noir;
+    padding-top: 1em;
+  }
+
+  &__texte:nth-of-type(1){
+   margin-bottom: 1.5em;
   }
 
   &__titre{
@@ -120,8 +133,6 @@
     position: absolute;
     top: 3%;
     left: 28%;
-    max-width: 250px;
-    padding: 40px;
   }
 }
 
@@ -159,6 +170,7 @@
 
 @media(min-width:$desktop){
   .wrapper{
+    margin-top: 7em;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-gap: 20px;
