@@ -10,7 +10,6 @@
 
 .accueil {
   margin: 0 auto;
-  text-align: center;
 
   &__nom {
     text-align: left;
@@ -19,7 +18,6 @@
   &__titre {
     text-align: left;
     margin-left: 150px;
-    @include title;
   }
 }
 
@@ -78,20 +76,10 @@ body {
   margin-bottom: 3em;
 }
 
-.accueil__titre {
-  text-transform: uppercase;
-  color: $blanc;
-  text-decoration: underline 17px $orange solid;
-  margin-bottom: 2em;
-  margin-top: 2em;
-  margin-right: 150px;
-  float: left;
-  font-size: 40px;
-}
-
 .conteneur {
   display: block;
   position: relative;
+  width: 100%;
 }
 
 .titre_texte {
@@ -100,16 +88,22 @@ body {
   padding: 0 32px 0 32px;
 }
 
-.hr_article {
+.hr__actu {
+  padding: 3px;
   background-color: $orange;
-  width: 162px;
-  padding: 4px;
-  border: $orange;
+  border: none;
+  margin: 20px 40px 0 40px;
+  display: flex;
+  align-items: center;
 }
 
 .auteurs {
   background-color: $blanc;
   text-transform: none;
+  text-decoration-line: underline;
+  text-decoration-color: $orange;
+  text-underline-offset: 4px;
+  list-style: 2px;
   font-size: 14px;
   color: $noir;
   padding: 0 0 0 32px;
@@ -123,7 +117,6 @@ body {
   padding: 0 32px 0 32px;
   text-align: justify;
   padding-bottom: 30px;
-  vertical-align: bottom;
 }
 
 .a_points {
@@ -138,9 +131,8 @@ body {
 }
 
 .conteneur_actu {
-  align-items: center;
+  margin: 20px;
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
   align-items: flex-end;
 }
@@ -382,4 +374,77 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+@media (max-width: 1440px) {
+  .nav-sec__listeItem {
+    padding: 14px 80px;
+  }
+  
+  .centered, .centered_dates {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 601px) {
+  .titre_texte {
+    font-size: 18px;
+  }
+
+  .centered, .centered_dates {
+    padding-left: 20px;
+    font-size: 24px;
+  }
+
+  .nav-sec__listeItem {
+    padding: 14px 40px;
+  }
+  
+  .img__entete {
+    height: auto;
+  }
+}
+
+@media (max-width: 601px) {
+  .titre_texte, .nav-sec__listeItem, .auteurs {
+    font-size: 14px;
+    padding: 0 8px;
+  }
+
+  .centered {
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 24px;
+  }
+
+  .centered_dates {
+    padding-top: 70px;
+    padding-left: 10px;
+    font-size: 18px;
+  }
+
+  .img__entete {
+    width: 100%;
+    height: auto;
+  }
+
+  .a_points {
+    font-size: 14px;
+  }
+
+  .conteneur_actu {
+    display: block;
+    position: relative;
+    margin: 21px;
+  }
+
+  .articles {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .picture__img, .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
 }
