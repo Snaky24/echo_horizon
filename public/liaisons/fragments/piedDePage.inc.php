@@ -16,23 +16,25 @@
 
 <footer class="piedDePage">
     <hr class="separator">
-    <div class="section__logo">
-        <img class="logo__footer" src="<?php echo $niveau ?>liaisons/images/logo.svg" alt="Logo">
-    </div>
-    <div class="section__nav">
-        <nav class="nav__footer">
-            <ul class="nav__principal">
-                <li class="nav__principal-items"><a href="#">LE OFF</a></li>
-                <li class="nav__principal-items"><a href="#">PROGRAMMATION</a></li>
-                <li class="nav__principal-items"><a href="#">ARTISTES</a></li>
-                <li class="nav__principal-items"><a href="#">PARTENAIRES</a></li>
-            </ul>
-            <ul class="nav__secondaire">
-                <li class="nav__secondaire-items"><a href="#">LIEUX</a></li>
-                <li class="nav__secondaire-items"><a href="#">TARIFS</a></li>
-                <li class="nav__secondaire-items"><a href="#">CONTACT</a></li>
-            </ul>
-        </nav>
+    <div class="section__footer">
+        <div class="section__logo">
+            <img class="logo__footer" src="<?php echo $niveau ?>liaisons/images/logo.svg" alt="Logo">
+        </div>
+        <div class="section__nav">
+            <nav class="nav__footer">
+                <ul class="nav__principal">
+                    <li class="nav__principal-items"><a href="#">LE OFF</a></li>
+                    <li class="nav__principal-items"><a href="#">PROGRAMMATION</a></li>
+                    <li class="nav__principal-items"><a href="#">ARTISTES</a></li>
+                    <li class="nav__principal-items"><a href="#">PARTENAIRES</a></li>
+                </ul>
+                <ul class="nav__secondaire">
+                    <li class="nav__secondaire-items"><a href="#">LIEUX</a></li>
+                    <li class="nav__secondaire-items"><a href="#">TARIFS</a></li>
+                    <li class="nav__secondaire-items"><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
     <div class="footer">
         <div class="contact">
