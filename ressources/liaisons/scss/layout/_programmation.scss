@@ -32,12 +32,12 @@ a {
 /******* MISE EN FORME DE LA LISTE DES LIEUX *******/
 .contenuPrincipal {
   @include texteCourant;
-  margin: 0 auto;
-  max-width: 70%;
-  background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png), url(../images/feux_dartifices3.png);
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: 100%, 80%, 80%;
-  background-position: top 12.3% right 10%, top 35% left 10%, top 64% left 3%;
+  // margin: 0 auto;
+  // max-width: 70%;
+  // background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png), url(../images/feux_dartifices3.png);
+  // background-repeat: no-repeat, no-repeat, no-repeat;
+  // background-size: 100%, 80%, 80%;
+  // background-position: top 12.3% right 10%, top 35% left 10%, top 64% left 3%;
 
   @media(min-width:$desktop) {
     max-width: 90%;
