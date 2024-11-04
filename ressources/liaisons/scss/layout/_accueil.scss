@@ -24,14 +24,9 @@
 }
 
 body {
-<<<<<<< HEAD
   background-color: $noir;
   color: $blanc;
-=======
-  background-color: black;
-  color: #FFF;
   max-width: 1440px;
->>>>>>> 6068b61ea346ebb438a15cf53939fbab4c698847
 }
 
 .img__entete {
@@ -85,8 +80,8 @@ body {
 
 .accueil__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-right: 150px;
@@ -151,15 +146,12 @@ body {
 }
 
 .titre {
-<<<<<<< HEAD
   background-color: $blanc;
-=======
->>>>>>> 6068b61ea346ebb438a15cf53939fbab4c698847
   padding-top: 20px;
 }
 
 .articles {
-  background-color: #FFF;
+  background-color: $blanc;
   justify-content: space-between;
   margin: 21px;
   width: 320px;
@@ -180,8 +172,8 @@ body {
 
 .artistes__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-right: 150px;
@@ -220,7 +212,7 @@ body {
 .artistes__noms {
   font-size: 20px;
   font-weight: bold;
-  color: #ffffff;
+  color: $blanc;
   display: flex;
 }
 
@@ -233,8 +225,8 @@ body {
 
 .tarifs__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-left: 150px;
@@ -296,7 +288,7 @@ body {
 
 .textes__tarifs {
   width: 60%;
-  color: #FFF;
+  color: $blanc;
   text-align: center;
   font-style: italic;
   font-size: 16px;
@@ -304,7 +296,7 @@ body {
 }
 
 .lien__tarif {
-  color: #DA4167;
+  color: $rose;
   text-decoration: none;
 }
 
@@ -318,15 +310,15 @@ body {
   align-items: center;
   text-align: left;
   font-size: 18px;
-  color: #FEA82F;
+  color: $orange;
   gap: 10px;
   margin-bottom: 20px;
 }
 
 .lieux__titre {
   text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
+  color: $blanc;
+  text-decoration: underline 17px $orange solid;
   margin-bottom: 2em;
   margin-top: 2em;
   margin-right: 150px;
@@ -371,8 +363,8 @@ body {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(to right, #ff6347, #ffa500);
-  color: white;
+  background: $degrade;
+  color: $blanc;
   padding: 5px 10px;
   font-weight: bold;
 }
@@ -380,7 +372,7 @@ body {
 .location {
   margin-top: 10px;
   font-size: 16px;
-  color: #fff;
+  color: $blanc;
   display: flex;
   align-items: center;
   gap: 5px;
