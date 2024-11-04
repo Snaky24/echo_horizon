@@ -804,6 +804,17 @@ Effet actif : #f4d07c
 }
 
 /****** LAYOUT *****************************/
+:root {
+  background: #000;
+  max-width: 1440px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .logo {
   display: block;
   height: 84px;
@@ -813,6 +824,8 @@ Effet actif : #f4d07c
 .menu__listeItem,
 a {
   color: #DA4167;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .entete {
@@ -823,6 +836,30 @@ a {
   position: relative;
 }
 
+@media (max-width: 601px) {
+  :root {
+    background: #000;
+    max-width: 601px;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .entete {
+    padding: 20px 5%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .logo {
+    height: 70px;
+  }
+  .menu__listeItem,
+  a {
+    font-size: 16px;
+  }
+}
 .container {
   padding: 20px;
   display: flex;
@@ -950,6 +987,15 @@ a {
     width: 80%;
   }
 }
+@media (min-width: 601px) {
+  .artiste {
+    max-width: 90%;
+    background-image: url(../images/feux_dartifices.png);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 60%, 60%, 50%;
+    background-position: top 40% left 20%;
+  }
+}
 
 .suggestion {
   justify-items: center;
@@ -1007,13 +1053,17 @@ a {
 
 .infos {
   background-color: #FFF;
-  width: 200px;
+  width: 250px;
   border-bottom: #FEA82F 20px solid;
   padding: 30px;
   margin: 2em auto;
 }
 .infos__texte {
   color: #000;
+  padding-top: 1em;
+}
+.infos__texte:nth-of-type(1) {
+  margin-bottom: 1.5em;
 }
 .infos__titre {
   color: #000;
@@ -1024,8 +1074,6 @@ a {
     position: absolute;
     top: 3%;
     left: 28%;
-    max-width: 250px;
-    padding: 40px;
   }
 }
 
@@ -1057,6 +1105,7 @@ a {
 
 @media (min-width: 601px) {
   .wrapper {
+    margin-top: 7em;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-gap: 20px;
@@ -1083,7 +1132,6 @@ a {
 
 .accueil {
   margin: 0 auto;
-  text-align: center;
 }
 .accueil__nom {
   text-align: left;
@@ -1091,11 +1139,6 @@ a {
 .accueil__titre {
   text-align: left;
   margin-left: 150px;
-  text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
-  margin-bottom: 2em;
-  margin-top: 2em;
 }
 
 body {
@@ -1153,20 +1196,10 @@ body {
   margin-bottom: 3em;
 }
 
-.accueil__titre {
-  text-transform: uppercase;
-  color: #FFF;
-  text-decoration: underline 17px #FEA82F solid;
-  margin-bottom: 2em;
-  margin-top: 2em;
-  margin-right: 150px;
-  float: left;
-  font-size: 40px;
-}
-
 .conteneur {
   display: block;
   position: relative;
+  width: 100%;
 }
 
 .titre_texte {
@@ -1175,16 +1208,22 @@ body {
   padding: 0 32px 0 32px;
 }
 
-.hr_article {
+.hr__actu {
+  padding: 3px;
   background-color: #FEA82F;
-  width: 162px;
-  padding: 4px;
-  border: #FEA82F;
+  border: none;
+  margin: 20px 40px 0 40px;
+  display: flex;
+  align-items: center;
 }
 
 .auteurs {
   background-color: #FFF;
   text-transform: none;
+  text-decoration-line: underline;
+  text-decoration-color: #FEA82F;
+  text-underline-offset: 4px;
+  list-style: 2px;
   font-size: 14px;
   color: #000;
   padding: 0 0 0 32px;
@@ -1198,7 +1237,6 @@ body {
   padding: 0 32px 0 32px;
   text-align: justify;
   padding-bottom: 30px;
-  vertical-align: bottom;
 }
 
 .a_points {
@@ -1213,9 +1251,8 @@ body {
 }
 
 .conteneur_actu {
-  align-items: center;
+  margin: 20px;
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
   align-items: flex-end;
 }
@@ -1459,6 +1496,65 @@ body {
   gap: 5px;
 }
 
+@media (max-width: 1440px) {
+  .nav-sec__listeItem {
+    padding: 14px 80px;
+  }
+  .centered, .centered_dates {
+    padding-left: 50px;
+  }
+}
+@media (max-width: 601px) {
+  .titre_texte {
+    font-size: 18px;
+  }
+  .centered, .centered_dates {
+    padding-left: 20px;
+    font-size: 24px;
+  }
+  .nav-sec__listeItem {
+    padding: 14px 40px;
+  }
+  .img__entete {
+    height: auto;
+  }
+}
+@media (max-width: 601px) {
+  .titre_texte, .nav-sec__listeItem, .auteurs {
+    font-size: 14px;
+    padding: 0 8px;
+  }
+  .centered {
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 24px;
+  }
+  .centered_dates {
+    padding-top: 70px;
+    padding-left: 10px;
+    font-size: 18px;
+  }
+  .img__entete {
+    width: 100%;
+    height: auto;
+  }
+  .a_points {
+    font-size: 14px;
+  }
+  .conteneur_actu {
+    display: block;
+    position: relative;
+    margin: 21px;
+  }
+  .articles {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .picture__img, .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 /**
  * @author Elma Atindehou 2233755@csfoy.ca
  * @todo MISE EN PAGE DE LA PAGE PROGRAMMATION

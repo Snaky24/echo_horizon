@@ -175,9 +175,9 @@
     font-family: ($texteCourant);
     font-size: 1.5rem;
     font-weight: 900;
-    @media(min-width:$desktop) {
-        font-size: 2rem;
-    }
+    // @media(min-width:$desktop) {
+    //     font-size: 2rem;
+    // }
 
 }
 

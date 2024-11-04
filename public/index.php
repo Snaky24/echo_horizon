@@ -69,7 +69,7 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 <html lang="fr">
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="keyword" content="">
 	<meta name="author" content="">
@@ -101,8 +101,10 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 					<article class="articles">
 						<header class="titre">
 							<h3 class="titre_texte"><b><?php echo $arrArticlesChoisis[$cpt]["titre"]; ?></b></h3>
-							<hr class="hr_article">
+							<hr class="hr__actu">
+							<br>
 							<p class="auteurs"><?php echo $arrArticlesChoisis[$cpt]["auteurs"]; ?></p>
+							<br>
 							<p class="articles_texte">
 								<?php echo $arrArticlesChoisis[$cpt]["article"];
 								if (count(explode(" ", $arrArticlesChoisis[$cpt]["article"])) >= 45) { ?>
