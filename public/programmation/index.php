@@ -250,7 +250,7 @@ $pdoResultatDates->closeCursor();
                             <source srcset="<?php echo $niveau; ?>liaisons/images/artistes/portrait/<?php echo $arrEvenement["artiste_id"] ?>_<?php echo rand(1, 2) ?>_portrait__w636.jpg" media="(min-width:601px)">
                             <img class="evenementsDesArtistes__image"
                             src="<?php echo $niveau; ?>liaisons/images/artistes/portrait/<?php echo $arrEvenement["artiste_id"] ?>_<?php echo rand(1, 2) ?>_portrait__w636.jpg"
-                            alt="<?php echo $arrEvenement["artiste_id"] ?>" width="50" height="50">
+                            alt=" Artiste <?php echo $arrEvenement["artistes_nom"] ?>" width="50" height="50">
                         </picture>
                         <div class="infoArtiste">
                             <a class="evenementsDesArtistes__lien"
