@@ -7,17 +7,32 @@ $lieux = [
 	[
 		'image' => 'liaisons/images/lieux/lieux_meduse4.png',
 		'nom' => 'Méduse',
-		'adresse' => '123 Rue du Soleil, Paris'
+		'adresse' => '591, rue de Saint-Vallier Est',
+		'adresse2' => 'Québec'
+	],
+	[
+		'image' => 'liaisons/images/lieux/lieux_sacrilege2.jpg',
+		'nom' => 'Le Sacrilège',
+		'adresse' => '447, rue Saint-Jean',
+		'adresse2' => 'Québec'
+	],
+	[
+		'image' => 'liaisons/images/lieux/lieux_sceneDesjardins.jpg',
+		'nom' => 'Scène Desjardins',
+		'adresse' => '480 rue Saint-Jean',
+		'adresse2' => 'Québec'
+	],
+	[
+		'image' => 'liaisons/images/lieux/lieux_foubar_interieur.jpg',
+		'nom' => 'Le Fou-Bar',
+		'adresse' => '525, Rue St-Jean',
+		'adresse2' => 'Québec'
 	],
 	[
 		'image' => 'liaisons/images/lieux/lieux_Ninkasi2.jpg',
-		'nom' => 'Lieu 2',
-		'adresse' => '456 Avenue de la Lune, Lyon'
-	],
-	[
-		'image' => 'images/lieu3.jpg',
-		'nom' => 'Lieu 3',
-		'adresse' => '789 Boulevard des Étoiles, Marseille'
+		'nom' => 'La Ninkasi du Faubourg',
+		'adresse' => '811, Rue Saint-Jean',
+		'adresse2' => 'Québec'
 	]
 ];
 
@@ -276,11 +291,16 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 		<div class="lieux-container">
 			<?php foreach ($lieux as $lieu): ?>
 				<div class="lieu">
-					<img src="<?php echo htmlspecialchars($lieu['image']); ?>"
-						alt="<?php echo htmlspecialchars($lieu['nom']); ?>">
+					<img class="img__lieu" src="<?php echo ($lieu['image']); ?>" alt="<?php echo ($lieu['nom']); ?>">
 					<div class="lieu-details">
-						<div class="lieu-nom"><?php echo htmlspecialchars($lieu['nom']); ?></div>
-						<div class="lieu-adresse"><?php echo htmlspecialchars($lieu['adresse']); ?></div>
+						<div class="lieu-nom"><?php echo ($lieu['nom']); ?></div>
+						<div class="lieu-adresse"><svg class="icone__adresse" width="14" height="14"
+								xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+								text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+								clip-rule="evenodd" viewBox="0 0 384 511.49">
+								<path fill="#fff"
+									d="M285.17 442.38c-23.26 25.51-50.35 48.35-80.78 66.86-3.76 2.75-8.84 3.09-13.01.42-44.94-28.6-82.7-62.95-112.39-100.3C38.06 358 12.3 301.06 3.46 246.2c-9-55.61-.58-109.13 27.1-152.65C41.48 76.38 55.4 60.7 72.41 47.19 111.43 16.1 156.03-.33 200.47.01c42.77.33 85.04 16.25 121.56 49.6 12.83 11.67 23.59 25.01 32.43 39.52 29.76 49.02 36.18 111.55 23.09 174.91-12.92 62.62-44.94 126.23-92.38 178.25v.09zm-93.2-343.5c52.77 0 95.54 42.77 95.54 95.55 0 52.77-42.77 95.54-95.54 95.54-52.78 0-95.55-42.77-95.55-95.54 0-52.78 42.77-95.55 95.55-95.55z" />
+							</svg><?php echo ($lieu['adresse']); ?><br><?php echo ($lieu['adresse2']); ?></div>
 					</div>
 				</div>
 			<?php endforeach; ?>

@@ -345,29 +345,40 @@ body {
   margin: 20px auto;
 }
 .lieu {
-  background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 300px;
   text-align: center;
 }
-.lieu img {
+.img__lieu {
   width: 100%;
   height: auto;
   display: block;
+  border-color: $degrade;
 }
 .lieu-details {
   padding: 15px;
+  padding: 20px;
+  text-align: center;
 }
 .lieu-nom {
-  font-size: 1.2em;
+  padding: 1.2%;
+  background-color: $orange;
+  text-align: center;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
   font-weight: bold;
   margin: 10px 0;
-  color: #333;
 }
+.icone__adresse {
+  margin-right: 2%;
+  align-items: center;
+}
+
 .lieu-adresse {
-  font-size: 0.9em;
-  color: #777;
+  font-size: 1em;
+  color: #FFF;
 }
 
 @media (max-width: 601px) {

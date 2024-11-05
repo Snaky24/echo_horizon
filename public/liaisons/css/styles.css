@@ -602,7 +602,7 @@ body {
   text-decoration: underline;
 }
 .hyperlien:visited {
-  color: rgb(151.4977973568, 29.5022026432, 59.8017621145);
+  color: #971e3c;
 }
 .hyperlien:hover {
   color: #FFF;
@@ -869,10 +869,14 @@ a {
 
 .section__footer {
   display: flex;
+  position: relative;
+  width: 100%;
   align-items: center;
 }
 
 .section__logo {
+  display: flex;
+  position: relative;
   float: left;
   margin: 20px;
 }
@@ -884,14 +888,20 @@ a {
 }
 
 .section__nav {
-  float: right;
-  margin-left: 200px;
+  display: flex;
+  align-items: center;
 }
 
 .nav__footer {
+  width: 100%;
+  float: right;
+  display: flex;
+}
+
+.nav__principal {
   list-style-type: none;
-  display: block;
-  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .footer {
@@ -1570,33 +1580,44 @@ body {
 }
 
 .lieu {
-  background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 300px;
   text-align: center;
 }
 
-.lieu img {
+.img__lieu {
   width: 100%;
   height: auto;
   display: block;
+  border-color: linear-gradient(160deg, rgb(218, 65, 103) 20%, rgb(254, 168, 47) 70%);
 }
 
 .lieu-details {
   padding: 15px;
+  padding: 20px;
+  text-align: center;
 }
 
 .lieu-nom {
-  font-size: 1.2em;
+  padding: 1.2%;
+  background-color: #FEA82F;
+  text-align: center;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
   font-weight: bold;
   margin: 10px 0;
-  color: #333;
+}
+
+.icone__adresse {
+  margin-right: 2%;
+  align-items: center;
 }
 
 .lieu-adresse {
-  font-size: 0.9em;
-  color: #777;
+  font-size: 1em;
+  color: #FFF;
 }
 
 @media (max-width: 601px) {
