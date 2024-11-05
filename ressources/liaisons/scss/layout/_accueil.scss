@@ -6,27 +6,41 @@
   @include texteCourant;
   margin: 0 auto;
   max-width: 100%;
-  background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png), url(../images/feux_dartifices3.png);
+  background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png);
   background-repeat: no-repeat;
-  background-size: 100%, 100%, 100%;
-  background-position: top 12.3% right 100%, top 35% left 60%, top 64% left 100%;
+  background-size: 100%, 100%;
+  background-position: top 12.3% right 100%, top 15% left 60%;
+
   @media(min-width:$desktop) {
+    margin: 0 auto;
     max-width: 100%;
-    background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png), url(../images/feux_dartifices3.png);
-    background-repeat: no-repeat;
-    background-size: 60%, 60%, 50%;
-    background-position: top 10% right 70%, top 100% left 50%, top 50% left 90%;
+    background-image: url(../images/feux_dartifices.png), url(../images/feux_dartifices2.png);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 50%, 40%;
+    background-position: top 30% right 30%, top 90% left 50%;
   }
-  
+
 }
 
 .accueil__titre {
-  @include h1__accueil;
+  @include h1__accueil-left;
+}
+
+.artistes__titre {
+  @include h1__accueil-right;
+}
+
+.tarifs__titre {
+  @include h1__accueil-left;
+}
+
+.lieux__titre {
+  @include h1__accueil-right;
 }
 
 .nav_sec {
   background-color: $noir;
-  padding: 3%;
+  padding: 1%;
   align-items: center;
 }
 
@@ -42,365 +56,318 @@ body {
 }
 
 .accueil {
-  margin: 0 auto;
+  margin: 0;
   position: relative;
   text-align: center;
-
-  @media(min-width: $desktop) {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
+}
 
 
-  .img__entete {
-    width: 1440px;
-    height: 470px;
-  }
+.img__entete {
+  width: 1440px;
+}
 
-  .container {
-    color: $blanc;
-    padding: 10px;
-    position: relative;
-  }
+.container {
+  color: $blanc;
+  padding: 10px;
+  position: relative;
+}
 
-  .centered {
-    position: absolute;
-    padding-top: 50px;
-    padding-left: 200px;
-    font-size: 40px;
-  }
+.centered {
+  position: absolute;
+  padding-top: 50px;
+  padding-left: 200px;
+  font-size: 40px;
+}
 
-  .centered_dates {
-    position: absolute;
-    padding-top: 110px;
-    padding-left: 200px;
-    font-size: 30px;
-  }
+.centered_dates {
+  position: absolute;
+  padding-top: 110px;
+  padding-left: 200px;
+  font-size: 30px;
+}
 
-  .nav-sec__liste {
-    justify-content: center;
-    display: flex;
-    list-style: none;
-  }
+.nav-sec__liste {
+  justify-content: center;
+  display: flex;
+  list-style: none;
+}
 
-  .nav-sec__listeItem {
-    padding: 14px 140px;
-    font-size: 20px;
-    text-decoration: underline 10px $rose solid;
-  }
+.nav-sec__listeItem {
+  padding: 14px 140px;
+  font-size: 20px;
+  text-decoration: underline 10px $rose solid;
+}
 
-  .nav-sec__lien {
-    color: $blanc;
-  }
+.nav-sec__lien {
+  color: $blanc;
+}
 
-  .separator {
-    background-color: $orange;
-    width: 100%;
-    padding: 10px;
-    border: $orange;
-    margin-top: 3em;
-    margin-bottom: 3em;
-  }
+.separator {
+  background-color: $orange;
+  width: 100%;
+  padding: 10px;
+  border: $orange;
+  margin-bottom: 3em;
+}
 
-  .conteneur {
-    display: block;
-    position: relative;
-    width: 100%;
-  }
+.conteneur {
+  display: block;
+  position: relative;
+  width: 100%;
+}
 
-  .titre_texte {
-    font-size: 20px;
-    color: $noir;
-    padding: 0 32px 0 32px;
-  }
+.titre_texte {
+  font-size: 20px;
+  color: $noir;
+  padding: 0 32px 0 32px;
+}
 
-  .hr__actu {
-    padding: 3px;
-    background-color: $orange;
-    border: none;
-    margin: 20px 40px 0 40px;
-    display: flex;
-    align-items: center;
-  }
+.hr__actu {
+  padding: 3px;
+  background-color: $orange;
+  border: none;
+  margin: 20px 40px 0 40px;
+  display: flex;
+  align-items: center;
+}
 
-  .auteurs {
-    background-color: $blanc;
-    text-transform: none;
-    text-decoration-line: underline;
-    text-decoration-color: $orange;
-    text-underline-offset: 4px;
-    list-style: 2px;
-    font-size: 14px;
-    color: $noir;
-    padding: 0 0 0 32px;
-  }
+.auteurs {
+  background-color: $blanc;
+  text-transform: none;
+  text-decoration-line: underline;
+  text-decoration-color: $orange;
+  text-underline-offset: 4px;
+  list-style: 2px;
+  font-size: 14px;
+  color: $noir;
+  padding: 0 0 0 32px;
+}
 
-  .articles_texte {
-    background-color: $blanc;
-    text-transform: none;
-    color: $noir;
-    font-size: 16px;
-    padding: 0 32px 0 32px;
-    text-align: justify;
-    padding-bottom: 30px;
-  }
+.articles_texte {
+  background-color: $blanc;
+  text-transform: none;
+  color: $noir;
+  font-size: 16px;
+  padding: 0 32px 0 32px;
+  text-align: justify;
+  padding-bottom: 30px;
+}
 
-  .a_points {
-    color: $rose;
-    cursor: pointer;
-    font-size: 16px;
-    letter-spacing: 2px;
-  }
+.a_points {
+  color: $rose;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
 
-  .a_points:hover {
-    font-weight: bold;
-  }
+.a_points:hover {
+  font-weight: bold;
+}
 
-  .conteneur_actu {
-    margin: 20px;
-    display: flex;
-    width: 100%;
-    align-items: flex-end;
-  }
+.conteneur_actu {
+  margin: 20px;
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+}
 
-  .titre {
-    background-color: $blanc;
-    padding-top: 20px;
-  }
+.titre {
+  background-color: $blanc;
+  padding-top: 20px;
+}
 
-  .articles {
-    background-color: $blanc;
-    justify-content: space-between;
-    margin: 21px;
-    width: 320px;
-  }
+.articles {
+  background-color: $blanc;
+  justify-content: space-between;
+  margin: 21px;
+  width: 320px;
+}
 
-  .articles__footer {
-    background-color: $orange;
-    padding: 2px;
-  }
+.articles__footer {
+  background-color: $orange;
+  padding: 2px;
+}
 
-  .date__article__footer {
-    text-align: right;
-    color: $noir;
-    font-weight: 400;
-    margin-right: 20px;
-    font-size: 14px;
-  }
+.date__article__footer {
+  text-align: right;
+  color: $noir;
+  font-weight: 400;
+  margin-right: 20px;
+  font-size: 14px;
+}
 
-  .artistes__titre {
-    text-transform: uppercase;
-    color: $blanc;
-    text-decoration: underline 17px $orange solid;
-    margin-bottom: 2em;
-    margin-top: 2em;
-    margin-right: 150px;
-    float: right;
-    font-size: 40px;
-  }
+.artistes__sect {
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
 
-  .artistes__sect {
-    align-items: center;
-    width: 100%;
-    position: relative;
-  }
+.img_artistes__ul {
+  display: flex;
+  width: 100%;
+  list-style: none;
+}
 
-  .img_artistes__ul {
-    display: flex;
-    width: 100%;
-    list-style: none;
-  }
+.img_artistes__li {
+  margin: 21px;
+}
 
-  .img_artistes__li {
-    margin: 21px;
-  }
+.picture__img {
+  width: 235px;
+  height: auto;
+}
 
-  .picture__img {
-    width: 235px;
-    height: auto;
-  }
+.noms__artistes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
 
-  .noms__artistes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
+.artistes__noms {
+  font-size: 20px;
+  font-weight: bold;
+  color: $blanc;
+  display: flex;
+}
 
-  .artistes__noms {
-    font-size: 20px;
-    font-weight: bold;
-    color: $blanc;
-    display: flex;
-  }
+.noms__artiste {
+  width: 225px;
+  text-align: center;
+  padding: 4px;
+  background-color: $rose;
+}
 
-  .noms__artiste {
-    width: 225px;
-    text-align: center;
-    padding: 4px;
-    background-color: $rose;
-  }
+.tarifs__sect {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-start;
+}
 
-  .tarifs__titre {
-    text-transform: uppercase;
-    color: $blanc;
-    text-decoration: underline 17px $orange solid;
-    margin-bottom: 2em;
-    margin-top: 2em;
-    margin-left: 150px;
-    font-size: 40px;
-  }
+.liste__tarifs-items {
+  background-color: $blanc;
+  width: 310px;
+  margin: 21px;
+}
 
-  .tarifs__sect {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: flex-start;
-  }
+.items_tarifs {
+  font-size: 25px;
+  padding: 0 30px 0 30px;
+  color: $noir;
+}
 
-  .liste__tarifs-items {
-    background-color: $blanc;
-    width: 310px;
-    margin: 21px;
-  }
+.items_tarifs-conditions {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 30px 0 30px;
+  margin-bottom: 30px;
+  color: $noir;
+  text-transform: none;
+  opacity: .6;
+}
 
-  .items_tarifs {
-    font-size: 25px;
-    padding: 0 30px 0 30px;
-    color: $noir;
-  }
+.tarifs__prix {
+  background-color: $orange;
+  box-shadow: 0 3px 10px $noir;
+}
 
-  .items_tarifs-conditions {
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0 30px 0 30px;
-    margin-bottom: 30px;
-    color: $noir;
-    text-transform: none;
-    opacity: .6;
-  }
+.tarifs_items-prix {
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 8px;
+  color: $noir;
+}
 
-  .tarifs__prix {
-    background-color: $orange;
-    box-shadow: 0 3px 10px $noir;
-  }
+.infos__tarifs {
+  display: flex;
+  gap: 50px;
+  max-width: 1440px;
+  padding: 20px;
+  align-items: center;
+}
 
-  .tarifs_items-prix {
-    text-align: center;
-    font-size: 20px;
-    text-transform: uppercase;
-    padding: 8px;
-    color: $noir;
-  }
+.infos__textes__tarifs {
+  width: 50%;
+}
 
-  .infos__tarifs {
-    display: flex;
-    gap: 50px;
-    max-width: 1440px;
-    padding: 20px;
-    align-items: center;
-  }
+.textes__tarifs {
+  width: 60%;
+  color: $blanc;
+  text-align: center;
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
 
-  .infos__textes__tarifs {
-    width: 50%;
-  }
+.lien__tarif {
+  color: $rose;
+  text-decoration: none;
+}
 
-  .textes__tarifs {
-    width: 60%;
-    color: $blanc;
-    text-align: center;
-    font-style: italic;
-    font-size: 16px;
-    margin-bottom: 30px;
-  }
+.lieux__billets__tarifs {
+  display: flex;
+  flex-direction: column;
+}
 
-  .lien__tarif {
-    color: $rose;
-    text-decoration: none;
-  }
+.icone__lieux__tarifs {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 16px;
+  color: $blanc;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
-  .lieux__billets__tarifs {
-    display: flex;
-    flex-direction: column;
-  }
+.icone__lieux {
+  color: $blanc;
+}
 
-  .icone__lieux__tarifs {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    font-size: 16px;
-    color: $blanc;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
+.lieux__sect {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+  align-items: flex-start;
+}
 
-  .icone__lieux {
-    color: $blanc;
-  }
-
-  .lieux__titre {
-    text-transform: uppercase;
-    color: $blanc;
-    text-decoration: underline 17px $orange solid;
-    margin-bottom: 2em;
-    margin-top: 2em;
-    margin-right: 150px;
-    float: right;
-    font-size: 40px;
-  }
-
-  .lieux__sect {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 20px;
-    align-items: flex-start;
-  }
-
-  .gallery {
-    position: relative;
-    align-items: center;
-    display: flex;
-    gap: 20px;
-    width: 40%;
-  }
-
-  .gallery-item {
-    text-align: center;
-  }
-
-  .image-container {
-    position: relative;
-    width: 260px;
-    height: 260px;
-    overflow: hidden;
-  }
-
-  .image-container img {
-    width: 260px;
-  }
-
-  .label {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: $degrade;
-    color: $blanc;
-    padding: 5px 10px;
-    font-weight: bold;
-  }
-
-  .location {
-    margin-top: 10px;
-    font-size: 16px;
-    color: $blanc;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+.lieux-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+.lieu {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+}
+.lieu img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.lieu-details {
+  padding: 15px;
+}
+.lieu-nom {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+.lieu-adresse {
+  font-size: 0.9em;
+  color: #777;
 }
 
 @media (max-width: 601px) {

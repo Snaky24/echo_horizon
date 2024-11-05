@@ -2,6 +2,25 @@
 <?php include($niveau . "liaisons/php/config.inc.php"); ?>
 
 <?php
+
+$lieux = [
+	[
+		'image' => 'liaisons/images/lieux/lieux_meduse4.png',
+		'nom' => 'Méduse',
+		'adresse' => '123 Rue du Soleil, Paris'
+	],
+	[
+		'image' => 'liaisons/images/lieux/lieux_Ninkasi2.jpg',
+		'nom' => 'Lieu 2',
+		'adresse' => '456 Avenue de la Lune, Lyon'
+	],
+	[
+		'image' => 'images/lieu3.jpg',
+		'nom' => 'Lieu 3',
+		'adresse' => '789 Boulevard des Étoiles, Marseille'
+	]
+];
+
 $arrJour = array("lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche");
 $arrMois = array("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre");
 
@@ -95,34 +114,32 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 			</ul>
 		</nav>
 		<hr class="separator">
-		<div id="contenu" class="conteneur">
-			<h1 class="accueil__titre">Actualités brèves</h1>
-			<section class="conteneur_actu">
-				<?php for ($cpt = 0; $cpt < count($arrArticlesChoisis); $cpt++) { ?>
-					<article class="articles">
-						<header class="titre">
-							<h3 class="titre_texte"><b><?php echo $arrArticlesChoisis[$cpt]["titre"]; ?></b></h3>
-							<hr class="hr__actu">
-							<br>
-							<p class="auteurs"><?php echo $arrArticlesChoisis[$cpt]["auteurs"]; ?></p>
-							<br>
-							<p class="articles_texte">
-								<?php echo $arrArticlesChoisis[$cpt]["article"];
-								if (count(explode(" ", $arrArticlesChoisis[$cpt]["article"])) >= 45) { ?>
-									<a class="a_points" href="#">...</a>
-								<?php } ?>
-							</p>
-						</header>
-						<footer class="articles__footer">
-							<h4 class="date__article__footer">Le
-								<?php echo $arrJour[$arrArticlesChoisis[$cpt]["jourSemaine"] - 1]; ?>
-								<?php echo $arrArticlesChoisis[$cpt]["jour"] . " " . $arrMois[$arrArticlesChoisis[$cpt]["mois"]] . " " . $arrArticlesChoisis[$cpt]["annee"]; ?>
-							</h4>
-						</footer>
-					</article>
-				<?php } ?>
-			</section>
-		</div>
+		<h1 class="accueil__titre">Actualités brèves</h1>
+		<section class="conteneur_actu">
+			<?php for ($cpt = 0; $cpt < count($arrArticlesChoisis); $cpt++) { ?>
+				<article class="articles">
+					<header class="titre">
+						<h3 class="titre_texte"><b><?php echo $arrArticlesChoisis[$cpt]["titre"]; ?></b></h3>
+						<hr class="hr__actu">
+						<br>
+						<p class="auteurs"><?php echo $arrArticlesChoisis[$cpt]["auteurs"]; ?></p>
+						<br>
+						<p class="articles_texte">
+							<?php echo $arrArticlesChoisis[$cpt]["article"];
+							if (count(explode(" ", $arrArticlesChoisis[$cpt]["article"])) >= 45) { ?>
+								<a class="a_points" href="#">...</a>
+							<?php } ?>
+						</p>
+					</header>
+					<footer class="articles__footer">
+						<h4 class="date__article__footer">Le
+							<?php echo $arrJour[$arrArticlesChoisis[$cpt]["jourSemaine"] - 1]; ?>
+							<?php echo $arrArticlesChoisis[$cpt]["jour"] . " " . $arrMois[$arrArticlesChoisis[$cpt]["mois"]] . " " . $arrArticlesChoisis[$cpt]["annee"]; ?>
+						</h4>
+					</footer>
+				</article>
+			<?php } ?>
+		</section>
 
 		<h1 class="artistes__titre">Artistes à découvrir</h1>
 		<section class="artistes__sect">
@@ -255,36 +272,19 @@ for ($intCptPart = 0; $intCptPart < $nbArtistesSug; $intCptPart++) {
 		</div>
 
 		<h1 class="lieux__titre">Lieux de spectacles</h1>
-		<section class="lieux__sect">
-			<div class="gallery">
-				<div class="gallery-item">
-					<div class="image-container">
-						<img src="liaisons/images/lieux/lieux_meduse4.png" alt="Méduse">
-						<div class="label">MÉDUSE</div>
+
+		<div class="lieux-container">
+			<?php foreach ($lieux as $lieu): ?>
+				<div class="lieu">
+					<img src="<?php echo htmlspecialchars($lieu['image']); ?>"
+						alt="<?php echo htmlspecialchars($lieu['nom']); ?>">
+					<div class="lieu-details">
+						<div class="lieu-nom"><?php echo htmlspecialchars($lieu['nom']); ?></div>
+						<div class="lieu-adresse"><?php echo htmlspecialchars($lieu['adresse']); ?></div>
 					</div>
-					<p class="location"><img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg"
-							alt="lieu carte"> 591, rue de Saint-Vallier Est, Québec</p>
 				</div>
-				<div class="gallery">
-					<div class="gallery-item">
-						<div class="image-container">
-							<img src="liaisons/images/lieux/lieux_meduse4.png" alt="Méduse">
-							<div class="label">MÉDUSE</div>
-						</div>
-						<p class="location"><img class="icone__lieu" src="<?php echo $niveau; ?>liaisons/images/map.svg"
-								alt="lieu carte"> 591, rue de Saint-Vallier Est, Québec</p>
-					</div>
-					<div class="gallery">
-						<div class="gallery-item">
-							<div class="image-container">
-								<img src="liaisons/images/lieux/lieux_meduse4.png" alt="Méduse">
-								<div class="label">MÉDUSE</div>
-							</div>
-							<p class="location"><img class="icone__lieu"
-									src="<?php echo $niveau; ?>liaisons/images/map.svg" alt="lieu carte"> 591, rue de
-								Saint-Vallier Est, Québec</p>
-						</div>
-		</section>
+			<?php endforeach; ?>
+		</div>
 
 	</main>
 

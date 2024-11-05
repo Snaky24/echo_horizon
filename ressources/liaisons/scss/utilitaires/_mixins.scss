@@ -180,7 +180,7 @@
 /**** TEXTE COURANT *****/
 
 @mixin texteCourant {
-    font-family: ($texteCourant);
+    font-family: $texteCourant;
 }
 
 @mixin texteDeGrandeTaille {
@@ -239,7 +239,7 @@
 
 // @mixins Camille
 
-@mixin h1__accueil {
+@mixin h1__accueil-left {
     font-family: ($titreNiveau1);
     font-size: 1.88rem;
     float: left;
@@ -255,5 +255,24 @@
         background-position: bottom -30% left 100%;
         font-size: 5.4rem;
         margin-left: 4%;
+    }
+}
+
+@mixin h1__accueil-right {
+    font-family: ($titreNiveau1);
+    font-size: 1.88rem;
+    float: right;
+    text-transform: uppercase;
+    color: $blanc;
+    background-image: url(../images/bordure_jaune.jpg);
+    background-repeat: no-repeat;
+    background-size: 40% 30%;
+    background-position: bottom -10% right 100%;
+
+    @media(min-width:$desktop) {
+        background-size: 60% 40%;
+        background-position: bottom -30% right 100%;
+        font-size: 5.4rem;
+        margin-right: 4%;
     }
 }
