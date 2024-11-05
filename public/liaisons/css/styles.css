@@ -602,7 +602,7 @@ body {
   text-decoration: underline;
 }
 .hyperlien:visited {
-  color: #971e3c;
+  color: rgb(151.4977973568, 29.5022026432, 59.8017621145);
 }
 .hyperlien:hover {
   color: #FFF;
@@ -982,6 +982,11 @@ a {
   font-family: LatoBlack;
   font-size: 5rem;
 }
+@media (min-width: 601px) {
+  .artiste__nom {
+    margin-left: 8rem;
+  }
+}
 .artiste__description {
   color: #000;
   background-color: #FFF;
@@ -1000,6 +1005,11 @@ a {
   margin-top: 2em;
   font-family: LatoBlack;
   font-size: 3rem;
+}
+@media (min-width: 601px) {
+  .artiste__titre {
+    margin-left: 8rem;
+  }
 }
 @media (min-width: 601px) {
   .artiste__description {
