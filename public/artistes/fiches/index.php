@@ -167,6 +167,7 @@ $niveau = '../../';
 
 
 <body>
+<a class="screen-reader-only focusable" href="#main">Aller au contenu</a>
 <?php include($niveau . "liaisons/fragments/entete.inc.php"); ?>
 <nav class="nav_sec">
 			<ul class="nav-sec__liste">
